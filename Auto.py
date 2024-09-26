@@ -8,116 +8,123 @@ import requests
 logging.basicConfig(filename='automacao_pesquisa.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Lista de possíveis temas para as pesquisas
-temas = [
-    "tecnologia", "saúde", "educação", "esportes", "política", "economia", 
-    "ciência", "arte", "música", "literatura", "história", "geografia", 
-    "filosofia", "psicologia", "sociologia", "antropologia", "astronomia", 
-    "biologia", "química", "física", "matemática", "engenharia", "medicina", 
-    "direito", "administração", "marketing", "finanças", "arquitetura", 
-    "design", "moda", "gastronomia"
+themes = [
+    "technology", "health", "education", "sports", "politics", "economy", 
+    "science", "art", "music", "literature", "history", "geography", 
+    "philosophy", "psychology", "sociology", "anthropology", "astronomy", 
+    "biology", "chemistry", "physics", "mathematics", "engineering", "medicine", 
+    "law", "administration", "marketing", "finance", "architecture", 
+    "design", "fashion", "gastronomy"
 ]
 
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
-def gerar_pesquisas_sobre_tema(tema, n):
-    perguntas = [
-        f"O que é {tema}?",
-        f"Quais são as últimas novidades em {tema}?",
-        f"Como {tema} impacta a sociedade?",
-        f"Quais são os principais desafios em {tema}?",
-        f"Quem são os principais especialistas em {tema}?"
+def generate_searches_about_theme(theme, n):
+    questions = [
+        f"What is {theme}?",
+        f"What are the latest news in {theme}?",
+        f"How does {theme} impact society?",
+        f"What are the main challenges in {theme}?",
+        f"Who are the leading experts in {theme}?"
     ]
-    return perguntas[:n]
+    return questions[:n]
 
 # Função para abrir o Edge
-def abrir_edge():
+def open_edge():
     try:
         pyautogui.press('win')
         pyautogui.write('edge')
         pyautogui.press('enter')
         time.sleep(2)  # Aumentar o tempo para garantir que o navegador abra
-        logging.info("Navegador Edge aberto com sucesso.")
+        logging.info("Edge browser opened successfully.")
         return True
     except Exception as e:
-        logging.error(f"Erro ao abrir o Edge: {e}")
-        pyautogui.alert(f"Erro ao abrir o Edge: {e}")
+        logging.error(f"Error opening Edge: {e}")
+        pyautogui.alert(f"Error opening Edge: {e}")
         return False
 
 # Função para realizar uma pesquisa
-def realizar_pesquisa(pesquisa):
+def perform_search(search):
     try:
         pyautogui.hotkey('ctrl', 't')  # Abrir uma nova aba
-        pyautogui.write(pesquisa)
+        pyautogui.write(search)
         pyautogui.press('enter')
-        time.sleep(2)  # Tempo para carregar a página
+        time.sleep(10)  # Tempo para carregar a página e permanecer nela
         pyautogui.hotkey('ctrl', 'w')  # Fechar a aba após a pesquisa
-        logging.info(f"Pesquisa realizada: {pesquisa}")
+        logging.info(f"Search performed: {search}")
     except Exception as e:
-        logging.error(f"Erro ao realizar a pesquisa: {e}")
-        pyautogui.alert(f"Erro ao realizar a pesquisa: {e}")
+        logging.error(f"Error performing search: {e}")
+        pyautogui.alert(f"Error performing search: {e}")
 
 # Função para limpar dados de navegação e cookies
-def limpar_dados_navegacao():
+def clear_browsing_data():
     try:
         pyautogui.hotkey('ctrl', 'shift', 'delete')
         time.sleep(2)  # Tempo para abrir a janela de limpeza de dados
         pyautogui.press('enter')  # Confirmar a limpeza dos dados
         time.sleep(2)  # Tempo para concluir a limpeza
-        pyautogui.alert("Dados de navegação e cookies limpos com sucesso.")
+        pyautogui.alert("Browsing data and cookies cleared successfully.")
     except Exception as e:
-        logging.error(f"Erro ao limpar os dados de navegação: {e}")
-        pyautogui.alert(f"Erro ao limpar os dados de navegação: {e}")
+        logging.error(f"Error clearing browsing data: {e}")
+        pyautogui.alert(f"Error clearing browsing data: {e}")
 
 # Função para fechar o navegador
-def fechar_navegador():
+def close_browser():
     try:
         pyautogui.hotkey('alt', 'f4')
-        logging.info("Navegador fechado com sucesso.")
+        logging.info("Browser closed successfully.")
     except Exception as e:
-        logging.error(f"Erro ao fechar o navegador: {e}")
-        pyautogui.alert(f"Erro ao fechar o navegador: {e}")
+        logging.error(f"Error closing browser: {e}")
+        pyautogui.alert(f"Error closing browser: {e}")
 
 # Função para verificar a conectividade com a internet
-def verificar_conectividade():
+def check_connectivity():
     try:
         response = requests.get('https://www.google.com', timeout=5)
         if response.status_code == 200:
-            logging.info("Conectividade com a internet verificada.")
+            logging.info("Internet connectivity verified.")
             return True
         else:
-            logging.error("Falha na verificação de conectividade com a internet.")
+            logging.error("Failed to verify internet connectivity.")
             return False
     except requests.ConnectionError as e:
-        logging.error(f"Erro ao verificar a conectividade com a internet: {e}")
-        pyautogui.alert(f"Erro ao verificar a conectividade com a internet: {e}")
+        logging.error(f"Error verifying internet connectivity: {e}")
+        pyautogui.alert(f"Error verifying internet connectivity: {e}")
         return False
 
 # Função principal para executar a automação
-def executar_automacao(num_temas=7, num_pesquisas=5):
-    # Alerta inicial
-    pyautogui.alert('O código de automação de pesquisa no Edge vai começar....')
-    pyautogui.PAUSE = 0.5
+def execute_automation(num_themes=7, num_searches=5):
+    # Perguntar ao usuário se deseja realizar a pesquisa
+    response = pyautogui.confirm('Do you want to perform the search?', buttons=['Yes', 'No'])
+    
+    if response == 'Yes':
+        # Alerta inicial
+        pyautogui.alert('The search automation code in Edge will start now....')
+        pyautogui.PAUSE = 0.5
 
-    # Verificar conectividade com a internet
-    if verificar_conectividade():
-        # Abrindo o Edge uma vez
-        if abrir_edge():
-            # Iniciando o laço de repetição para os temas diferentes
-            for _ in range(num_temas):
-                tema = random.choice(temas)
-                pesquisas = gerar_pesquisas_sobre_tema(tema, num_pesquisas)
+        # Verificar conectividade com a internet
+        if check_connectivity():
+            # Abrindo o Edge uma vez
+            if open_edge():
+                # Iniciando o laço de repetição para os temas diferentes
+                for _ in range(num_themes):
+                    theme = random.choice(themes)
+                    searches = generate_searches_about_theme(theme, num_searches)
+                    
+                    for search in searches:
+                        perform_search(search)
                 
-                for pesquisa in pesquisas:
-                    realizar_pesquisa(pesquisa)
-            
-            # Limpar dados de navegação e cookies
-            limpar_dados_navegacao()
-            
-            # Fechar o navegador
-            fechar_navegador()
+                # Limpar dados de navegação e cookies
+                clear_browsing_data()
+                
+                # Fechar o navegador
+                close_browser()
+            else:
+                pyautogui.alert("Could not open Edge browser.")
         else:
-            pyautogui.alert("Não foi possível abrir o navegador Edge.")
+            pyautogui.alert("Could not verify internet connectivity.")
     else:
-        pyautogui.alert("Não foi possível verificar a conectividade com a internet.")
+        pyautogui.alert("The program is closing.")
+        logging.info("User opted not to perform the search. The program is closing.")
 
 # Executar a automação com parâmetros configuráveis
-executar_automacao(num_temas=7, num_pesquisas=5)
+execute_automation(num_themes=7, num_searches=5)
