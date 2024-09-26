@@ -5,7 +5,7 @@ import logging
 import requests
 
 # Configuração de logging
-logging.basicConfig(filename='automacao_pesquisa.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='automacao_pesquisa.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
 
 # Listas de temas em diferentes idiomas
 temas_pt = [
