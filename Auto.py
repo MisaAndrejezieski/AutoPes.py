@@ -112,7 +112,94 @@ perguntas_pt = [
 perguntas_en = [
     "What is {tema}?", "What are the latest news in {tema}?", "How does {tema} impact society?",
     "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?",
-    # Adicione mais perguntas aqui até ter 200
+    "How can {tema} improve education?", "What are the latest advancements in {tema}?",
+    "How is {tema} changing the job market?", "What are the benefits of {tema} in health?",
+    "How can {tema} help combat climate change?", "What are the risks associated with the use of {tema}?",
+    "How is {tema} transforming communication?", "What are the future trends in {tema}?",
+    "How can {tema} improve public safety?", "What are the impacts of {tema} on the economy?",
+    "How is {tema} changing the entertainment industry?", "What are the main developments in {tema}?",
+    "How can {tema} help manage natural resources?", "What are the ethical challenges of {tema}?",
+    "How is {tema} influencing politics?", "What are the advancements in {tema}?",
+    "How can {tema} improve urban mobility?", "What are the impacts of {tema} on privacy?",
+    "How is {tema} changing agriculture?", "What are the main developments in {tema}?",
+    "How can {tema} help in disaster response?", "What are the impacts of {tema} on culture?",
+    "How is {tema} transforming the financial sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve quality of life?", "What are the challenges of {tema}?",
+    "How is {tema} changing commerce?", "What are the main developments in {tema}?",
+    "How can {tema} help preserve the environment?", "What are the impacts of {tema} on education?",
+    "How is {tema} transforming transportation?", "What are the advancements in {tema}?",
+    "How can {tema} improve mental health?", "What are the challenges of {tema}?",
+    "How is {tema} changing the manufacturing industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with social inclusion?", "What are the impacts of {tema} on security?",
+    "How is {tema} transforming the service sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve accessibility?", "What are the challenges of {tema}?",
+    "How is {tema} changing the construction industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with waste management?", "What are the impacts of {tema} on art?",
+    "How is {tema} transforming the tourism sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve energy efficiency?", "What are the challenges of {tema}?",
+    "How is {tema} changing the fashion industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with water management?", "What are the impacts of {tema} on music?",
+    "How is {tema} transforming the retail sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve sustainability?", "What are the challenges of {tema}?",
+    "How is {tema} changing the gaming industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with public health management?", "What are the impacts of {tema} on literature?",
+    "How is {tema} transforming the energy sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve productivity?", "What are the challenges of {tema}?",
+    "How is {tema} changing the media industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with crisis management?", "What are the impacts of {tema} on photography?",
+    "How is {tema} transforming the education sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve innovation?", "What are the challenges of {tema}?",
+    "How is {tema} changing the advertising industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with project management?", "What are the impacts of {tema} on dance?",
+    "How is {tema} transforming the health sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve collaboration?", "What are the challenges of {tema}?",
+    "How is {tema} changing the transportation industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with time management?", "What are the impacts of {tema} on sculpture?",
+    "How is {tema} transforming the manufacturing sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve creativity?", "What are the challenges of {tema}?",
+    "How is {tema} changing the food industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with human resources management?", "What are the impacts of {tema} on painting?",
+    "How is {tema} transforming the telecommunications sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve innovation?", "What are the challenges of {tema}?",
+    "How is {tema} changing the fashion industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with financial management?", "What are the impacts of {tema} on architecture?",
+    "How is {tema} transforming the tourism sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve efficiency?", "What are the challenges of {tema}?",
+    "How is {tema} changing the gaming industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with marketing management?", "What are the impacts of {tema} on sculpture?",
+    "How is {tema} transforming the energy sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve productivity?", "What are the challenges of {tema}?",
+    "How is {tema} changing the media industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with crisis management?", "What are the impacts of {tema} on photography?",
+    "How is {tema} transforming the education sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve innovation?", "What are the challenges of {tema}?",
+    "How is {tema} changing the advertising industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with project management?", "What are the impacts of {tema} on dance?",
+    "How is {tema} transforming the health sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve collaboration?", "What are the challenges of {tema}?",
+    "How is {tema} changing the transportation industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with time management?", "What are the impacts of {tema} on sculpture?",
+    "How is {tema} transforming the manufacturing sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve creativity?", "What are the challenges of {tema}?",
+    "How is {tema} changing the food industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with human resources management?", "What are the impacts of {tema} on painting?",
+    "How is {tema} transforming the telecommunications sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve innovation?", "What are the challenges of {tema}?",
+    "How is {tema} changing the fashion industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with financial management?", "What are the impacts of {tema} on architecture?",
+    "How is {tema} transforming the tourism sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve efficiency?", "What are the challenges of {tema}?",
+    "How is {tema} changing the gaming industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with marketing management?", "What are the impacts of {tema} on sculpture?",
+    "How is {tema} transforming the energy sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve productivity?", "What are the challenges of {tema}?",
+    "How is {tema} changing the media industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with crisis management?", "What are the impacts of {tema} on photography?",
+    "How is {tema} transforming the education sector?", "What are the advancements in {tema}?",
+    "How can {tema} improve innovation?", "What are the challenges of {tema}?",
+    "How is {tema} changing the advertising industry?", "What are the main developments in {tema}?",
+    "How can {tema} help with project management?", "What are the impacts of {tema} on dance?",
+    "How is {tema} transforming the health sector?"
 ]
 
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
@@ -195,7 +282,7 @@ def selecionar_idioma():
         return 'en', temas_en
 
 # Função principal para executar a automação
-def executar_automacao(num_pesquisas=31):
+def executar_automacao(num_pesquisas=3):
     while True:
         # Selecionar o idioma
         idioma, temas = selecionar_idioma()
@@ -241,4 +328,4 @@ def executar_automacao(num_pesquisas=31):
             break
 
 # Executar a automação com parâmetros configuráveis
-executar_automacao(num_pesquisas=31)
+executar_automacao(num_pesquisas=3)
