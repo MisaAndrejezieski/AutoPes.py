@@ -40,11 +40,11 @@ def gerar_pesquisas_sobre_tema(tema, n, idioma):
         perguntas = [
             f"What is {tema}?",
             f"What are the latest news in {tema}?",
-            f"How does {tema} impact society?",
-            f"What are the main challenges in {tema}?",
-            f"Who are the leading experts in {tema}?"
+            f"How does {theme} impact society?",
+            f"What are the main challenges in {theme}?",
+            f"Who are the leading experts in {theme}?"
         ]
-    return perguntas[:n]
+    return perguntas * (n // len(perguntas)) + perguntas[:n % len(perguntas)]
 
 # Função para abrir o Edge
 def abrir_edge():
@@ -118,7 +118,7 @@ def selecionar_idioma():
         return 'en', temas_en
 
 # Função principal para executar a automação
-def executar_automacao(num_temas=1, num_pesquisas=5):
+def executar_automacao(num_pesquisas=5):
     # Selecionar o idioma
     idioma, temas = selecionar_idioma()
     
@@ -126,6 +126,9 @@ def executar_automacao(num_temas=1, num_pesquisas=5):
     resposta = pyautogui.confirm('Você deseja realizar a pesquisa?', buttons=['Sim', 'Não'])
     
     if resposta == 'Sim':
+        # Selecionar o tema
+        tema = pyautogui.confirm('Escolha um tema:', buttons=temas)
+        
         # Alerta inicial
         pyautogui.alert('O código de automação de pesquisa no Edge vai começar....')
         pyautogui.PAUSE = 0.5
@@ -134,13 +137,11 @@ def executar_automacao(num_temas=1, num_pesquisas=5):
         if verificar_conectividade():
             # Abrindo o Edge uma vez
             if abrir_edge():
-                # Iniciando o laço de repetição para os temas diferentes
-                for _ in range(num_temas):
-                    tema = random.choice(temas)
-                    pesquisas = gerar_pesquisas_sobre_tema(tema, num_pesquisas, idioma)
-                    
-                    for pesquisa in pesquisas:
-                        realizar_pesquisa(pesquisa)
+                # Gerar pesquisas sobre o tema selecionado
+                pesquisas = gerar_pesquisas_sobre_tema(tema, num_pesquisas, idioma)
+                
+                for pesquisa in pesquisas:
+                    realizar_pesquisa(pesquisa)
                 
                 # Limpar dados de navegação e cookies
                 limpar_dados_navegacao()
@@ -156,4 +157,4 @@ def executar_automacao(num_temas=1, num_pesquisas=5):
         logging.info("O usuário optou por não realizar a pesquisa. O programa está fechando.")
 
 # Executar a automação com parâmetros configuráveis
-executar_automacao(num_temas=1, num_pesquisas=5)
+executar_automacao(num_pesquisas=5)
