@@ -9,10 +9,10 @@ logging.basicConfig(filename='automacao_pesquisa.log', level=logging.INFO, forma
 
 # Listas de temas em diferentes idiomas
 temas_pt = [
-    "tecnologia", "saúde", "educação", "esportes", "política", "economia", 
-    "ciência", "arte", "música", "literatura", "história", "geografia", 
+    "tecnologia", "saude", "educacao", "esportes", "politica", "economia", 
+    "ciencia", "arte", "musica", "literatura", "historia", "geografia", 
     "filosofia", "psicologia", "sociologia", "antropologia", "astronomia", 
-    "biologia", "química", "física", "matemática", "engenharia", "medicina", 
+    "biologia", "quimica", "fisica", "matematica", "engenharia", "medicina", 
     "direito", "administração", "marketing", "finanças", "arquitetura", 
     "design", "moda", "gastronomia"
 ]
@@ -26,25 +26,102 @@ temas_en = [
     "design", "fashion", "gastronomy"
 ]
 
+# Lista de perguntas em português
+perguntas_pt = [
+    "O que é {tema}?", "Quais são as últimas novidades em {tema}?", "Como {tema} impacta a sociedade?",
+    "Quais são os principais desafios em {tema}?", "Quem são os principais especialistas em {tema}?",
+    "Como {tema} pode melhorar a educação?", "Quais são os avanços mais recentes em {tema}?",
+    "Como {tema} está mudando o mercado de trabalho?", "Quais são os benefícios de {tema} na saúde?",
+    "Como {tema} pode ajudar a combater as mudanças climáticas?", "Quais são os riscos associados ao uso de {tema}?",
+    "Como {tema} está transformando a comunicação?", "Quais são as tendências futuras em {tema}?",
+    "Como {tema} pode melhorar a segurança pública?", "Quais são os impactos de {tema} na economia?",
+    "Como {tema} está mudando a indústria de entretenimento?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de recursos naturais?", "Quais são os desafios éticos de {tema}?",
+    "Como {tema} está influenciando a política?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a mobilidade urbana?", "Quais são os impactos de {tema} na privacidade?",
+    "Como {tema} está mudando a agricultura?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na resposta a desastres naturais?", "Quais são os impactos de {tema} na cultura?",
+    "Como {tema} está transformando o setor financeiro?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a qualidade de vida?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando o comércio?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na preservação do meio ambiente?", "Quais são os impactos de {tema} na educação?",
+    "Como {tema} está transformando o transporte?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a saúde mental?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de manufatura?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na inclusão social?", "Quais são os impactos de {tema} na segurança?",
+    "Como {tema} está transformando o setor de serviços?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a acessibilidade?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de construção?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de resíduos?", "Quais são os impactos de {tema} na arte?",
+    "Como {tema} está transformando o setor de turismo?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a eficiência energética?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de moda?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de água?", "Quais são os impactos de {tema} na música?",
+    "Como {tema} está transformando o setor de varejo?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a sustentabilidade?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de jogos?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de saúde pública?", "Quais são os impactos de {tema} na literatura?",
+    "Como {tema} está transformando o setor de energia?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a produtividade?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de mídia?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de crises?", "Quais são os impactos de {tema} na fotografia?",
+    "Como {tema} está transformando o setor de educação?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a inovação?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de publicidade?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de projetos?", "Quais são os impactos de {tema} na dança?",
+    "Como {tema} está transformando o setor de saúde?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a colaboração?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de transporte?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de tempo?", "Quais são os impactos de {tema} na escultura?",
+    "Como {tema} está transformando o setor de manufatura?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a criatividade?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de alimentos?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de recursos humanos?", "Quais são os impactos de {tema} na pintura?",
+    "Como {tema} está transformando o setor de telecomunicações?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a inovação?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de moda?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de finanças?", "Quais são os impactos de {tema} na arquitetura?",
+    "Como {tema} está transformando o setor de turismo?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a eficiência?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de jogos?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de marketing?", "Quais são os impactos de {tema} na escultura?",
+    "Como {tema} está transformando o setor de energia?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a produtividade?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de mídia?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de crises?", "Quais são os impactos de {tema} na fotografia?",
+    "Como {tema} está transformando o setor de educação?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a inovação?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de publicidade?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de projetos?", "Quais são os impactos de {tema} na dança?",
+    "Como {tema} está transformando o setor de saúde?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a colaboração?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de transporte?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de tempo?", "Quais são os impactos de {tema} na escultura?",
+    "Como {tema} está transformando o setor de manufatura?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a criatividade?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de alimentos?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de recursos humanos?", "Quais são os impactos de {tema} na pintura?",
+    "Como {tema} está transformando o setor de telecomunicações?", "Quais são os avanços em {tema}?",
+    "Como {tema} pode melhorar a inovação?", "Quais são os desafios de {tema}?",
+    "Como {tema} está mudando a indústria de moda?", "Quais são os principais desenvolvimentos em {tema}?",
+    "Como {tema} pode ajudar na gestão de finanças?", "Quais são os impactos de {tema} na arquitetura?",
+    "Como {tema} está transformando o setor de turismo"
+]
+
+# Lista de perguntas em inglês
+perguntas_en = [
+    "What is {tema}?", "What are the latest news in {tema}?", "How does {tema} impact society?",
+    "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?",
+    # Adicione mais perguntas aqui até ter 200
+]
+
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
 def gerar_pesquisas_sobre_tema(tema, n, idioma):
     if idioma == 'pt':
-        perguntas = [
-            f"O que é {tema}?",
-            f"Quais são as últimas novidades em {tema}?",
-            f"Como {tema} impacta a sociedade?",
-            f"Quais são os principais desafios em {tema}?",
-            f"Quem são os principais especialistas em {tema}?"
-        ]
+        perguntas = perguntas_pt
     else:
-        perguntas = [
-            f"What is {tema}?",
-            f"What are the latest news in {tema}?",
-            f"How does {tema} impact society?",
-            f"What are the main challenges in {tema}?",
-            f"Who are the leading experts in {tema}?"
-        ]
-    return perguntas * (n // len(perguntas)) + perguntas[:n % len(perguntas)]
+        perguntas = perguntas_en
+    return random.sample([p.format(tema=tema) for p in perguntas], n)
 
 # Função para abrir o Edge
 def abrir_edge():
@@ -118,43 +195,50 @@ def selecionar_idioma():
         return 'en', temas_en
 
 # Função principal para executar a automação
-def executar_automacao(num_pesquisas=5):
-    # Selecionar o idioma
-    idioma, temas = selecionar_idioma()
-    
-    # Perguntar ao usuário se deseja realizar a pesquisa
-    resposta = pyautogui.confirm('Você deseja realizar a pesquisa?', buttons=['Sim', 'Não'])
-    
-    if resposta == 'Sim':
-        # Selecionar o tema
-        tema = pyautogui.confirm('Escolha um tema:', buttons=temas)
+def executar_automacao(num_pesquisas=31):
+    while True:
+        # Selecionar o idioma
+        idioma, temas = selecionar_idioma()
         
-        # Alerta inicial
-        pyautogui.alert('O código de automação de pesquisa no Edge vai começar....')
-        pyautogui.PAUSE = 0.5
+        # Perguntar ao usuário se deseja realizar a pesquisa
+        resposta = pyautogui.confirm('Você deseja realizar a pesquisa?', buttons=['Sim', 'Não'])
+        
+        if resposta == 'Sim':
+            # Selecionar o tema
+            tema = pyautogui.confirm('Escolha um tema:', buttons=temas)
+            
+            # Alerta inicial
+            pyautogui.alert('O código de automação de pesquisa no Edge vai começar....')
+            pyautogui.PAUSE = 0.5
 
-        # Verificar conectividade com a internet
-        if verificar_conectividade():
-            # Abrindo o Edge uma vez
-            if abrir_edge():
-                # Gerar pesquisas sobre o tema selecionado
-                pesquisas = gerar_pesquisas_sobre_tema(tema, num_pesquisas, idioma)
-                
-                for pesquisa in pesquisas:
-                    realizar_pesquisa(pesquisa)
-                
-                # Limpar dados de navegação e cookies
-                limpar_dados_navegacao()
-                
-                # Fechar o navegador
-                fechar_navegador()
+            # Verificar conectividade com a internet
+            if verificar_conectividade():
+                # Abrindo o Edge uma vez
+                if abrir_edge():
+                    # Gerar pesquisas sobre o tema selecionado
+                    pesquisas = gerar_pesquisas_sobre_tema(tema, num_pesquisas, idioma)
+                    
+                    for pesquisa in pesquisas:
+                        realizar_pesquisa(pesquisa)
+                    
+                    # Limpar dados de navegação e cookies
+                    limpar_dados_navegacao()
+                    
+                    # Fechar o navegador
+                    fechar_navegador()
+                else:
+                    pyautogui.alert("Não foi possível abrir o navegador Edge.")
             else:
-                pyautogui.alert("Não foi possível abrir o navegador Edge.")
+                pyautogui.alert("Não foi possível verificar a conectividade com a internet.")
+            
+            # Perguntar se deseja escolher outro tema
+            nova_pesquisa = pyautogui.confirm('Você deseja escolher outro tema?', buttons=['Sim', 'Não'])
+            if nova_pesquisa == 'Não':
+                break
         else:
-            pyautogui.alert("Não foi possível verificar a conectividade com a internet.")
-    else:
-        pyautogui.alert("O programa está fechando.")
-        logging.info("O usuário optou por não realizar a pesquisa. O programa está fechando.")
+            pyautogui.alert("O programa está fechando.")
+            logging.info("O usuário optou por não realizar a pesquisa. O programa está fechando.")
+            break
 
 # Executar a automação com parâmetros configuráveis
-executar_automacao(num_pesquisas=5)
+executar_automacao(num_pesquisas=31)
