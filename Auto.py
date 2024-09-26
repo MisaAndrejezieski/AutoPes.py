@@ -92,7 +92,7 @@ def verificar_conectividade():
         return False
 
 # Função principal para executar a automação
-def executar_automacao(num_temas=1, num_pesquisas=5):
+def executar_automacao(num_temas=7, num_pesquisas=5):
     # Alerta inicial
     pyautogui.alert('O código de automação de pesquisa no Edge vai começar....')
     pyautogui.PAUSE = 0.5
@@ -120,4 +120,4 @@ def executar_automacao(num_temas=1, num_pesquisas=5):
         pyautogui.alert("Não foi possível verificar a conectividade com a internet.")
 
 # Executar a automação com parâmetros configuráveis
-executar_automacao(num_temas=2, num_pesquisas=5)
+executar_automacao(num_temas=7, num_pesquisas=5)
