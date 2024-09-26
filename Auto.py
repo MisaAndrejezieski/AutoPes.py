@@ -40,9 +40,9 @@ def gerar_pesquisas_sobre_tema(tema, n, idioma):
         perguntas = [
             f"What is {tema}?",
             f"What are the latest news in {tema}?",
-            f"How does {theme} impact society?",
-            f"What are the main challenges in {theme}?",
-            f"Who are the leading experts in {theme}?"
+            f"How does {tema} impact society?",
+            f"What are the main challenges in {tema}?",
+            f"Who are the leading experts in {tema}?"
         ]
     return perguntas * (n // len(perguntas)) + perguntas[:n % len(perguntas)]
 
