@@ -93,21 +93,40 @@ def verificar_conectividade():
 
 # Função principal para executar a automação
 def executar_automacao(num_temas=6, num_perguntas=5):
-    if verificar_conectividade():
-        for _ in range(num_temas):
-            tema = random.choice(temas_en)
-            pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
-            
-            if abrir_edge():
-                for pesquisa in pesquisas:
-                    realizar_pesquisa(pesquisa)
-                
-                limpar_dados_navegacao()
-                fechar_navegador()
+    while True:
+        # Perguntar ao usuário se deseja realizar a pesquisa
+        resposta = pyautogui.confirm('Você deseja realizar a pesquisa?', buttons=['Sim', 'Não'])
+        
+        if resposta == 'Sim':
+            # Alerta inicial
+            pyautogui.alert('O código de automação de pesquisa no Edge vai começar....')
+            pyautogui.PAUSE = 0.5
+
+            # Verificar conectividade com a internet
+            if verificar_conectividade():
+                for _ in range(num_temas):
+                    tema = random.choice(temas_en)
+                    pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
+                    
+                    if abrir_edge():
+                        for pesquisa in pesquisas:
+                            realizar_pesquisa(pesquisa)
+                        
+                        limpar_dados_navegacao()
+                        fechar_navegador()
+                    else:
+                        pyautogui.alert("Não foi possível abrir o navegador Edge.")
             else:
-                pyautogui.alert("Não foi possível abrir o navegador Edge.")
-    else:
-        pyautogui.alert("Não foi possível verificar a conectividade com a internet.")
+                pyautogui.alert("Não foi possível verificar a conectividade com a internet.")
+            
+            # Perguntar se deseja escolher outro tema
+            nova_pesquisa = pyautogui.confirm('Você deseja realizar outra pesquisa?', buttons=['Sim', 'Não'])
+            if nova_pesquisa == 'Não':
+                break
+        else:
+            pyautogui.alert("O programa está fechando.")
+            logging.info("O usuário optou por não realizar a pesquisa. O programa está fechando.")
+            break
 
 # Executar a automação com parâmetros configuráveis
 executar_automacao(num_temas=6, num_perguntas=5)
