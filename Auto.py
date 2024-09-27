@@ -1,16 +1,15 @@
-import time  # Importa o módulo time para manipulação de tempo
-import pyautogui  # Importa o módulo pyautogui para automação de GUI
-import random  # Importa o módulo random para gerar valores aleatórios
-import logging  # Importa o módulo logging para registrar logs
-import requests  # Importa o módulo requests para fazer requisições HTTP
+import time
+import pyautogui
+import random
+import logging
+import requests
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 # Configuração de logging
-logging.basicConfig(
-    filename='automacao_pesquisa.log',  # Nome do arquivo de log
-    level=logging.INFO,  # Nível de log (INFO)
-    format='%(asctime)s - %(levelname)s - %(message)s',  # Formato da mensagem de log
-    encoding='utf-8'  # Codificação do arquivo de log
-)
+logging.basicConfig(filename='automacao_pesquisa.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
 
 # Lista de temas em inglês
 temas_en = [
@@ -26,75 +25,75 @@ temas_en = [
 perguntas_en = [
     "What is {tema}?", "What are the latest news in {tema}?", "How does {tema} impact society?",
     "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?",
-    
+    # Adicione mais perguntas aqui até ter 200
 ]
 
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
 def gerar_pesquisas_sobre_tema(tema, n):
-    return random.sample([p.format(tema=tema) for p in perguntas_en], n)  # Gera uma lista de n perguntas aleatórias sobre o tema
+    return random.sample([p.format(tema=tema) for p in perguntas_en], n)
 
-# Função para abrir o Edge
-def abrir_edge():
+# Função para abrir o navegador usando Selenium
+def abrir_navegador():
     try:
-        pyautogui.press('win')  # Pressiona a tecla 'win' para abrir o menu Iniciar
-        pyautogui.write('edge')  # Digita 'edge' para procurar o navegador Edge
-        pyautogui.press('enter')  # Pressiona 'enter' para abrir o Edge
-        time.sleep(2)  # Aguarda 2 segundos para garantir que o navegador abra
-        logging.info("Navegador Edge aberto com sucesso.")  # Registra no log que o navegador foi aberto com sucesso
-        return True  # Retorna True indicando sucesso
+        driver = webdriver.Edge()  # Inicializa o navegador Edge
+        driver.maximize_window()  # Maximiza a janela do navegador
+        logging.info("Navegador Edge aberto com sucesso.")
+        return driver
     except Exception as e:
-        logging.error(f"Erro ao abrir o Edge: {e}")  # Registra no log o erro ocorrido
-        pyautogui.alert(f"Erro ao abrir o Edge: {e}")  # Exibe um alerta com o erro
-        return False  # Retorna False indicando falha
+        logging.error(f"Erro ao abrir o Edge: {e}")
+        pyautogui.alert(f"Erro ao abrir o Edge: {e}")
+        return None
 
-# Função para realizar uma pesquisa
-def realizar_pesquisa(pesquisa):
+# Função para realizar uma pesquisa usando Selenium
+def realizar_pesquisa(driver, pesquisa):
     try:
-        pyautogui.hotkey('ctrl', 't')  # Abre uma nova aba no navegador
-        pyautogui.write(pesquisa)  # Digita a pesquisa na barra de endereços
-        pyautogui.press('enter')  # Pressiona 'enter' para realizar a pesquisa
-        time.sleep(10)  # Aguarda 10 segundos para carregar a página e permanecer nela
-        pyautogui.hotkey('ctrl', 'w')  # Fecha a aba após a pesquisa
-        logging.info(f"Pesquisa realizada: {pesquisa}")  # Registra no log que a pesquisa foi realizada
+        driver.get("https://www.google.com")  # Abre o Google
+        search_box = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.NAME, "q"))
+        )  # Espera até que a caixa de pesquisa esteja presente
+        search_box.send_keys(pesquisa)  # Digita a pesquisa na caixa de pesquisa
+        search_box.submit()  # Submete a pesquisa
+        time.sleep(10)  # Tempo para carregar a página e permanecer nela
+        logging.info(f"Pesquisa realizada: {pesquisa}")
     except Exception as e:
-        logging.error(f"Erro ao realizar a pesquisa: {e}")  # Registra no log o erro ocorrido
-        pyautogui.alert(f"Erro ao realizar a pesquisa: {e}")  # Exibe um alerta com o erro
+        logging.error(f"Erro ao realizar a pesquisa: {e}")
+        pyautogui.alert(f"Erro ao realizar a pesquisa: {e}")
 
-# Função para limpar dados de navegação e cookies
+# Função para limpar dados de navegação e cookies usando PyAutoGUI
 def limpar_dados_navegacao():
     try:
-        pyautogui.hotkey('ctrl', 'shift', 'delete')  # Abre a janela de limpeza de dados de navegação
-        time.sleep(2)  # Aguarda 2 segundos para abrir a janela de limpeza de dados
-        pyautogui.press('enter')  # Confirma a limpeza dos dados
-        time.sleep(2)  # Aguarda 2 segundos para concluir a limpeza
-        pyautogui.alert("Dados de navegação e cookies limpos com sucesso.")  # Exibe um alerta indicando sucesso
+        pyautogui.hotkey('ctrl', 'shift', 'delete')
+        time.sleep(2)  # Tempo para abrir a janela de limpeza de dados
+        pyautogui.press('enter')  # Confirmar a limpeza dos dados
+        time.sleep(2)  # Tempo para concluir a limpeza
+        pyautogui.alert("Dados de navegação e cookies limpos com sucesso.")
     except Exception as e:
-        logging.error(f"Erro ao limpar os dados de navegação: {e}")  # Registra no log o erro ocorrido
-        pyautogui.alert(f"Erro ao limpar os dados de navegação: {e}")  # Exibe um alerta com o erro
+        logging.error(f"Erro ao limpar os dados de navegação: {e}")
+        pyautogui.alert(f"Erro ao limpar os dados de navegação: {e}")
 
-# Função para fechar o navegador
-def fechar_navegador():
+# Função para fechar o navegador usando Selenium
+def fechar_navegador(driver):
     try:
-        pyautogui.hotkey('alt', 'f4')  # Fecha o navegador
-        logging.info("Navegador fechado com sucesso.")  # Registra no log que o navegador foi fechado com sucesso
+        driver.quit()  # Fecha o navegador
+        logging.info("Navegador fechado com sucesso.")
     except Exception as e:
-        logging.error(f"Erro ao fechar o navegador: {e}")  # Registra no log o erro ocorrido
-        pyautogui.alert(f"Erro ao fechar o navegador: {e}")  # Exibe um alerta com o erro
+        logging.error(f"Erro ao fechar o navegador: {e}")
+        pyautogui.alert(f"Erro ao fechar o navegador: {e}")
 
 # Função para verificar a conectividade com a internet
 def verificar_conectividade():
     try:
-        response = requests.get('https://www.google.com', timeout=5)  # Faz uma requisição para o Google com timeout de 5 segundos
+        response = requests.get('https://www.google.com', timeout=5)
         if response.status_code == 200:
-            logging.info("Conectividade com a internet verificada.")  # Registra no log que a conectividade foi verificada
-            return True  # Retorna True indicando sucesso
+            logging.info("Conectividade com a internet verificada.")
+            return True
         else:
-            logging.error("Falha na verificação de conectividade com a internet.")  # Registra no log a falha na verificação
-            return False  # Retorna False indicando falha
+            logging.error("Falha na verificação de conectividade com a internet.")
+            return False
     except requests.ConnectionError as e:
-        logging.error(f"Erro ao verificar a conectividade com a internet: {e}")  # Registra no log o erro ocorrido
-        pyautogui.alert(f"Erro ao verificar a conectividade com a internet: {e}")  # Exibe um alerta com o erro
-        return False  # Retorna False indicando falha
+        logging.error(f"Erro ao verificar a conectividade com a internet: {e}")
+        pyautogui.alert(f"Erro ao verificar a conectividade com a internet: {e}")
+        return False
 
 # Função principal para executar a automação
 def executar_automacao(num_temas=6, num_perguntas=5):
@@ -113,16 +112,17 @@ def executar_automacao(num_temas=6, num_perguntas=5):
                     tema = random.choice(temas_en)  # Escolhe um tema aleatoriamente
                     pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)  # Gera uma lista de pesquisas sobre o tema
                     
-                    if abrir_edge():  # Tenta abrir o navegador Edge
+                    driver = abrir_navegador()  # Tenta abrir o navegador Edge
+                    if driver:
                         for pesquisa in pesquisas:  # Realiza cada pesquisa gerada
-                            realizar_pesquisa(pesquisa)
+                            realizar_pesquisa(driver, pesquisa)
                         
                         limpar_dados_navegacao()  # Limpa os dados de navegação e cookies
-                        fechar_navegador()  # Fecha o navegador
+                        fechar_navegador(driver)  # Fecha o navegador
                     else:
-                        pyautogui.alert("Não foi possível abrir o navegador Edge.")  # Exibe um alerta se não conseguir abrir o navegador
+                        pyautogui.alert("Não foi possível abrir o navegador Edge.")
             else:
-                pyautogui.alert("Não foi possível verificar a conectividade com a internet.")  # Exibe um alerta se não conseguir verificar a conectividade
+                pyautogui.alert("Não foi possível verificar a conectividade com a internet.")
             
             # Perguntar se deseja realizar outra pesquisa
             nova_pesquisa = pyautogui.confirm('Você deseja realizar outra pesquisa?', buttons=['Sim', 'Não'])
