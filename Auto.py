@@ -26,7 +26,7 @@ temas_en = [
 perguntas_en = [
     "What is {tema}?", "What are the latest news in {tema}?", "How does {tema} impact society?",
     "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?",
-    # Adicione mais perguntas aqui até ter 200
+    
 ]
 
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
