@@ -53,7 +53,9 @@ def realizar_pesquisa(driver, pesquisa):
         )  # Espera até que a caixa de pesquisa esteja presente
         search_box.send_keys(pesquisa)  # Digita a pesquisa na caixa de pesquisa
         search_box.submit()  # Submete a pesquisa
-        time.sleep(10)  # Tempo para carregar a página e permanecer nela
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "search"))
+        )  # Espera até que os resultados da pesquisa estejam presentes
         logging.info(f"Pesquisa realizada: {pesquisa}")
     except Exception as e:
         logging.error(f"Erro ao realizar a pesquisa: {e}")
