@@ -127,7 +127,7 @@ def selecionar_tema(temas):
     return resposta.split(", ")[0]
 
 # Função principal para executar a automação
-def executar_automacao(num_pesquisas=3):
+def executar_automacao(num_pesquisas=5):
     while True:
         # Selecionar o idioma
         idioma, temas = selecionar_idioma()
@@ -173,4 +173,4 @@ def executar_automacao(num_pesquisas=3):
             break
 
 # Executar a automação com parâmetros configuráveis
-executar_automacao(num_pesquisas=3)
+executar_automacao(num_pesquisas=5)
