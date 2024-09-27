@@ -7,16 +7,7 @@ import requests
 # Configuração de logging
 logging.basicConfig(filename='automacao_pesquisa.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
 
-# Listas de temas em diferentes idiomas
-temas_pt = [
-    "tecnologia", "saúde", "educação", "esportes", "política", "economia", 
-    "ciência", "arte", "música", "literatura", "história", "geografia", 
-    "filosofia", "psicologia", "sociologia", "antropologia", "astronomia", 
-    "biologia", "química", "física", "matemática", "engenharia", "medicina", 
-    "direito", "administração", "marketing", "finanças", "arquitetura", 
-    "design", "moda", "gastronomia"
-]
-
+# Lista de temas em inglês
 temas_en = [
     "technology", "health", "education", "sports", "politics", "economy", 
     "science", "art", "music", "literature", "history", "geography", 
@@ -24,13 +15,6 @@ temas_en = [
     "biology", "chemistry", "physics", "mathematics", "engineering", "medicine", 
     "law", "administration", "marketing", "finance", "architecture", 
     "design", "fashion", "gastronomy"
-]
-
-# Lista de perguntas em português
-perguntas_pt = [
-    "O que é {tema}?", "Quais são as últimas novidades em {tema}?", "Como {tema} impacta a sociedade?",
-    "Quais são os principais desafios em {tema}?", "Quem são os principais especialistas em {tema}?",
-    # Adicione mais perguntas aqui até ter 200
 ]
 
 # Lista de perguntas em inglês
@@ -41,12 +25,8 @@ perguntas_en = [
 ]
 
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
-def gerar_pesquisas_sobre_tema(tema, n, idioma):
-    if idioma == 'pt':
-        perguntas = perguntas_pt
-    else:
-        perguntas = perguntas_en
-    return random.sample([p.format(tema=tema) for p in perguntas], n)
+def gerar_pesquisas_sobre_tema(tema, n):
+    return random.sample([p.format(tema=tema) for p in perguntas_en], n)
 
 # Função para abrir o Edge
 def abrir_edge():
@@ -111,66 +91,23 @@ def verificar_conectividade():
         pyautogui.alert(f"Erro ao verificar a conectividade com a internet: {e}")
         return False
 
-# Função para exibir o menu de seleção de idioma
-def selecionar_idioma():
-    resposta = pyautogui.confirm('Escolha o idioma para as pesquisas:', buttons=['Português', 'English'])
-    if resposta == 'Português':
-        return 'pt', temas_pt
-    else:
-        return 'en', temas_en
-
-# Função para exibir o menu de seleção de tema em três colunas
-def selecionar_tema(temas):
-    temas_divididos = [temas[i:i + 10] for i in range(0, len(temas), 10)]
-    temas_formatados = [", ".join(coluna) for coluna in zip(*temas_divididos)]
-    resposta = pyautogui.confirm('Escolha um tema:', buttons=temas_formatados)
-    return resposta.split(", ")[0]
-
 # Função principal para executar a automação
-def executar_automacao(num_pesquisas=5):
-    while True:
-        # Selecionar o idioma
-        idioma, temas = selecionar_idioma()
-        
-        # Perguntar ao usuário se deseja realizar a pesquisa
-        resposta = pyautogui.confirm('Você deseja realizar a pesquisa?', buttons=['Sim', 'Não'])
-        
-        if resposta == 'Sim':
-            # Selecionar o tema
-            tema = selecionar_tema(temas)
+def executar_automacao(num_temas=6, num_perguntas=5):
+    if verificar_conectividade():
+        for _ in range(num_temas):
+            tema = random.choice(temas_en)
+            pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
             
-            # Alerta inicial
-            pyautogui.alert('O código de automação de pesquisa no Edge vai começar....')
-            pyautogui.PAUSE = 0.5
-
-            # Verificar conectividade com a internet
-            if verificar_conectividade():
-                # Abrindo o Edge uma vez
-                if abrir_edge():
-                    # Gerar pesquisas sobre o tema selecionado
-                    pesquisas = gerar_pesquisas_sobre_tema(tema, num_pesquisas, idioma)
-                    
-                    for pesquisa in pesquisas:
-                        realizar_pesquisa(pesquisa)
-                    
-                    # Limpar dados de navegação e cookies
-                    limpar_dados_navegacao()
-                    
-                    # Fechar o navegador
-                    fechar_navegador()
-                else:
-                    pyautogui.alert("Não foi possível abrir o navegador Edge.")
+            if abrir_edge():
+                for pesquisa in pesquisas:
+                    realizar_pesquisa(pesquisa)
+                
+                limpar_dados_navegacao()
+                fechar_navegador()
             else:
-                pyautogui.alert("Não foi possível verificar a conectividade com a internet.")
-            
-            # Perguntar se deseja escolher outro tema
-            nova_pesquisa = pyautogui.confirm('Você deseja escolher outro tema?', buttons=['Sim', 'Não'])
-            if nova_pesquisa == 'Não':
-                break
-        else:
-            pyautogui.alert("O programa está fechando.")
-            logging.info("O usuário optou por não realizar a pesquisa. O programa está fechando.")
-            break
+                pyautogui.alert("Não foi possível abrir o navegador Edge.")
+    else:
+        pyautogui.alert("Não foi possível verificar a conectividade com a internet.")
 
 # Executar a automação com parâmetros configuráveis
-executar_automacao(num_pesquisas=5)
+executar_automacao(num_temas=6, num_perguntas=5)
