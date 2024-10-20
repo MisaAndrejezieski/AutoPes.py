@@ -3,6 +3,7 @@ import pyautogui  # Importa o módulo pyautogui para automação de GUI
 import random  # Importa o módulo random para gerar valores aleatórios
 import logging  # Importa o módulo logging para registrar logs
 import requests  # Importa o módulo requests para fazer requisições HTTP
+import threading  # Importa o módulo threading para rodar em segundo plano
 
 # Configuração de logging
 logging.basicConfig(
@@ -25,8 +26,7 @@ temas_en = [
 # Lista de perguntas em inglês
 perguntas_en = [
     "What is {tema}?", "What are the latest news in {tema}?", "How does {tema} impact society?",
-    "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?",
-    
+    "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?"
 ]
 
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
@@ -44,7 +44,6 @@ def abrir_edge():
         return True  # Retorna True indicando sucesso
     except Exception as e:
         logging.error(f"Erro ao abrir o Edge: {e}")  # Registra no log o erro ocorrido
-        pyautogui.alert(f"Erro ao abrir o Edge: {e}")  # Exibe um alerta com o erro
         return False  # Retorna False indicando falha
 
 # Função para realizar uma pesquisa
@@ -58,7 +57,6 @@ def realizar_pesquisa(pesquisa):
         logging.info(f"Pesquisa realizada: {pesquisa}")  # Registra no log que a pesquisa foi realizada
     except Exception as e:
         logging.error(f"Erro ao realizar a pesquisa: {e}")  # Registra no log o erro ocorrido
-        pyautogui.alert(f"Erro ao realizar a pesquisa: {e}")  # Exibe um alerta com o erro
 
 # Função para limpar dados de navegação e cookies
 def limpar_dados_navegacao():
@@ -67,10 +65,9 @@ def limpar_dados_navegacao():
         time.sleep(2)  # Aguarda 2 segundos para abrir a janela de limpeza de dados
         pyautogui.press('enter')  # Confirma a limpeza dos dados
         time.sleep(2)  # Aguarda 2 segundos para concluir a limpeza
-        pyautogui.alert("Dados de navegação e cookies limpos com sucesso.")  # Exibe um alerta indicando sucesso
+        logging.info("Dados de navegação e cookies limpos com sucesso.")  # Registra no log que a limpeza foi concluída
     except Exception as e:
         logging.error(f"Erro ao limpar os dados de navegação: {e}")  # Registra no log o erro ocorrido
-        pyautogui.alert(f"Erro ao limpar os dados de navegação: {e}")  # Exibe um alerta com o erro
 
 # Função para fechar o navegador
 def fechar_navegador():
@@ -79,7 +76,6 @@ def fechar_navegador():
         logging.info("Navegador fechado com sucesso.")  # Registra no log que o navegador foi fechado com sucesso
     except Exception as e:
         logging.error(f"Erro ao fechar o navegador: {e}")  # Registra no log o erro ocorrido
-        pyautogui.alert(f"Erro ao fechar o navegador: {e}")  # Exibe um alerta com o erro
 
 # Função para verificar a conectividade com a internet
 def verificar_conectividade():
@@ -93,45 +89,30 @@ def verificar_conectividade():
             return False  # Retorna False indicando falha
     except requests.ConnectionError as e:
         logging.error(f"Erro ao verificar a conectividade com a internet: {e}")  # Registra no log o erro ocorrido
-        pyautogui.alert(f"Erro ao verificar a conectividade com a internet: {e}")  # Exibe um alerta com o erro
         return False  # Retorna False indicando falha
 
 # Função principal para executar a automação
-def executar_automacao(num_temas=2, num_perguntas=5):
-    while True:
-        # Perguntar ao usuário se deseja realizar a pesquisa
-        resposta = pyautogui.confirm('Você deseja realizar a pesquisa?', buttons=['Sim', 'Não'])
-        
-        if resposta == 'Sim':
-            # Alerta inicial
-            pyautogui.alert('O código de automação de pesquisa no Edge vai começar....')
-            pyautogui.PAUSE = 0.5  # Define um pequeno intervalo entre as ações do PyAutoGUI
+def executar_automacao(num_temas=6, num_perguntas=5):
+    logging.info("O código de automação de pesquisa no Edge vai começar....")
+    if verificar_conectividade():
+        for _ in range(num_temas):  # Repete o processo para o número de temas especificado
+            tema = random.choice(temas_en)  # Escolhe um tema aleatoriamente
+            pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)  # Gera uma lista de pesquisas sobre o tema
 
-            # Verificar conectividade com a internet
-            if verificar_conectividade():
-                for _ in range(num_temas):  # Repete o processo para o número de temas especificado
-                    tema = random.choice(temas_en)  # Escolhe um tema aleatoriamente
-                    pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)  # Gera uma lista de pesquisas sobre o tema
-                    
-                    if abrir_edge():  # Tenta abrir o navegador Edge
-                        for pesquisa in pesquisas:  # Realiza cada pesquisa gerada
-                            realizar_pesquisa(pesquisa)
-                        
-                        limpar_dados_navegacao()  # Limpa os dados de navegação e cookies
-                        fechar_navegador()  # Fecha o navegador
-                    else:
-                        pyautogui.alert("Não foi possível abrir o navegador Edge.")  # Exibe um alerta se não conseguir abrir o navegador
+            if abrir_edge():  # Tenta abrir o navegador Edge
+                for pesquisa in pesquisas:  # Realiza cada pesquisa gerada
+                    realizar_pesquisa(pesquisa)
+                limpar_dados_navegacao()  # Limpa os dados de navegação e cookies
+                fechar_navegador()  # Fecha o navegador
             else:
-                pyautogui.alert("Não foi possível verificar a conectividade com a internet.")  # Exibe um alerta se não conseguir verificar a conectividade
-            
-            # Perguntar se deseja realizar outra pesquisa
-            nova_pesquisa = pyautogui.confirm('Você deseja realizar outra pesquisa?', buttons=['Sim', 'Não'])
-            if nova_pesquisa == 'Não':
-                break  # Sai do loop se o usuário não quiser realizar outra pesquisa
-        else:
-            pyautogui.alert("O programa está fechando.")  # Exibe um alerta indicando que o programa está fechando
-            logging.info("O usuário optou por não realizar a pesquisa. O programa está fechando.")  # Registra no log que o programa está fechando
-            break  # Sai do loop
+                logging.error("Não foi possível abrir o navegador Edge.")  # Registra no log se não conseguir abrir o navegador
+    else:
+        logging.error("Não foi possível verificar a conectividade com a internet.")  # Registra no log se não conseguir verificar a conectividade
 
-# Executar a automação com parâmetros configuráveis
-executar_automacao(num_temas=2, num_perguntas=5)  # Executa a automação com 6 temas e 5 perguntas por tema
+    logging.info("O programa está concluído.")  # Registra no log que o programa está concluído
+
+# Executar a automação em uma thread separada para rodar em segundo plano
+thread = threading.Thread(target=executar_automacao, args=(6, 5))
+thread.start()
+
+logging.info("Automação iniciada em segundo plano....")
