@@ -1,16 +1,16 @@
-import time  # Importa o módulo time para manipulação de tempo
-import pyautogui  # Importa o módulo pyautogui para automação de GUI
-import random  # Importa o módulo random para gerar valores aleatórios
-import logging  # Importa o módulo logging para registrar logs
-import requests  # Importa o módulo requests para fazer requisições HTTP
-import threading  # Importa o módulo threading para rodar em segundo plano
+import time
+import pyautogui
+import random
+import logging
+import requests
+import threading
 
 # Configuração de logging
 logging.basicConfig(
-    filename='automacao_pesquisa.log',  # Nome do arquivo de log
-    level=logging.INFO,  # Nível de log (INFO)
-    format='%(asctime)s - %(levelname)s - %(message)s',  # Formato da mensagem de log
-    encoding='utf-8'  # Codificação do arquivo de log
+    filename='automacao_pesquisa.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    encoding='utf-8'
 )
 
 # Lista de temas em inglês
@@ -26,90 +26,91 @@ temas_en = [
 # Lista de perguntas em inglês
 perguntas_en = [
     "What is {tema}?", "What are the latest news in {tema}?", "How does {tema} impact society?",
-    "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?"
+    "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?",
 ]
 
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
 def gerar_pesquisas_sobre_tema(tema, n):
-    return random.sample([p.format(tema=tema) for p in perguntas_en], n)  # Gera uma lista de n perguntas aleatórias sobre o tema
+    n = min(n, len(perguntas_en))  # Garante que n não seja maior que o número de perguntas disponíveis
+    return random.sample([p.format(tema=tema) for p in perguntas_en], n)
 
 # Função para abrir o Edge
 def abrir_edge():
     try:
-        pyautogui.press('win')  # Pressiona a tecla 'win' para abrir o menu Iniciar
-        pyautogui.write('edge')  # Digita 'edge' para procurar o navegador Edge
-        pyautogui.press('enter')  # Pressiona 'enter' para abrir o Edge
-        time.sleep(2)  # Aguarda 2 segundos para garantir que o navegador abra
-        logging.info("Navegador Edge aberto com sucesso.")  # Registra no log que o navegador foi aberto com sucesso
-        return True  # Retorna True indicando sucesso
+        pyautogui.press('win')
+        pyautogui.write('edge')
+        pyautogui.press('enter')
+        time.sleep(2)
+        logging.info("Navegador Edge aberto com sucesso.")
+        return True
     except Exception as e:
-        logging.error(f"Erro ao abrir o Edge: {e}")  # Registra no log o erro ocorrido
-        return False  # Retorna False indicando falha
+        logging.error(f"Erro ao abrir o Edge: {e}")
+        return False
 
 # Função para realizar uma pesquisa
 def realizar_pesquisa(pesquisa):
     try:
-        pyautogui.hotkey('ctrl', 't')  # Abre uma nova aba no navegador
-        pyautogui.write(pesquisa)  # Digita a pesquisa na barra de endereços
-        pyautogui.press('enter')  # Pressiona 'enter' para realizar a pesquisa
-        time.sleep(10)  # Aguarda 10 segundos para carregar a página e permanecer nela
-        pyautogui.hotkey('ctrl', 'w')  # Fecha a aba após a pesquisa
-        logging.info(f"Pesquisa realizada: {pesquisa}")  # Registra no log que a pesquisa foi realizada
+        pyautogui.hotkey('ctrl', 't')
+        pyautogui.write(pesquisa)
+        pyautogui.press('enter')
+        time.sleep(10)
+        pyautogui.hotkey('ctrl', 'w')
+        logging.info(f"Pesquisa realizada: {pesquisa}")
     except Exception as e:
-        logging.error(f"Erro ao realizar a pesquisa: {e}")  # Registra no log o erro ocorrido
+        logging.error(f"Erro ao realizar a pesquisa: {e}")
 
 # Função para limpar dados de navegação e cookies
 def limpar_dados_navegacao():
     try:
-        pyautogui.hotkey('ctrl', 'shift', 'delete')  # Abre a janela de limpeza de dados de navegação
-        time.sleep(2)  # Aguarda 2 segundos para abrir a janela de limpeza de dados
-        pyautogui.press('enter')  # Confirma a limpeza dos dados
-        time.sleep(2)  # Aguarda 2 segundos para concluir a limpeza
-        logging.info("Dados de navegação e cookies limpos com sucesso.")  # Registra no log que a limpeza foi concluída
+        pyautogui.hotkey('ctrl', 'shift', 'delete')
+        time.sleep(2)
+        pyautogui.press('enter')
+        time.sleep(2)
+        logging.info("Dados de navegação e cookies limpos com sucesso.")
     except Exception as e:
-        logging.error(f"Erro ao limpar os dados de navegação: {e}")  # Registra no log o erro ocorrido
+        logging.error(f"Erro ao limpar os dados de navegação: {e}")
 
 # Função para fechar o navegador
 def fechar_navegador():
     try:
-        pyautogui.hotkey('alt', 'f4')  # Fecha o navegador
-        logging.info("Navegador fechado com sucesso.")  # Registra no log que o navegador foi fechado com sucesso
+        pyautogui.hotkey('alt', 'f4')
+        logging.info("Navegador fechado com sucesso.")
     except Exception as e:
-        logging.error(f"Erro ao fechar o navegador: {e}")  # Registra no log o erro ocorrido
+        logging.error(f"Erro ao fechar o navegador: {e}")
 
 # Função para verificar a conectividade com a internet
 def verificar_conectividade():
     try:
-        response = requests.get('https://www.google.com', timeout=5)  # Faz uma requisição para o Google com timeout de 5 segundos
+        response = requests.get('https://www.google.com', timeout=5)
         if response.status_code == 200:
-            logging.info("Conectividade com a internet verificada.")  # Registra no log que a conectividade foi verificada
-            return True  # Retorna True indicando sucesso
+            logging.info("Conectividade com a internet verificada.")
+            return True
         else:
-            logging.error("Falha na verificação de conectividade com a internet.")  # Registra no log a falha na verificação
-            return False  # Retorna False indicando falha
+            logging.error("Falha na verificação de conectividade com a internet.")
+            return False
     except requests.ConnectionError as e:
-        logging.error(f"Erro ao verificar a conectividade com a internet: {e}")  # Registra no log o erro ocorrido
-        return False  # Retorna False indicando falha
+        logging.error(f"Erro ao verificar a conectividade com a internet: {e}")
+        return False
 
 # Função principal para executar a automação
 def executar_automacao(num_temas=6, num_perguntas=5):
     logging.info("O código de automação de pesquisa no Edge vai começar....")
     if verificar_conectividade():
-        for _ in range(num_temas):  # Repete o processo para o número de temas especificado
-            tema = random.choice(temas_en)  # Escolhe um tema aleatoriamente
-            pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)  # Gera uma lista de pesquisas sobre o tema
+        for _ in range(num_temas):
+            tema = random.choice(temas_en)
+            pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
 
-            if abrir_edge():  # Tenta abrir o navegador Edge
-                for pesquisa in pesquisas:  # Realiza cada pesquisa gerada
+            if abrir_edge():
+                for pesquisa in pesquisas:
                     realizar_pesquisa(pesquisa)
-                limpar_dados_navegacao()  # Limpa os dados de navegação e cookies
-                fechar_navegador()  # Fecha o navegador
+                limpar_dados_navegacao()
+                fechar_navegador()
             else:
-                logging.error("Não foi possível abrir o navegador Edge.")  # Registra no log se não conseguir abrir o navegador
+                logging.error("Não foi possível abrir o navegador Edge.")
     else:
-        logging.error("Não foi possível verificar a conectividade com a internet.")  # Registra no log se não conseguir verificar a conectividade
+        logging.error("Não foi possível verificar a conectividade com a internet.")
 
-    logging.info("O programa está concluído.")  # Registra no log que o programa está concluído
+    logging.info("O programa está concluído.")
 
 # Executar a automação em uma thread separada para rodar em segundo plano
 thread = threading.Thread(target=executar_automacao, args=(6, 5))
