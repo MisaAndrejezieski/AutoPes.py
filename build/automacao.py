@@ -9,7 +9,7 @@ import threading
 logging.basicConfig(
     filename='automacao_pesquisa.log',
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
+    format='%(asctime)s - %(levellevelname)s - %(message)s',
     encoding='utf-8'
 )
 
@@ -17,6 +17,7 @@ temas_en = ["technology", "health", "education"]
 perguntas_en = ["What is {tema}?", "What are the latest news in {tema}?", "How does {tema} impact society?"]
 
 def gerar_pesquisas_sobre_tema(tema, n):
+    n = min(n, len(perguntas_en))  # Garante que n não seja maior que o número de perguntas disponíveis
     return random.sample([p.format(tema=tema) for p in perguntas_en], n)
 
 def abrir_edge():
