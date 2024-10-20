@@ -94,7 +94,9 @@ def verificar_conectividade():
 
 # Função principal para executar a automação
 def executar_automacao(num_temas=6, num_perguntas=5):
+    pyautogui.alert("A automação de pesquisa no Edge está começando...")
     logging.info("O código de automação de pesquisa no Edge vai começar....")
+    
     if verificar_conectividade():
         for _ in range(num_temas):
             tema = random.choice(temas_en)
@@ -111,6 +113,7 @@ def executar_automacao(num_temas=6, num_perguntas=5):
         logging.error("Não foi possível verificar a conectividade com a internet.")
 
     logging.info("O programa está concluído.")
+    pyautogui.alert("A automação de pesquisa no Edge foi concluída.")
 
 # Executar a automação em uma thread separada para rodar em segundo plano
 thread = threading.Thread(target=executar_automacao, args=(6, 5))
