@@ -1,17 +1,7 @@
 import time
 import pyautogui
 import random
-import logging
 import requests
-
-
-# Configuração de logging
-logging.basicConfig(
-    filename='automacao_pesquisa.log',
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    encoding='utf-8'
-)
 
 # Lista de temas em inglês
 temas_en = [
