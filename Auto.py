@@ -3,7 +3,6 @@ import pyautogui
 import random
 import logging
 import requests
-import threading
 
 # Configuração de logging
 logging.basicConfig(
@@ -15,11 +14,11 @@ logging.basicConfig(
 
 # Lista de temas em inglês
 temas_en = [
-    "technology", "health", "education", "sports", "politics", "economy", 
-    "science", "art", "music", "literature", "history", "geography", 
-    "philosophy", "psychology", "sociology", "anthropology", "astronomy", 
-    "biology", "chemistry", "physics", "mathematics", "engineering", "medicine", 
-    "law", "administration", "marketing", "finance", "architecture", 
+    "technology", "health", "education", "sports", "politics", "economy",
+    "science", "art", "music", "literature", "history", "geography",
+    "philosophy", "psychology", "sociology", "anthropology", "astronomy",
+    "biology", "chemistry", "physics", "mathematics", "engineering", "medicine",
+    "law", "administration", "marketing", "finance", "architecture",
     "design", "fashion", "gastronomy"
 ]
 
@@ -96,12 +95,11 @@ def verificar_conectividade():
 def executar_automacao(num_temas=6, num_perguntas=5):
     pyautogui.alert("A automação de pesquisa no Edge está começando...")
     logging.info("O código de automação de pesquisa no Edge vai começar....")
-    
+
     if verificar_conectividade():
         for _ in range(num_temas):
             tema = random.choice(temas_en)
             pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
-
             if abrir_edge():
                 for pesquisa in pesquisas:
                     realizar_pesquisa(pesquisa)
@@ -111,12 +109,5 @@ def executar_automacao(num_temas=6, num_perguntas=5):
                 logging.error("Não foi possível abrir o navegador Edge.")
     else:
         logging.error("Não foi possível verificar a conectividade com a internet.")
-
     logging.info("O programa está concluído.")
     pyautogui.alert("A automação de pesquisa no Edge foi concluída.")
-
-# Executar a automação em uma thread separada para rodar em segundo plano
-thread = threading.Thread(target=executar_automacao, args=(6, 5))
-thread.start()
-
-logging.info("Automação iniciada em segundo plano....")
