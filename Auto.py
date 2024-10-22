@@ -4,6 +4,7 @@ import random
 import logging
 import requests
 
+
 # Configuração de logging
 logging.basicConfig(
     filename='automacao_pesquisa.log',
