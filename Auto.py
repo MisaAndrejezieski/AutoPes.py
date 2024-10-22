@@ -25,7 +25,7 @@ temas_en = [
 # Lista de perguntas em inglês
 perguntas_en = [
     "What is {tema}?", "What are the latest news in {tema}?", "How does {tema} impact society?",
-    "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?",
+    "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?", "how to make money with {tema}",
     
 ]
 
@@ -97,7 +97,7 @@ def verificar_conectividade():
         return False  # Retorna False indicando falha
 
 # Função principal para executar a automação
-def executar_automacao(num_temas=6, num_perguntas=5):
+def executar_automacao(num_temas=6, num_perguntas=6):
     while True:
         # Perguntar ao usuário se deseja realizar a pesquisa
         resposta = pyautogui.confirm('Você deseja realizar a pesquisa?', buttons=['Sim', 'Não'])
@@ -134,4 +134,4 @@ def executar_automacao(num_temas=6, num_perguntas=5):
             break  # Sai do loop
 
 # Executar a automação com parâmetros configuráveis
-executar_automacao(num_temas=6, num_perguntas=5)  # Executa a automação com 6 temas e 5 perguntas por tema
+executar_automacao(num_temas=6, num_perguntas=6)  # Executa a automação com 6 temas e 5 perguntas por tema
