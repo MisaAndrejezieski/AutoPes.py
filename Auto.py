@@ -1,3 +1,4 @@
+
 import time  # Importa o módulo time para manipulação de tempo
 import pyautogui  # Importa o módulo pyautogui para automação de GUI
 import random  # Importa o módulo random para gerar valores aleatórios
