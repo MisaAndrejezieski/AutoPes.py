@@ -100,12 +100,12 @@ def agendar_automacao(scheduler, hora, minuto):
     logging.info(f"Automação agendada para: {horario_agendado}")
 
 def executar_automacao():
-    global temas_var, perguntas_var  # Declarar como global
+    global temas_var, perguntas_var
     if not verificar_conectividade():
         messagebox.showerror("Erro", "Não foi possível verificar a conectividade com a internet.")
         return
     
-    pyautogui.PAUSE = 0.5
+    py autogui.PAUSE = 0.5
     num_temas = int(temas_var.get())
     num_perguntas = int(perguntas_var.get())
     
@@ -122,14 +122,17 @@ def executar_automacao():
             messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
 
 def criar_interface_grafica():
-    global temas_var, perguntas_var  # Declarar como global
+    global temas_var, perguntas_var
     scheduler = sched.scheduler(time.time, time.sleep)
 
     def executar_automacao_agendada():
         hora_minuto = entry_hora_minuto.get()
-        hora, minuto = map(int, hora_minuto.split(':'))
-        agendar_automacao(scheduler, hora, minuto)
-        scheduler.run(blocking=False)
+        if ':' in hora_minuto:
+            hora, minuto = map(int, hora_minuto.split(':'))
+            agendar_automacao(scheduler, hora, minuto)
+            scheduler.run(blocking=False)
+        else:
+            messagebox.showerror("Erro", "Formato de hora inválido. Por favor, use o formato HH:MM.")
 
     def fechar_programa():
         root.destroy()
@@ -190,3 +193,4 @@ def criar_interface_grafica():
 
 if __name__ == "__main__":
     criar_interface_grafica()
+    
