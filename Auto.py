@@ -105,7 +105,7 @@ def executar_automacao():
         messagebox.showerror("Erro", "Não foi possível verificar a conectividade com a internet.")
         return
     
-    py autogui.PAUSE = 0.5
+    pyautogui.PAUSE = 0.5
     num_temas = int(temas_var.get())
     num_perguntas = int(perguntas_var.get())
     
