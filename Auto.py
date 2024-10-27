@@ -5,6 +5,7 @@ import logging
 import requests
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import ttk  # Importa ttk para estilos modernos
 
 # Configuração de logging
 logging.basicConfig(
@@ -117,18 +118,34 @@ def criar_interface_grafica():
             else:
                 messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
     
+    # Criação da janela principal
     root = tk.Tk()
     root.title("Automação de Pesquisas")
-    
-    tk.Label(root, text="Número de Temas:").pack()
+    root.geometry("400x300")
+    root.configure(bg='#2E4053')  # Fundo azul escuro
+
+    style = ttk.Style()
+    style.configure("TLabel", font=("Helvetica", 12), background='#2E4053', foreground='white')
+    style.configure("TButton", font=("Helvetica", 12), background='#AED6F1', foreground='black')
+    style.configure("TEntry", font=("Helvetica", 12))
+
+    # Criação dos widgets
+    label_temas = ttk.Label(root, text="Número de Temas:")
+    label_temas.pack(pady=10)
     temas_var = tk.StringVar(value='6')
-    tk.Entry(root, textvariable=temas_var).pack()
-    
-    tk.Label(root, text="Número de Perguntas por Tema:").pack()
+    entry_temas = ttk.Entry(root, textvariable=temas_var)
+    entry_temas.pack(pady=10)
+
+    label_perguntas = ttk.Label(root, text="Número de Perguntas por Tema:")
+    label_perguntas.pack(pady=10)
     perguntas_var = tk.StringVar(value='6')
-    tk.Entry(root, textvariable=perguntas_var).pack()
-    
-    tk.Button(root, text="Iniciar Automação", command=executar_automacao).pack()
+    entry_perguntas = ttk.Entry(root, textvariable=perguntas_var)
+    entry_perguntas.pack(pady=10)
+
+    button_iniciar = ttk.Button(root, text="Iniciar Automação", command=executar_automacao)
+    button_iniciar.pack(pady=20)
+
+    # Iniciar o loop da interface gráfica
     root.mainloop()
 
 if __name__ == "__main__":
