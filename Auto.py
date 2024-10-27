@@ -129,7 +129,7 @@ def criar_interface_grafica():
     root.configure(bg='#2E4053')  # Fundo azul escuro
 
     # Adiciona o ícone do programa
-    root.iconbitmap('lupa.ico')
+    root.iconbitmap('22287dragon_98813.ico')
 
     style = ttk.Style()
     style.configure("TLabel", font=("Helvetica", 12), background='#2E4053', foreground='white')
@@ -137,7 +137,7 @@ def criar_interface_grafica():
     style.configure("TEntry", font=("Helvetica", 12))
 
     # Carregar e exibir imagem
-    image = Image.open('lupa.png')
+    image = Image.open('22287dragon_98813.png')
     photo = ImageTk.PhotoImage(image)
     label_image = tk.Label(root, image=photo, bg='#2E4053')
     label_image.image = photo
