@@ -34,9 +34,7 @@ perguntas_en = [
     "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?", "how to make money with {tema}"
 ]
 
-# Variáveis globais para guardar os valores dos widgets
-temas_var = tk.StringVar(value='6')
-perguntas_var = tk.StringVar(value='6')
+
 
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
 def gerar_pesquisas_sobre_tema(tema, n):
@@ -162,6 +160,11 @@ def criar_interface_grafica():
     style.configure("TLabel", font=("Helvetica", 12), background='#2E4053', foreground='white')
     style.configure("TButton", font=("Helvetica", 12), background='#AED6F1', foreground='black')
     style.configure("TEntry", font=("Helvetica", 12))
+
+    # Inicializa as variáveis Tkinter
+    global temas_var, perguntas_var
+    temas_var = tk.StringVar(value='6')
+    perguntas_var = tk.StringVar(value='6')
 
     # Carregar e exibir imagem
     image = Image.open('22287dragon_98813.png')
