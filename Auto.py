@@ -173,7 +173,7 @@ def criar_interface_grafica():
     temas_var = tk.StringVar(value='6')
     perguntas_var = tk.StringVar(value='6')
 
-    image = Image.open('22287dragon_98 .png')
+    image = Image.open('22287dragon_98813.png')
     image = ImageTk.PhotoImage(image)
     label_imagem = ttk.Label(root, image=image, background='#2E4053')
     label_imagem.pack(pady=10)
