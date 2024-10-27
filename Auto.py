@@ -5,10 +5,10 @@ import logging
 import requests
 import tkinter as tk
 from tkinter import messagebox
-from tkinter import ttk  # Importa ttk para estilos modernos
-from PIL import Image, ImageTk  # Importa PIL para trabalhar com imagens
-import sched  # Importa o módulo sched para agendamento
-import datetime  # Importa datetime para lidar com datas e horas
+from tkinter import ttk
+from PIL import Image, ImageTk
+import sched
+import datetime
 
 # Configuração de logging
 logging.basicConfig(
@@ -18,7 +18,6 @@ logging.basicConfig(
     encoding='utf-8'
 )
 
-# Lista de temas em inglês
 temas_en = [
     "technology", "health", "education", "sports", "politics", "economy",
     "science", "art", "music", "literature", "history", "geography",
@@ -28,19 +27,14 @@ temas_en = [
     "design", "fashion", "gastronomy"
 ]
 
-# Lista de perguntas em inglês
 perguntas_en = [
     "What is {tema}?", "What are the latest news in {tema}?", "How does {tema} impact society?",
     "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?", "how to make money with {tema}"
 ]
 
-
-
-# Função para gerar uma lista de pesquisas aleatórias sobre um tema
 def gerar_pesquisas_sobre_tema(tema, n):
     return random.sample([p.format(tema=tema) for p in perguntas_en], n)
 
-# Função para abrir o Edge
 def abrir_edge():
     try:
         pyautogui.press('win')
@@ -53,7 +47,6 @@ def abrir_edge():
         logging.error(f"Erro ao abrir o Edge: {e}")
         return False
 
-# Função para realizar uma pesquisa
 def realizar_pesquisa(pesquisa):
     try:
         pyautogui.hotkey('ctrl', 't')
@@ -62,12 +55,9 @@ def realizar_pesquisa(pesquisa):
         time.sleep(10)
         pyautogui.hotkey('ctrl', 'w')
         logging.info(f"Pesquisa realizada: {pesquisa}")
-        with open('automacao_pesquisa.log', 'a') as log_file:
-            log_file.write(f"Pesquisa realizada: {pesquisa}\n")
     except Exception as e:
         logging.error(f"Erro ao realizar a pesquisa: {e}")
 
-# Função para limpar dados de navegação e cookies
 def limpar_dados_navegacao():
     try:
         pyautogui.hotkey('ctrl', 'shift', 'delete')
@@ -78,7 +68,6 @@ def limpar_dados_navegacao():
     except Exception as e:
         logging.error(f"Erro ao limpar os dados de navegação: {e}")
 
-# Função para fechar o navegador
 def fechar_navegador():
     try:
         pyautogui.hotkey('alt', 'f4')
@@ -86,7 +75,6 @@ def fechar_navegador():
     except Exception as e:
         logging.error(f"Erro ao fechar o navegador: {e}")
 
-# Função para verificar a conectividade com a internet
 def verificar_conectividade():
     try:
         response = requests.get('https://www.google.com', timeout=5)
@@ -100,7 +88,6 @@ def verificar_conectividade():
         logging.error(f"Erro ao verificar a conectividade com a internet: {e}")
         return False
 
-# Função para agendar a automação
 def agendar_automacao(scheduler, hora, minuto):
     agora = datetime.datetime.now()
     horario_agendado = agora.replace(hour=hora, minute=minuto, second=0, microsecond=0)
@@ -112,14 +99,13 @@ def agendar_automacao(scheduler, hora, minuto):
     scheduler.enter(tempo_espera, 1, executar_automacao)
     logging.info(f"Automação agendada para: {horario_agendado}")
 
-# Função para executar a automação
 def executar_automacao():
     if not verificar_conectividade():
         messagebox.showerror("Erro", "Não foi possível verificar a conectividade com a internet.")
         return
     
     pyautogui.PAUSE = 0.5
-    num_temas = int(temas_var.get())
+    num_temas = int(temas_var .get())
     num_perguntas = int(perguntas_var.get())
     
     for _ in range(num_temas):
@@ -134,46 +120,42 @@ def executar_automacao():
         else:
             messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
 
-# Função para criar a interface gráfica
 def criar_interface_grafica():
     scheduler = sched.scheduler(time.time, time.sleep)
 
     def executar_automacao_agendada():
-        hora = int(entry_hora.get())
-        minuto = int(entry_minuto.get())
+        hora_minuto = entry_hora_minuto.get()
+        hora, minuto = map(int, hora_minuto.split(':'))
         agendar_automacao(scheduler, hora, minuto)
         scheduler.run(blocking=False)
 
     def fechar_programa():
         root.destroy()
-    
-    # Criação da janela principal
+
+    def atualizar_relogio():
+        agora = datetime.datetime.now()
+        label_relogio.config(text=agora.strftime("%Y-%m-%d %H:%M:%S"))
+        root.after(1000, atualizar_relogio)
+
     root = tk.Tk()
     root.title("Automação de Pesquisas")
-    root.geometry("600x600")  # Aumenta o tamanho da janela
-    root.configure(bg='#2E4053')  # Fundo azul escuro
-
-    # Adiciona o ícone do programa
-    root.iconbitmap('22287dragon_98813.ico')
+    root.geometry("600x600")
+    root.configure(bg='#2E4053')
 
     style = ttk.Style()
     style.configure("TLabel", font=("Helvetica", 12), background='#2E4053', foreground='white')
     style.configure("TButton", font=("Helvetica", 12), background='#AED6F1', foreground='black')
     style.configure("TEntry", font=("Helvetica", 12))
 
-    # Inicializa as variáveis Tkinter
-    global temas_var, perguntas_var
     temas_var = tk.StringVar(value='6')
     perguntas_var = tk.StringVar(value='6')
 
-    # Carregar e exibir imagem
     image = Image.open('22287dragon_98813.png')
     photo = ImageTk.PhotoImage(image)
     label_image = tk.Label(root, image=photo, bg='#2E4053')
     label_image.image = photo
     label_image.pack(pady=10)
 
-    # Criação dos widgets
     label_temas = ttk.Label(root, text="Número de Temas:")
     label_temas.pack(pady=10)
     entry_temas = ttk.Entry(root, textvariable=temas_var)
@@ -184,29 +166,28 @@ def criar_interface_grafica():
     entry_perguntas = ttk.Entry(root, textvariable=perguntas_var)
     entry_perguntas.pack(pady=10)
 
-    # Widgets de agendamento
-    label_hora = ttk.Label(root, text="Hora de Início:")
-    label_hora.pack(pady=5)
-    entry_hora = ttk.Entry(root)
-    entry_hora.pack(pady=5)
-    
-    label_minuto = ttk.Label(root, text="Minuto de Início:")
-    label_minuto.pack(pady=5)
-    entry_minuto = ttk.Entry(root)
-    entry_minuto.pack(pady=5)
+    label_hora_minuto = ttk.Label(root, text="Hora de Início (HH:MM):")
+    label_hora_minuto.pack(pady=5)
+    entry_hora_minuto = ttk.Entry(root)
+    entry_hora_minuto.pack(pady=5)
+
+    label_relogio = ttk.Label(root, text="", font=("Helvetica", 24), foreground='white', background='#2E4053')
+    label_relogio.pack(pady=10)
+    atualizar_relogio()
 
     button_agendar = ttk.Button(root, text="Agendar Automação", command=executar_automacao_agendada)
     button_agendar.pack(pady=10)
 
     button_iniciar = ttk.Button(root, text="Iniciar Automação", command=executar_automacao)
     button_iniciar.pack(pady=10)
-    
+
     button_fechar = ttk.Button(root, text="Fechar Programa", command=fechar_programa)
     button_fechar.pack(pady=10)
 
-    # Iniciar o loop da interface gráfica
+
     root.mainloop()
 
 if __name__ == "__main__":
     criar_interface_grafica()
-
+    
+    
