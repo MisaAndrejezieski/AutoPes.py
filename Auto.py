@@ -6,6 +6,7 @@ import requests
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk  # Importa ttk para estilos modernos
+from PIL import Image, ImageTk  # Importa PIL para trabalhar com imagens
 
 # Configuração de logging
 logging.basicConfig(
@@ -124,16 +125,23 @@ def criar_interface_grafica():
     # Criação da janela principal
     root = tk.Tk()
     root.title("Automação de Pesquisas")
-    root.geometry("400x350")
+    root.geometry("400x450")
     root.configure(bg='#2E4053')  # Fundo azul escuro
 
     # Adiciona o ícone do programa
-    root.iconbitmap('22287dragon_98813.ico')
+    root.iconbitmap('lupa.ico')
 
     style = ttk.Style()
     style.configure("TLabel", font=("Helvetica", 12), background='#2E4053', foreground='white')
     style.configure("TButton", font=("Helvetica", 12), background='#AED6F1', foreground='black')
     style.configure("TEntry", font=("Helvetica", 12))
+
+    # Carregar e exibir imagem
+    image = Image.open('lupa.png')
+    photo = ImageTk.PhotoImage(image)
+    label_image = tk.Label(root, image=photo, bg='#2E4053')
+    label_image.image = photo
+    label_image.pack(pady=10)
 
     # Criação dos widgets
     label_temas = ttk.Label(root, text="Número de Temas:")
@@ -159,3 +167,4 @@ def criar_interface_grafica():
 
 if __name__ == "__main__":
     criar_interface_grafica()
+
