@@ -127,6 +127,9 @@ def criar_interface_grafica():
     root.geometry("400x350")
     root.configure(bg='#2E4053')  # Fundo azul escuro
 
+    # Adiciona o ícone do programa
+    root.iconbitmap('Icone_AutoPes.png')
+
     style = ttk.Style()
     style.configure("TLabel", font=("Helvetica", 12), background='#2E4053', foreground='white')
     style.configure("TButton", font=("Helvetica", 12), background='#AED6F1', foreground='black')
