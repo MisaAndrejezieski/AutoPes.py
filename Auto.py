@@ -128,7 +128,7 @@ def criar_interface_grafica():
     root.configure(bg='#2E4053')  # Fundo azul escuro
 
     # Adiciona o ícone do programa
-    root.iconbitmap('Icone_AutoPes.png')
+    root.iconbitmap('Icone_AutoPes_002.png')
 
     style = ttk.Style()
     style.configure("TLabel", font=("Helvetica", 12), background='#2E4053', foreground='white')
