@@ -99,7 +99,7 @@ def verificar_conectividade():
         return False
 
 # Função para agendar a automação
-def agendar_automacao(hora, minuto):
+def agendar_automacao(scheduler, hora, minuto):
     agora = datetime.datetime.now()
     horario_agendado = agora.replace(hour=hora, minute=minuto, second=0, microsecond=0)
 
@@ -138,7 +138,7 @@ def criar_interface_grafica():
     def executar_automacao_agendada():
         hora = int(entry_hora.get())
         minuto = int(entry_minuto.get())
-        agendar_automacao(hora, minuto)
+        agendar_automacao(scheduler, hora, minuto)
         scheduler.run(blocking=False)
 
     def fechar_programa():
