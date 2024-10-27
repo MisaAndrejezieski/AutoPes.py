@@ -96,8 +96,22 @@ def verificar_conectividade():
         logging.error(f"Erro ao verificar a conectividade com a internet: {e}")
         return False
 
+# Função para agendar a automação
+def agendar_automacao(hora, minuto):
+    agora = datetime.datetime.now()
+    horario_agendado = agora.replace(hour=hora, minute=minuto, second=0, microsecond=0)
+
+    if horario_agendado < agora:
+        horario_agendado += datetime.timedelta(days=1)
+
+    tempo_espera = (horario_agendado - agora).total_seconds()
+    scheduler.enter(tempo_espera, 1, executar_automacao)
+    logging.info(f"Automação agendada para: {horario_agendado}")
+
 # Função para criar a interface gráfica
 def criar_interface_grafica():
+    scheduler = sched.scheduler(time.time, time.sleep)
+
     def executar_automacao():
         if not verificar_conectividade():
             messagebox.showerror("Erro", "Não foi possível verificar a conectividade com a internet.")
@@ -119,13 +133,19 @@ def criar_interface_grafica():
             else:
                 messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
     
+    def executar_automacao_agendada():
+        hora = int(entry_hora.get())
+        minuto = int(entry_minuto.get())
+        agendar_automacao(hora, minuto)
+        scheduler.run(blocking=False)
+
     def fechar_programa():
         root.destroy()
     
     # Criação da janela principal
     root = tk.Tk()
     root.title("Automação de Pesquisas")
-    root.geometry("400x450")
+    root.geometry("400x500")
     root.configure(bg='#2E4053')  # Fundo azul escuro
 
     # Adiciona o ícone do programa
@@ -155,6 +175,20 @@ def criar_interface_grafica():
     perguntas_var = tk.StringVar(value='6')
     entry_perguntas = ttk.Entry(root, textvariable=perguntas_var)
     entry_perguntas.pack(pady=10)
+
+    # Widgets de agendamento
+    label_hora = ttk.Label(root, text="Hora de Início:")
+    label_hora.pack(pady=5)
+    entry_hora = ttk.Entry(root)
+    entry_hora.pack(pady=5)
+    
+    label_minuto = ttk.Label(root, text="Minuto de Início:")
+    label_minuto.pack(pady=5)
+    entry_minuto = ttk.Entry(root)
+    entry_minuto.pack(pady=5)
+
+    button_agendar = ttk.Button(root, text="Agendar Automação", command=executar_automacao_agendada)
+    button_agendar.pack(pady=10)
 
     button_iniciar = ttk.Button(root, text="Iniciar Automação", command=executar_automacao)
     button_iniciar.pack(pady=10)
