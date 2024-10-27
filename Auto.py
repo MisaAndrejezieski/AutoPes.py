@@ -34,6 +34,10 @@ perguntas_en = [
     "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?", "how to make money with {tema}"
 ]
 
+# Variáveis globais para guardar os valores dos widgets
+temas_var = tk.StringVar(value='6')
+perguntas_var = tk.StringVar(value='6')
+
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
 def gerar_pesquisas_sobre_tema(tema, n):
     return random.sample([p.format(tema=tema) for p in perguntas_en], n)
@@ -148,7 +152,7 @@ def criar_interface_grafica():
     # Criação da janela principal
     root = tk.Tk()
     root.title("Automação de Pesquisas")
-    root.geometry("400x500")
+    root.geometry("600x600")  # Aumenta o tamanho da janela
     root.configure(bg='#2E4053')  # Fundo azul escuro
 
     # Adiciona o ícone do programa
@@ -169,13 +173,11 @@ def criar_interface_grafica():
     # Criação dos widgets
     label_temas = ttk.Label(root, text="Número de Temas:")
     label_temas.pack(pady=10)
-    temas_var = tk.StringVar(value='6')
     entry_temas = ttk.Entry(root, textvariable=temas_var)
     entry_temas.pack(pady=10)
 
     label_perguntas = ttk.Label(root, text="Número de Perguntas por Tema:")
     label_perguntas.pack(pady=10)
-    perguntas_var = tk.StringVar(value='6')
     entry_perguntas = ttk.Entry(root, textvariable=perguntas_var)
     entry_perguntas.pack(pady=10)
 
