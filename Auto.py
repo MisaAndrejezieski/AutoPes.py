@@ -105,7 +105,7 @@ def executar_automacao():
         messagebox.showerror("Erro", "Não foi possível verificar a conectividade com a internet.")
         return
     
-    pyautogui.PAUSE = 0.5
+ pyautogui.PAUSE = 0.5
     num_temas = int(temas_var.get())
     num_perguntas = int(perguntas_var.get())
     
@@ -128,9 +128,16 @@ def criar_interface_grafica():
     def executar_automacao_agendada():
         hora_minuto = entry_hora_minuto.get()
         if ':' in hora_minuto:
-            hora, minuto = map(int, hora_minuto.split(':'))
-            agendar_automacao(scheduler, hora, minuto)
-            scheduler.run(blocking=False)
+            partes = hora_minuto.split(':')
+            if len(partes) == 2:
+                try:
+                    hora, minuto = map(int, partes)
+                    agendar_automacao(scheduler, hora, minuto)
+                    scheduler.run(blocking=False)
+                except ValueError:
+                    messagebox.showerror("Erro", "Formato de hora inválido. Por favor, use o formato HH:MM.")
+            else:
+                messagebox.showerror("Erro", "Formato de hora inválido. Por favor, use o formato HH:MM.")
         else:
             messagebox.showerror("Erro", "Formato de hora inválido. Por favor, use o formato HH:MM.")
 
@@ -193,4 +200,3 @@ def criar_interface_grafica():
 
 if __name__ == "__main__":
     criar_interface_grafica()
-    
