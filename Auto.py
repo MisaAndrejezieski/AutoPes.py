@@ -100,12 +100,13 @@ def agendar_automacao(scheduler, hora, minuto):
     logging.info(f"Automação agendada para: {horario_agendado}")
 
 def executar_automacao():
+    global temas_var, perguntas_var  # Declarar como global
     if not verificar_conectividade():
         messagebox.showerror("Erro", "Não foi possível verificar a conectividade com a internet.")
         return
     
     pyautogui.PAUSE = 0.5
-    num_temas = int(temas_var .get())
+    num_temas = int(temas_var.get())
     num_perguntas = int(perguntas_var.get())
     
     for _ in range(num_temas):
@@ -121,6 +122,7 @@ def executar_automacao():
             messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
 
 def criar_interface_grafica():
+    global temas_var, perguntas_var  # Declarar como global
     scheduler = sched.scheduler(time.time, time.sleep)
 
     def executar_automacao_agendada():
@@ -184,10 +186,7 @@ def criar_interface_grafica():
     button_fechar = ttk.Button(root, text="Fechar Programa", command=fechar_programa)
     button_fechar.pack(pady=10)
 
-
     root.mainloop()
 
 if __name__ == "__main__":
     criar_interface_grafica()
-    
-    
