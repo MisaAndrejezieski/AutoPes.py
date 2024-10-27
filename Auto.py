@@ -110,31 +110,32 @@ def agendar_automacao(scheduler, hora, minuto):
     scheduler.enter(tempo_espera, 1, executar_automacao)
     logging.info(f"Automação agendada para: {horario_agendado}")
 
+# Função para executar a automação
+def executar_automacao():
+    if not verificar_conectividade():
+        messagebox.showerror("Erro", "Não foi possível verificar a conectividade com a internet.")
+        return
+    
+    pyautogui.PAUSE = 0.5
+    num_temas = int(temas_var.get())
+    num_perguntas = int(perguntas_var.get())
+    
+    for _ in range(num_temas):
+        tema = random.choice(temas_en)
+        pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
+        
+        if abrir_edge():
+            for pesquisa in pesquisas:
+                realizar_pesquisa(pesquisa)
+            limpar_dados_navegacao()
+            fechar_navegador()
+        else:
+            messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
+
 # Função para criar a interface gráfica
 def criar_interface_grafica():
     scheduler = sched.scheduler(time.time, time.sleep)
 
-    def executar_automacao():
-        if not verificar_conectividade():
-            messagebox.showerror("Erro", "Não foi possível verificar a conectividade com a internet.")
-            return
-        
-        pyautogui.PAUSE = 0.5
-        num_temas = int(temas_var.get())
-        num_perguntas = int(perguntas_var.get())
-        
-        for _ in range(num_temas):
-            tema = random.choice(temas_en)
-            pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
-            
-            if abrir_edge():
-                for pesquisa in pesquisas:
-                    realizar_pesquisa(pesquisa)
-                limpar_dados_navegacao()
-                fechar_navegador()
-            else:
-                messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
-    
     def executar_automacao_agendada():
         hora = int(entry_hora.get())
         minuto = int(entry_minuto.get())
