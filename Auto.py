@@ -98,6 +98,7 @@ def agendar_automacao(scheduler, hora, minuto):
     tempo_espera = (horario_agendado - agora).total_seconds()
     scheduler.enter(tempo_espera, 1, executar_automacao)
     logging.info(f"Automação agendada para: {horario_agendado}")
+    return horario_agendado
 
 def executar_automacao():
     global temas_var, perguntas_var
@@ -122,7 +123,7 @@ def executar_automacao():
             messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
 
 def criar_interface_grafica():
-    global temas_var, perguntas_var
+    global temas_var, perguntas_var, label_status
     scheduler = sched.scheduler(time.time, time.sleep)
 
     def executar_automacao_agendada():
@@ -132,8 +133,18 @@ def criar_interface_grafica():
             if len(partes) == 2:
                 try:
                     hora, minuto = map(int, partes)
-                    agendar_automacao(scheduler, hora, minuto)
-                    scheduler.run(blocking=False)
+                    if 0 <= hora <= 23 and 0 <= minuto <= 59:
+                        horario_agendado = agendar_automacao(scheduler, hora, minuto)
+                        scheduler.run(blocking=False)
+                        horario_formatado = horario_agendado.strftime("%H:%M")
+                        messagebox.showinfo(
+                            "Agendamento Confirmado",
+                            f"Automação agendada com sucesso para {horario_formatado}!\n\n"
+                            f"A aplicação executará automaticamente no horário programado."
+                        )
+                        label_status.config(text=f"Próxima execução: {horario_formatado}")
+                    else:
+                        messagebox.showerror("Erro", "Hora ou minuto inválidos. Use valores entre 00:00 e 23:59.")
                 except ValueError:
                     messagebox.showerror("Erro", "Formato de hora inválido. Por favor, use o formato HH:MM.")
             else:
@@ -162,42 +173,42 @@ def criar_interface_grafica():
     temas_var = tk.StringVar(value='6')
     perguntas_var = tk.StringVar(value='6')
 
-    image = Image.open('22287dragon_98813.png')
-    photo = ImageTk.PhotoImage(image)
-    label_image = tk.Label(root, image=photo, bg='#2E4053')
-    label_image.image = photo
-    label_image.pack(pady=10)
+    image = Image.open('22287dragon_98 .png')
+    image = ImageTk.PhotoImage(image)
+    label_imagem = ttk.Label(root, image=image, background='#2E4053')
+    label_imagem.pack(pady=10)
 
-    label_temas = ttk.Label(root, text="Número de Temas:")
-    label_temas.pack(pady=10)
-    entry_temas = ttk.Entry(root, textvariable=temas_var)
-    entry_temas.pack(pady=10)
+    label_titulo = ttk.Label(root, text="Automação de Pesquisas", font=("Helvetica", 18), background='#2E4053', foreground='white')
+    label_titulo.pack(pady=10)
 
-    label_perguntas = ttk.Label(root, text="Número de Perguntas por Tema:")
-    label_perguntas.pack(pady=10)
-    entry_perguntas = ttk.Entry(root, textvariable=perguntas_var)
-    entry_perguntas.pack(pady=10)
-
-    label_hora_minuto = ttk.Label(root, text="Hora de Início (HH:MM):")
-    label_hora_minuto.pack(pady=5)
-    entry_hora_minuto = ttk.Entry(root)
-    entry_hora_minuto.pack(pady=5)
-
-    label_relogio = ttk.Label(root, text="", font=("Helvetica", 24), foreground='white', background='#2E4053')
+    label_relogio = ttk.Label(root, text="", font=("Helvetica", 12), background='#2E4053', foreground='white')
     label_relogio.pack(pady=10)
     atualizar_relogio()
+
+    label_temas = ttk.Label(root, text="Número de Temas:", background='#2E4053', foreground='white')
+    label_temas.pack(pady=5)
+    entry_temas = ttk.Entry(root, textvariable=temas_var, width=5)
+    entry_temas.pack(pady=5)
+
+    label_perguntas = ttk.Label(root, text="Número de Perguntas:", background='#2E4053', foreground='white')
+    label_perguntas.pack(pady=5)
+    entry_perguntas = ttk.Entry(root, textvariable=perguntas_var, width=5)
+    entry_perguntas.pack(pady=5)
+
+    label_hora_minuto = ttk.Label(root, text="Horário de Execução (HH:MM):", background='#2E4053', foreground='white')
+    label_hora_minuto.pack(pady=5)
+    entry_hora_minuto = ttk.Entry(root, width=5)
+    entry_hora_minuto.pack(pady=5)
 
     button_agendar = ttk.Button(root, text="Agendar Automação", command=executar_automacao_agendada)
     button_agendar.pack(pady=10)
 
-    button_iniciar = ttk.Button(root, text="Iniciar Automação", command=executar_automacao)
-    button_iniciar.pack(pady=10)
+    label_status = ttk.Label(root, text="Status: Aguardando agendamento", font=("Helvetica", 10), background='#2E4053', foreground='white')
+    label_status.pack(pady=5)
 
-    button_fechar = ttk.Button(root, text="Fechar Programa", command=fechar_programa)
+    button_fechar = ttk.Button(root, text="Fechar", command=fechar_programa)
     button_fechar.pack(pady=10)
 
     root.mainloop()
 
-if __name__ == "__main__":
-    criar_interface_grafica()
-    
+criar_interface_grafica()
