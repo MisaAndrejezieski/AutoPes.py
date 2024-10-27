@@ -91,10 +91,8 @@ def verificar_conectividade():
 def agendar_automacao(scheduler, hora, minuto):
     agora = datetime.datetime.now()
     horario_agendado = agora.replace(hour=hora, minute=minuto, second=0, microsecond=0)
-
     if horario_agendado < agora:
         horario_agendado += datetime.timedelta(days=1)
-
     tempo_espera = (horario_agendado - agora).total_seconds()
     scheduler.enter(tempo_espera, 1, executar_automacao)
     logging.info(f"Automação agendada para: {horario_agendado}")
@@ -105,15 +103,14 @@ def executar_automacao():
     if not verificar_conectividade():
         messagebox.showerror("Erro", "Não foi possível verificar a conectividade com a internet.")
         return
-    
     pyautogui.PAUSE = 0.5
     num_temas = int(temas_var.get())
     num_perguntas = int(perguntas_var.get())
-    
+
     for _ in range(num_temas):
         tema = random.choice(temas_en)
         pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
-        
+
         if abrir_edge():
             for pesquisa in pesquisas:
                 realizar_pesquisa(pesquisa)
@@ -151,6 +148,10 @@ def criar_interface_grafica():
                 messagebox.showerror("Erro", "Formato de hora inválido. Por favor, use o formato HH:MM.")
         else:
             messagebox.showerror("Erro", "Formato de hora inválido. Por favor, use o formato HH:MM.")
+
+    def iniciar_pesquisas():
+        executar_automacao()
+        messagebox.showinfo("Pesquisa Iniciada", "As pesquisas foram iniciadas manualmente.")
 
     def fechar_programa():
         root.destroy()
@@ -203,6 +204,9 @@ def criar_interface_grafica():
     button_agendar = ttk.Button(root, text="Agendar Automação", command=executar_automacao_agendada)
     button_agendar.pack(pady=10)
 
+    button_iniciar = ttk.Button(root, text="Iniciar Pesquisas", command=iniciar_pesquisas)
+    button_iniciar.pack(pady=10)
+
     label_status = ttk.Label(root, text="Status: Aguardando agendamento", font=("Helvetica", 10), background='#2E4053', foreground='white')
     label_status.pack(pady=5)
 
@@ -212,3 +216,4 @@ def criar_interface_grafica():
     root.mainloop()
 
 criar_interface_grafica()
+
