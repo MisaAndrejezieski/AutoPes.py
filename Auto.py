@@ -7,6 +7,8 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk  # Importa ttk para estilos modernos
 from PIL import Image, ImageTk  # Importa PIL para trabalhar com imagens
+import sched  # Importa o módulo sched para agendamento
+import datetime  # Importa datetime para lidar com datas e horas
 
 # Configuração de logging
 logging.basicConfig(
