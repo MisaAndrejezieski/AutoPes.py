@@ -56,6 +56,8 @@ def realizar_pesquisa(pesquisa):
         time.sleep(10)
         pyautogui.hotkey('ctrl', 'w')
         logging.info(f"Pesquisa realizada: {pesquisa}")
+        with open('automacao_pesquisa.log', 'a') as log_file:
+            log_file.write(f"Pesquisa realizada: {pesquisa}\n")
     except Exception as e:
         logging.error(f"Erro ao realizar a pesquisa: {e}")
 
