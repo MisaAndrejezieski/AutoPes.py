@@ -118,10 +118,13 @@ def criar_interface_grafica():
             else:
                 messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
     
+    def fechar_programa():
+        root.destroy()
+    
     # Criação da janela principal
     root = tk.Tk()
     root.title("Automação de Pesquisas")
-    root.geometry("400x300")
+    root.geometry("400x350")
     root.configure(bg='#2E4053')  # Fundo azul escuro
 
     style = ttk.Style()
@@ -143,7 +146,10 @@ def criar_interface_grafica():
     entry_perguntas.pack(pady=10)
 
     button_iniciar = ttk.Button(root, text="Iniciar Automação", command=executar_automacao)
-    button_iniciar.pack(pady=20)
+    button_iniciar.pack(pady=10)
+    
+    button_fechar = ttk.Button(root, text="Fechar Programa", command=fechar_programa)
+    button_fechar.pack(pady=10)
 
     # Iniciar o loop da interface gráfica
     root.mainloop()
