@@ -5,6 +5,7 @@ import logging
 import requests
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import PhotoImage
 
 # Configuração de logging
 logging.basicConfig(
@@ -119,6 +120,10 @@ def executar_automacao(num_temas=6, num_perguntas=6):
 def iniciar_interface():
     root = tk.Tk()
     root.title("Automação de Pesquisa")
+    
+    # Adicionar ícone .ico na barra superior
+    root.iconbitmap('22287dragon_98813.ico')
+    
     root.configure(bg='#f0f0f0')
     
     tk.Label(root, text="Número de Temas:", bg='#f0f0f0', fg='#333333').grid(row=0, column=0, padx=10, pady=10)
@@ -140,7 +145,14 @@ def iniciar_interface():
             messagebox.showerror("Erro", "Por favor, insira valores numéricos válidos.")
     
     tk.Button(root, text="Iniciar Automação", command=iniciar_automacao, bg='#4CAF50', fg='white').grid(row=2, column=0, columnspan=2, pady=20)
+    
+    # Adicionar botão para fechar o programa
     tk.Button(root, text="Fechar Programa", command=root.quit, bg='#f44336', fg='white').grid(row=3, column=0, columnspan=2, pady=10)
+    
+    # Adicionar imagem .png na interface
+    img = PhotoImage(file='22287dragon_98813.png')
+    img_label = tk.Label(root, image=img)
+    img_label.grid(row=4, column=0, columnspan=2, pady=10)
     
     root.mainloop()
 
