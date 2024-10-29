@@ -100,18 +100,18 @@ def verificar_conectividade():
 # Função principal para executar a automação
 def executar_automacao(num_temas=6, num_perguntas=6):
     if verificar_conectividade():
-        for _ in range(num_temas):
-            tema = random.choice(temas_en)
-            pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
-            
-            if abrir_edge():
+        if abrir_edge():
+            for _ in range(num_temas):
+                tema = random.choice(temas_en)
+                pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
+                
                 for pesquisa in pesquisas:
                     realizar_pesquisa(pesquisa)
                 
                 limpar_dados_navegacao()
-                fechar_navegador()
-            else:
-                messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
+            fechar_navegador()
+        else:
+            messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
     else:
         messagebox.showerror("Erro", "Não foi possível verificar a conectividade com a internet.")
 
@@ -119,13 +119,14 @@ def executar_automacao(num_temas=6, num_perguntas=6):
 def iniciar_interface():
     root = tk.Tk()
     root.title("Automação de Pesquisa")
+    root.configure(bg='#f0f0f0')
     
-    tk.Label(root, text="Número de Temas:").grid(row=0, column=0, padx=10, pady=10)
+    tk.Label(root, text="Número de Temas:", bg='#f0f0f0', fg='#333333').grid(row=0, column=0, padx=10, pady=10)
     num_temas = tk.Entry(root)
     num_temas.grid(row=0, column=1, padx=10, pady=10)
     num_temas.insert(0, "6")
     
-    tk.Label(root, text="Número de Perguntas por Tema:").grid(row=1, column=0, padx=10, pady=10)
+    tk.Label(root, text="Número de Perguntas por Tema:", bg='#f0f0f0', fg='#333333').grid(row=1, column=0, padx=10, pady=10)
     num_perguntas = tk.Entry(root)
     num_perguntas.grid(row=1, column=1, padx=10, pady=10)
     num_perguntas.insert(0, "6")
@@ -138,7 +139,8 @@ def iniciar_interface():
         except ValueError:
             messagebox.showerror("Erro", "Por favor, insira valores numéricos válidos.")
     
-    tk.Button(root, text="Iniciar Automação", command=iniciar_automacao).grid(row=2, column=0, columnspan=2, pady=20)
+    tk.Button(root, text="Iniciar Automação", command=iniciar_automacao, bg='#4CAF50', fg='white').grid(row=2, column=0, columnspan=2, pady=20)
+    tk.Button(root, text="Fechar Programa", command=root.quit, bg='#f44336', fg='white').grid(row=3, column=0, columnspan=2, pady=10)
     
     root.mainloop()
 
