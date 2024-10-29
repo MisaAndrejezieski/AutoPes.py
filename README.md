@@ -1,4 +1,5 @@
-Automação de Pesquisa no Navegador Edge
+# Automação de Pesquisa no Navegador Edge
+
 Descrição
 Este programa realiza automações de pesquisa no navegador Edge, utilizando a biblioteca pyautogui para controlar a interface gráfica do usuário (GUI). Ele gera pesquisas aleatórias sobre diversos temas, realiza essas pesquisas no navegador, limpa os dados de navegação e fecha o navegador após a conclusão. O programa também inclui uma interface gráfica amigável desenvolvida com tkinter.
 
@@ -15,7 +16,7 @@ Bibliotecas Python: pyautogui, requests, tkinter
 Navegador Microsoft Edge
 Instalação
 Clone o repositório:
-git clone https://github.com/seu-usuario/automacao-pesquisa.git
+git clone <https://github.com/MisaAndrejezieski/automacao-pesquisa.git>
 cd automacao-pesquisa
 
 Instale as dependências:
@@ -42,7 +43,8 @@ automacao-pesquisa/
 Código Principal
 Python
 
-# Inclua aqui o código principal do programa
+## Inclua aqui o código principal do programa
+
 Código gerado por IA. Examine e use com cuidado. Mais informações em perguntas frequentes.
 Contribuição
 Fork o projeto.
@@ -56,10 +58,10 @@ Envie para a branch original:
 git push origin minha-nova-funcionalidade
 
 Crie um novo Pull Request.
+
 Licença
 Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
 
-Contato
-Nome: Seu Nome
-Email: seu.email@exemplo.com
-GitHub: seu-usuario
+Nome: Misa
+Email: <misaelandrejezieski130982@outlook.com>
+GitHub: <https://github.com/MisaAndrejezieski>
