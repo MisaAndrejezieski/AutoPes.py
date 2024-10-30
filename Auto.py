@@ -5,7 +5,9 @@ import logging
 import requests
 import tkinter as tk
 from tkinter import messagebox, PhotoImage
+from tkinter import ttk
 import threading
+import os
 
 # Configuração de logging
 logging.basicConfig(
@@ -104,10 +106,8 @@ def executar_automacao(num_temas=6, num_perguntas=6):
                 for _ in range(num_temas):
                     tema = random.choice(temas_en)
                     pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
-
                     for pesquisa in pesquisas:
                         realizar_pesquisa(pesquisa)
-
                     limpar_dados_navegacao()
                 fechar_navegador()
                 messagebox.showinfo("Finalizado", "Automação concluída com sucesso.")
@@ -128,18 +128,35 @@ def iniciar_interface():
     root = tk.Tk()
     root.title("Automação de Pesquisa")
 
-    # Adicionar ícone .ico na barra superior
-    root.iconbitmap('22287dragon_98813.ico')
+    # Caminhos dos arquivos
+    icon_path = os.path.join(os.path.dirname(__file__), '22287dragon_98813.ico')
+    image_path = os.path.join(os.path.dirname(__file__), '22287dragon_98813.png')
 
-    root.configure(bg='#f0f0f0')
+    # Adicionar ícone à barra superior
+    root.iconbitmap(icon_path)
 
-    tk.Label(root, text="Número de Temas:", bg='#f0f0f0', fg='#333333').grid(row=0, column=0, padx=10, pady=10)
-    num_temas = tk.Entry(root)
+    # Configuração de cores e estilos
+    root.geometry('500x300')
+    root.configure(bg='#282c34')
+
+    style = ttk.Style()
+    style.theme_use('clam')
+
+    style.configure('TButton', background='#4CAF50', foreground='#ffffff', font=('Helvetica', 12, 'bold'))
+    style.map('TButton', background=[('active', '#56b6c2')])
+    style.configure('Red.TButton', background='#f44336', foreground='#ffffff', font=('Helvetica', 12, 'bold'))
+    style.map('Red.TButton', background=[('active', '#d32f2f')])
+    style.configure('TLabel', background='#282c34', foreground='#61afef', font=('Helvetica', 10))
+    style.configure('TEntry', font=('Helvetica', 10))
+
+    # Elementos da interface
+    ttk.Label(root, text="Número de Temas:", style='TLabel').grid(row=0, column=0, padx=10, pady=10)
+    num_temas = ttk.Entry(root)
     num_temas.grid(row=0, column=1, padx=10, pady=10)
     num_temas.insert(0, "1")
 
-    tk.Label(root, text="Número de Perguntas por Tema:", bg='#f0f0f0', fg='#333333').grid(row=1, column=0, padx=10, pady=10)
-    num_perguntas = tk.Entry(root)
+    ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').grid(row=1, column=0, padx=10, pady=10)
+    num_perguntas = ttk.Entry(root)
     num_perguntas.grid(row=1, column=1, padx=10, pady=10)
     num_perguntas.insert(0, "1")
 
@@ -152,13 +169,13 @@ def iniciar_interface():
         except ValueError:
             messagebox.showerror("Erro", "Por favor, insira valores numéricos válidos.")
 
-    tk.Button(root, text="Iniciar Automação", command=iniciar_automacao, bg='#4CAF50', fg='white').grid(row=2, column=0, columnspan=2, pady=20)
+    ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao, style='TButton').grid(row=2, column=0, columnspan=2, pady=20)
 
     # Adicionar botão para fechar o programa
-    tk.Button(root, text="Fechar Programa", command=root.quit, bg='#f44336', fg='white').grid(row=3, column=0, columnspan=2, pady=10)
+    ttk.Button(root, text="Fechar Programa", command=root.quit, style='Red.TButton').grid(row=3, column=0, columnspan=2, pady=10)
 
     # Adicionar imagem .png na interface
-    img = PhotoImage(file='22287dragon_98813.png')
+    img = PhotoImage(file=image_path)
     img_label = tk.Label(root, image=img)
     img_label.grid(row=4, column=0, columnspan=2, pady=10)
 
