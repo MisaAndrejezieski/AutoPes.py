@@ -136,12 +136,12 @@ def iniciar_interface():
     tk.Label(root, text="Número de Temas:", bg='#f0f0f0', fg='#333333').grid(row=0, column=0, padx=10, pady=10)
     num_temas = tk.Entry(root)
     num_temas.grid(row=0, column=1, padx=10, pady=10)
-    num_temas.insert(0, "6")
+    num_temas.insert(0, "1")
 
     tk.Label(root, text="Número de Perguntas por Tema:", bg='#f0f0f0', fg='#333333').grid(row=1, column=0, padx=10, pady=10)
     num_perguntas = tk.Entry(root)
     num_perguntas.grid(row=1, column=1, padx=10, pady=10)
-    num_perguntas.insert(0, "6")
+    num_perguntas.insert(0, "1")
 
     def iniciar_automacao():
         try:
