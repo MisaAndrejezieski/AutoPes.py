@@ -150,14 +150,14 @@ def iniciar_interface():
     style.configure('TEntry', font=('Helvetica', 10))
 
     # Elementos da interface
-    ttk.Label(root, text="Número de Temas:", style='TLabel').grid(row=0, column=0, padx=10, pady=10, sticky='e')
+    ttk.Label(root, text="Número de Temas:", style='TLabel').grid(row=0, column=0, padx=10, pady=10, sticky='ew')
     num_temas = ttk.Entry(root)
-    num_temas.grid(row=0, column=1, padx=10, pady=10, sticky='w')
+    num_temas.grid(row=0, column=1, padx=10, pady=10, sticky='ew')
     num_temas.insert(0, "1")
 
-    ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').grid(row=1, column=0, padx=10, pady=10, sticky='e')
+    ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').grid(row=1, column=0, padx=10, pady=10, sticky='ew')
     num_perguntas = ttk.Entry(root)
-    num_perguntas.grid(row=1, column=1, padx=10, pady=10, sticky='w')
+    num_perguntas.grid(row=1, column=1, padx=10, pady=10, sticky='ew')
     num_perguntas.insert(0, "1")
 
     def iniciar_automacao():
@@ -169,15 +169,23 @@ def iniciar_interface():
         except ValueError:
             messagebox.showerror("Erro", "Por favor, insira valores numéricos válidos.")
 
-    ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao, style='TButton').grid(row=2, column=0, columnspan=2, pady=20)
+    ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao, style='TButton').grid(row=2, column=0, columnspan=2, pady=20, sticky='ew')
 
     # Adicionar botão para fechar o programa
-    ttk.Button(root, text="Fechar Programa", command=root.quit, style='Red.TButton').grid(row=3, column=0, columnspan=2, pady=10)
+    ttk.Button(root, text="Fechar Programa", command=root.quit, style='Red.TButton').grid(row=3, column=0, columnspan=2, pady=10, sticky='ew')
 
     # Adicionar imagem .png na interface
     img = PhotoImage(file=image_path)
     img_label = tk.Label(root, image=img)
-    img_label.grid(row=4, column=0, columnspan=2, pady=10)
+    img_label.grid(row=4, column=0, columnspan=2, pady=10, sticky='nsew')
+
+    root.grid_columnconfigure(0, weight=1)
+    root.grid_columnconfigure(1, weight=1)
+    root.grid_rowconfigure(0, weight=1)
+    root.grid_rowconfigure(1, weight=1)
+    root.grid_rowconfigure(2, weight=1)
+    root.grid_rowconfigure(3, weight=1)
+    root.grid_rowconfigure(4, weight=1)
 
     root.mainloop()
 
