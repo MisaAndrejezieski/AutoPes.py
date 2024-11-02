@@ -137,7 +137,7 @@ def iniciar_interface():
 
     # Configuração de cores e estilos
     root.geometry('500x400')
-    root.configure(bg='#282c34')
+    root.configure(bg='#f0f0f0')
 
     style = ttk.Style()
     style.theme_use('clam')
@@ -146,18 +146,18 @@ def iniciar_interface():
     style.map('TButton', background=[('active', '#56b6c2')])
     style.configure('Red.TButton', background='#f44336', foreground='#ffffff', font=('Helvetica', 12, 'bold'))
     style.map('Red.TButton', background=[('active', '#d32f2f')])
-    style.configure('TLabel', background='#282c34', foreground='#61afef', font=('Helvetica', 10))
+    style.configure('TLabel', background='#f0f0f0', foreground='#333', font=('Helvetica', 10))
     style.configure('TEntry', font=('Helvetica', 10))
 
     # Elementos da interface
-    ttk.Label(root, text="Número de Temas:", style='TLabel').grid(row=0, column=0, padx=10, pady=10, sticky='ew')
+    ttk.Label(root, text="Número de Temas:", style='TLabel').grid(row=0, column=0, padx=20, pady=20, sticky='ew')
     num_temas = ttk.Entry(root)
-    num_temas.grid(row=0, column=1, padx=10, pady=10, sticky='ew')
+    num_temas.grid(row=0, column=1, padx=20, pady=20, sticky='ew')
     num_temas.insert(0, "1")
 
-    ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').grid(row=1, column=0, padx=10, pady=10, sticky='ew')
+    ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').grid(row=1, column=0, padx=20, pady=20, sticky='ew')
     num_perguntas = ttk.Entry(root)
-    num_perguntas.grid(row=1, column=1, padx=10, pady=10, sticky='ew')
+    num_perguntas.grid(row=1, column=1, padx=20, pady=20, sticky='ew')
     num_perguntas.insert(0, "1")
 
     def iniciar_automacao():
@@ -183,7 +183,7 @@ def iniciar_interface():
     root.grid_columnconfigure(1, weight=1)
     root.grid_rowconfigure(0, weight=1)
     root.grid_rowconfigure(1, weight=1)
-    root.grid_rowconfigure(2, weight=1)
+    root.grid_rowconfigure(2 , weight=1)
     root.grid_rowconfigure(3, weight=1)
     root.grid_rowconfigure(4, weight=1)
 
