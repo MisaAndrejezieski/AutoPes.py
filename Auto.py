@@ -183,7 +183,7 @@ def iniciar_interface():
     root.grid_columnconfigure(1, weight=1)
     root.grid_rowconfigure(0, weight=1)
     root.grid_rowconfigure(1, weight=1)
-    root.grid_rowconfigure(2 , weight=1)
+    root.grid_rowconfigure(2, weight=1)
     root.grid_rowconfigure(3, weight=1)
     root.grid_rowconfigure(4, weight=1)
 
