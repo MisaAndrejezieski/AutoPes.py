@@ -22,15 +22,16 @@ temas_en = [
     "technology", "health", "education", "sports", "politics", "economy",
     "science", "art", "music", "literature", "history", "geography",
     "philosophy", "psychology", "sociology", "anthropology", "astronomy",
-    "biology", "chemistry", "physics", "mathematics", "engineering", "medicine",
-    "law", "administration", "marketing", "finance", "architecture",
-    "design", "fashion", "gastronomy"
+    "biology", "chemistry", "physics", "mathematics", "engineering",
+    "medicine", "law", "administration", "marketing", "finance",
+    "architecture", "design", "fashion", "gastronomy"
 ]
 
 # Lista de perguntas em inglês
 perguntas_en = [
-    "What is {tema}?", "What are the latest news in {tema}?", "How does {tema} impact society?",
-    "What are the main challenges in {tema}?", "Who are the leading experts in {tema}?", "how to make money with {tema}",
+    "What is {tema}?", "What are the latest news in {tema}?",
+    "How does {tema} impact society?", "What are the main challenges in {tema}?",
+    "Who are the leading experts in {tema}?", "how to make money with {tema}",
 ]
 
 # Função para gerar uma lista de pesquisas aleatórias sobre um tema
@@ -108,8 +109,8 @@ def executar_automacao(num_temas=6, num_perguntas=6):
                     pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
                     for pesquisa in pesquisas:
                         realizar_pesquisa(pesquisa)
-                    limpar_dados_navegacao()
-                fechar_navegador()
+                limpar_dados_navegacao()
+                fechar_navegador ()
                 messagebox.showinfo("Finalizado", "Automação concluída com sucesso.")
             else:
                 messagebox.showerror("Erro", "Não foi possível abrir o navegador Edge.")
@@ -137,16 +138,14 @@ def iniciar_interface():
 
     # Configuração de cores e estilos
     root.geometry('500x400')
-    root.configure(bg='#f0f0f0')
-
+    root.configure(bg='#282c34')
     style = ttk.Style()
     style.theme_use('clam')
-
     style.configure('TButton', background='#4CAF50', foreground='#ffffff', font=('Helvetica', 12, 'bold'))
     style.map('TButton', background=[('active', '#56b6c2')])
     style.configure('Red.TButton', background='#f44336', foreground='#ffffff', font=('Helvetica', 12, 'bold'))
     style.map('Red.TButton', background=[('active', '#d32f2f')])
-    style.configure('TLabel', background='#f0f0f0', foreground='#333', font=('Helvetica', 10))
+    style.configure('TLabel', background='#282c34', foreground='#61afef', font=('Helvetica', 10))
     style.configure('TEntry', font=('Helvetica', 10))
 
     # Elementos da interface
