@@ -152,12 +152,12 @@ def iniciar_interface():
     ttk.Label(root, text="Número de Temas:", style='TLabel').pack(pady=10)
     num_temas = ttk.Entry(root, width=20)
     num_temas.pack(pady=5)
-    num_temas.insert(0, "1")
+    num_temas.insert(0, "6")
 
     ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').pack(pady=10)
     num_perguntas = ttk.Entry(root , width=20)
     num_perguntas.pack(pady=5)
-    num_perguntas.insert(0, "1")
+    num_perguntas.insert(0, "6")
 
     def iniciar_automacao():
         try:
