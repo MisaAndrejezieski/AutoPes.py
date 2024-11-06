@@ -24,7 +24,7 @@ temas_en = [
     "philosophy", "psychology", "sociology", "anthropology", "astronomy",
     "biology", "chemistry", "physics", "mathematics", "engineering",
     "medicine", "law", "administration", "marketing", "finance",
-    "architecture", "design", "fashion", "gastronomy",
+    "architecture", "design", "fashion", "gastronomy"
 ]
 
 # Lista de perguntas em inglês
