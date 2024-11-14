@@ -1,0 +1,8 @@
+2024-11-14 18:59:09,871 - DEBUG - Using proactor: IocpProactor
+2024-11-14 18:59:09,871 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-14 18:59:10,420 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-14 18:59:10,440 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-14 18:59:12,755 - INFO - Navegador Edge aberto com sucesso.
+2024-11-14 18:59:23,175 - INFO - Pesquisa realizada: What is health?
+2024-11-14 18:59:32,379 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-14 18:59:32,379 - INFO - Automação concluída com sucesso.
