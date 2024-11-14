@@ -99,16 +99,24 @@ async def verificar_conectividade():
         logging.error(f"Erro ao verificar conectividade: {e}")
         return False
 
+# Função para exibir o progresso na interface gráfica
+def atualizar_progresso(label, valor):
+    label.config(text=f"Progresso: {valor}%")
+    root.update_idletasks()
+
 # Função principal da automação
-async def executar_automacao(num_temas=6, num_perguntas=6):
+async def executar_automacao(num_temas=6, num_perguntas=6, intervalo=10):
     try:
         if await verificar_conectividade():
             if abrir_edge():
-                for _ in range(num_temas):
+                for i in range(num_temas):
                     tema = random.choice(temas_en)
                     pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
-                    for pesquisa in pesquisas:
+                    for j, pesquisa in enumerate(pesquisas):
                         realizar_pesquisa(pesquisa)
+                        # Atualiza o progresso após cada pesquisa
+                        atualizar_progresso(label_progresso, (i * num_perguntas + j + 1) * 100 / (num_temas * num_perguntas))
+                        time.sleep(intervalo)  # Intervalo entre pesquisas
                     limpar_dados_navegacao()
                 fechar_navegador()
                 logging.info("Automação concluída com sucesso.")
@@ -118,13 +126,15 @@ async def executar_automacao(num_temas=6, num_perguntas=6):
         logging.error(f"Erro ao executar automação: {e}")
 
 # Função para iniciar a automação em segundo plano
-def iniciar_automacao_bg(num_temas, num_perguntas):
+def iniciar_automacao_bg(num_temas, num_perguntas, intervalo):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-    loop.run_until_complete(executar_automacao(num_temas, num_perguntas))
+    loop.run_until_complete(executar_automacao(num_temas, num_perguntas, intervalo))
 
 # Interface gráfica
 def iniciar_interface():
+    global root, label_progresso
+
     root = tk.Tk()
     root.title("Automação de Pesquisa")
 
@@ -136,7 +146,7 @@ def iniciar_interface():
     root.iconbitmap(icon_path)
 
     # Configuração de cores e estilos
-    root.geometry('500x400')
+    root.geometry('500x500')
     root.configure(bg='#282c34')
     style = ttk.Style()
     style.theme_use('clam')
@@ -158,16 +168,37 @@ def iniciar_interface():
     num_perguntas.pack(pady=5)
     num_perguntas.insert(0, "6")
 
+    ttk.Label(root, text="Intervalo entre Pesquisas (segundos):", style='TLabel').pack(pady=10)
+    intervalo_pesquisas = ttk.Entry(root, width=20)
+    intervalo_pesquisas.pack(pady=5)
+    intervalo_pesquisas.insert(0, "10")
+
+    label_conectividade = ttk.Label(root, text="Verificando conectividade...", style='TLabel')
+    label_conectividade.pack(pady=10)
+
+    label_progresso = ttk.Label(root, text="Progresso: 0%", style='TLabel')
+    label_progresso.pack(pady=10)
+
     def iniciar_automacao_handler():
         try:
             temas = int(num_temas.get())
             perguntas = int(num_perguntas.get())
-            threading.Thread(target=iniciar_automacao_bg, args=(temas, perguntas), daemon=True).start()
+            intervalo = int(intervalo_pesquisas.get())
+            threading.Thread(target=iniciar_automacao_bg, args=(temas, perguntas, intervalo), daemon=True).start()
+
+            # Atualizar o status da conectividade
+            if verificar_conectividade():
+                label_conectividade.config(text="Conectividade OK", foreground="green")
+            else:
+                label_conectividade.config(text="Falha na Conectividade", foreground="red")
+            
             messagebox.showinfo("Inicializado", "Automação iniciada em segundo plano.")
         except ValueError:
             messagebox.showerror("Erro", "Por favor, insira valores numéricos válidos.")
 
     ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao_handler, style='TButton').pack(pady=10)
+
+    # Adicionar botão para fechar o programa
     ttk.Button(root, text="Fechar Programa", command=root.quit, style='Red.TButton').pack(pady=10)
 
     # Adicionar imagem .png na interface
@@ -178,5 +209,4 @@ def iniciar_interface():
     root.mainloop()
 
 # Iniciar a interface gráfica
-if __name__ == '__main__':
-    iniciar_interface()
+iniciar_interface()
