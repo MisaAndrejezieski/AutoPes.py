@@ -7,6 +7,7 @@ import tkinter as tk
 from tkinter import messagebox, PhotoImage
 from tkinter import ttk
 import threading
+import asyncio
 import os
 
 # Configuração de logging
@@ -17,7 +18,7 @@ logging.basicConfig(
     encoding='utf-8'
 )
 
-# Lista de temas em inglês
+# Lista de temas e perguntas
 temas_en = [
     "technology", "health", "education", "sports", "politics", "economy",
     "science", "art", "music", "literature", "history", "geography",
@@ -27,18 +28,17 @@ temas_en = [
     "architecture", "design", "fashion", "gastronomy"
 ]
 
-# Lista de perguntas em inglês
 perguntas_en = [
     "What is {tema}?", "What are the latest news in {tema}?",
     "How does {tema} impact society?", "What are the main challenges in {tema}?",
     "Who are the leading experts in {tema}?", "How to make money with {tema}",
 ]
 
-# Função para gerar uma lista de pesquisas aleatórias sobre um tema
+# Função para gerar pesquisas sobre um tema
 def gerar_pesquisas_sobre_tema(tema, n):
     return random.sample([p.format(tema=tema) for p in perguntas_en], n)
 
-# Função para abrir o Edge
+# Função para abrir o navegador Edge
 def abrir_edge():
     try:
         pyautogui.press('win')
@@ -49,7 +49,7 @@ def abrir_edge():
         return True
     except Exception as e:
         logging.error(f"Erro ao abrir o Edge: {e}")
-        raise e
+        return False
 
 # Função para realizar uma pesquisa
 def realizar_pesquisa(pesquisa):
@@ -57,14 +57,13 @@ def realizar_pesquisa(pesquisa):
         pyautogui.hotkey('ctrl', 't')
         pyautogui.write(pesquisa)
         pyautogui.press('enter')
-        time.sleep(10)
+        time.sleep(10)  # Espera para garantir que a pesquisa tenha sido carregada
         pyautogui.hotkey('ctrl', 'w')
         logging.info(f"Pesquisa realizada: {pesquisa}")
     except Exception as e:
         logging.error(f"Erro ao realizar a pesquisa: {e}")
-        raise e
 
-# Função para limpar dados de navegação e cookies
+# Função para limpar dados de navegação
 def limpar_dados_navegacao():
     try:
         pyautogui.hotkey('ctrl', 'shift', 'delete')
@@ -73,8 +72,7 @@ def limpar_dados_navegacao():
         time.sleep(2)
         logging.info("Dados de navegação e cookies limpos com sucesso.")
     except Exception as e:
-        logging.error(f"Erro ao limpar os dados de navegação: {e}")
-        raise e
+        logging.error(f"Erro ao limpar dados de navegação: {e}")
 
 # Função para fechar o navegador
 def fechar_navegador():
@@ -83,46 +81,47 @@ def fechar_navegador():
         logging.info("Navegador fechado com sucesso.")
     except Exception as e:
         logging.error(f"Erro ao fechar o navegador: {e}")
-        raise e
 
-# Função para verificar a conectividade com a internet
-def verificar_conectividade():
+# Função para verificar conectividade
+async def verificar_conectividade():
     try:
-        response = requests.get('https://www.google.com', timeout=5)
-        if response.status_code == 200:
-            logging.info("Conectividade com a internet verificada.")
-            return True
-        else:
-            logging.error("Falha na verificação de conectividade com a internet.")
-            return False
-    except requests.ConnectionError as e:
-        logging.error(f"Erro ao verificar a conectividade com a internet: {e}")
-        raise e
+        endpoints = ['https://www.google.com', 'https://www.bing.com']
+        for url in endpoints:
+            try:
+                response = requests.get(url, timeout=5)
+                if response.status_code == 200:
+                    logging.info(f"Conectividade com {url} verificada.")
+                    return True
+            except requests.ConnectionError:
+                logging.warning(f"Falha ao acessar {url}. Tentando outro...")
+        return False
+    except requests.RequestException as e:
+        logging.error(f"Erro ao verificar conectividade: {e}")
+        return False
 
-# Função principal para executar a automação
-def executar_automacao(num_temas=6, num_perguntas=6):
+# Função principal da automação
+async def executar_automacao(num_temas=6, num_perguntas=6):
     try:
-        if verificar_conectividade():
+        if await verificar_conectividade():
             if abrir_edge():
                 for _ in range(num_temas):
                     tema = random.choice(temas_en)
-                    pesquisas = gerar_pesquisas_sobre_tema( tema, num_perguntas)
+                    pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
                     for pesquisa in pesquisas:
                         realizar_pesquisa(pesquisa)
                     limpar_dados_navegacao()
                 fechar_navegador()
                 logging.info("Automação concluída com sucesso.")
-            else:
-                logging.error("Falha ao abrir o navegador.")
         else:
             logging.error("Falha na verificação de conectividade com a internet.")
     except Exception as e:
-        logging.error(f"Erro ao executar a automação: {e}")
+        logging.error(f"Erro ao executar automação: {e}")
 
-# Função para rodar a automação em segundo plano
+# Função para iniciar a automação em segundo plano
 def iniciar_automacao_bg(num_temas, num_perguntas):
-    thread = threading.Thread(target=executar_automacao, args=(num_temas, num_perguntas))
-    thread.start()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(executar_automacao(num_temas, num_perguntas))
 
 # Interface gráfica
 def iniciar_interface():
@@ -159,18 +158,16 @@ def iniciar_interface():
     num_perguntas.pack(pady=5)
     num_perguntas.insert(0, "6")
 
-    def iniciar_automacao():
+    def iniciar_automacao_handler():
         try:
             temas = int(num_temas.get())
             perguntas = int(num_perguntas.get())
-            iniciar_automacao_bg(temas, perguntas)
+            threading.Thread(target=iniciar_automacao_bg, args=(temas, perguntas), daemon=True).start()
             messagebox.showinfo("Inicializado", "Automação iniciada em segundo plano.")
         except ValueError:
             messagebox.showerror("Erro", "Por favor, insira valores numéricos válidos.")
 
-    ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao, style='TButton').pack(pady=10)
-
-    # Adicionar botão para fechar o programa
+    ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao_handler, style='TButton').pack(pady=10)
     ttk.Button(root, text="Fechar Programa", command=root.quit, style='Red.TButton').pack(pady=10)
 
     # Adicionar imagem .png na interface
@@ -181,4 +178,5 @@ def iniciar_interface():
     root.mainloop()
 
 # Iniciar a interface gráfica
-iniciar_interface()
+if __name__ == '__main__':
+    iniciar_interface()
