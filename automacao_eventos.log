@@ -94,3 +94,11 @@
 2024-11-15 13:12:15,216 - INFO - Pesquisa realizada: What are the main challenges in health?
 2024-11-15 13:12:24,424 - INFO - Dados de navegação e cookies limpos com sucesso.
 2024-11-15 13:12:24,424 - INFO - Automação concluída com sucesso.
+2024-11-15 13:17:13,164 - DEBUG - Using proactor: IocpProactor
+2024-11-15 13:17:13,164 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-15 13:17:13,369 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-15 13:17:13,369 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-15 13:17:15,692 - INFO - Navegador Edge aberto com sucesso.
+2024-11-15 13:17:26,114 - INFO - Pesquisa realizada: What are the latest news in music?
+2024-11-15 13:17:35,318 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-15 13:17:35,318 - INFO - Automação concluída com sucesso.
