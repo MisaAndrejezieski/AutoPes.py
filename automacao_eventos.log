@@ -54,3 +54,11 @@
 2024-11-15 12:20:23,933 - INFO - Pesquisa realizada: How to make money with marketing
 2024-11-15 12:20:38,152 - INFO - Dados de navegação e cookies limpos com sucesso.
 2024-11-15 12:20:38,152 - INFO - Automação concluída com sucesso.
+2024-11-15 12:33:03,986 - DEBUG - Using proactor: IocpProactor
+2024-11-15 12:33:03,986 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-15 12:33:04,220 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-15 12:33:04,220 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-15 12:33:06,542 - INFO - Navegador Edge aberto com sucesso.
+2024-11-15 12:33:16,979 - INFO - Pesquisa realizada: Who are the leading experts in sociology?
+2024-11-15 12:33:31,193 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-15 12:33:31,193 - INFO - Automação concluída com sucesso.

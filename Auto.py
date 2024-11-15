@@ -10,7 +10,6 @@ import threading
 import os
 import csv
 import asyncio
-import schedule
 
 # Configuração de logging
 logging.basicConfig(
@@ -19,7 +18,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
     encoding='utf-8'
 )
-# Log de erros específicos
+
 logging.basicConfig(
     filename='automacao_erros.log',
     level=logging.ERROR,
@@ -50,13 +49,15 @@ def gerar_pesquisas_sobre_tema(tema, n):
 
 # Função para salvar os resultados em CSV
 def salvar_resultados(resultados):
-    with open('resultados_pesquisas.csv', 'a', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-        # Verifica se o arquivo está vazio e escreve o cabeçalho
-        if os.stat('resultados_pesquisas.csv').st_size == 0:
-            writer.writerow(["Tema", "Pergunta", "Status"])
-        for resultado in resultados:
-            writer.writerow([resultado['tema'], resultado['pergunta'], resultado['status']])
+    try:
+        with open('resultados_pesquisas.csv', 'a', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            if os.stat('resultados_pesquisas.csv').st_size == 0:
+                writer.writerow(["Tema", "Pergunta", "Status"])
+            for resultado in resultados:
+                writer.writerow([resultado['tema'], resultado['pergunta'], resultado['status']])
+    except Exception as e:
+        logging.error(f"Erro ao salvar os resultados: {e}")
 
 # Função de "tentar novamente" com múltiplas tentativas
 def tentar_novamente(funcao, max_tentativas=3, *args, **kwargs):
@@ -128,7 +129,7 @@ async def verificar_conectividade():
         return False
 
 # Função para executar a automação
-async def executar_automacao(num_temas=6, num_perguntas=6, intervalo=10):
+async def executar_automacao(num_temas=6, num_perguntas=6, intervalo=10, root=None):
     resultados = []
     if await verificar_conectividade():
         if abrir_edge():
@@ -147,14 +148,20 @@ async def executar_automacao(num_temas=6, num_perguntas=6, intervalo=10):
                 limpar_dados_navegacao()
             salvar_resultados(resultados)
             logging.info("Automação concluída com sucesso.")
+            if root:
+                root.quit()  # Fechar a interface gráfica após a execução
         else:
             logging.error("Falha ao abrir o navegador.")
+            if root:
+                root.quit()  # Fechar o programa caso falhe ao abrir o navegador
     else:
         logging.error("Falha na verificação de conectividade com a internet.")
+        if root:
+            root.quit()  # Fechar o programa caso falhe a conectividade
 
 # Função para rodar a automação em segundo plano
-def iniciar_automacao_bg(num_temas, num_perguntas, intervalo):
-    asyncio.run(executar_automacao(num_temas, num_perguntas, intervalo))
+def iniciar_automacao_bg(num_temas, num_perguntas, intervalo, root=None):
+    asyncio.run(executar_automacao(num_temas, num_perguntas, intervalo, root))
 
 # Interface gráfica
 def iniciar_interface():
@@ -203,7 +210,7 @@ def iniciar_interface():
             intervalo_value = int(intervalo.get())
             if temas < 1 or perguntas < 1 or intervalo_value < 1:
                 raise ValueError("Valores devem ser maiores que 0.")
-            threading.Thread(target=iniciar_automacao_bg, args=(temas, perguntas, intervalo_value), daemon=True).start()
+            threading.Thread(target=iniciar_automacao_bg, args=(temas, perguntas, intervalo_value, root), daemon=True).start()
             messagebox.showinfo("Inicializado", "Automação iniciada em segundo plano.")
         except ValueError as e:
             messagebox.showerror("Erro", f"Entrada inválida: {e}")
