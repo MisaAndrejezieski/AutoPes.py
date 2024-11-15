@@ -10,6 +10,7 @@ import threading
 import os
 import csv
 import asyncio
+import speedtest
 
 # Configuração de logging
 logging.basicConfig(
@@ -84,6 +85,15 @@ def abrir_edge():
         logging.error(f"Erro ao abrir o Edge: {e}")
         return False
 
+# Função para fechar o Edge
+def fechar_edge():
+    try:
+        pyautogui.hotkey('ctrl', 'w')  # Fechar a aba do navegador
+        time.sleep(1)
+        logging.info("Navegador Edge fechado com sucesso.")
+    except Exception as e:
+        logging.error(f"Erro ao fechar o Edge: {e}")
+
 # Função para realizar uma pesquisa
 def realizar_pesquisa(pesquisa):
     try:
@@ -91,7 +101,7 @@ def realizar_pesquisa(pesquisa):
         pyautogui.write(pesquisa)
         pyautogui.press('enter')
         time.sleep(10)
-        pyautogui.hotkey('ctrl', 'w')
+        pyautogui.hotkey('ctrl', 'w')  # Fechar a aba
         logging.info(f"Pesquisa realizada: {pesquisa}")
         return True
     except Exception as e:
@@ -128,9 +138,30 @@ async def verificar_conectividade():
         logging.error(f"Erro ao verificar conectividade: {e}")
         return False
 
+# Função para medir a velocidade da internet
+def medir_velocidade_internet():
+    st = speedtest.Speedtest()
+    st.get_best_server()  # Escolhe o melhor servidor
+    download_speed = st.download() / 1_000_000  # Convertendo para Mbps
+    upload_speed = st.upload() / 1_000_000  # Convertendo para Mbps
+    ping = st.results.ping
+    logging.info(f"Velocidade de download: {download_speed:.2f} Mbps, upload: {upload_speed:.2f} Mbps, ping: {ping} ms.")
+    return download_speed, upload_speed
+
 # Função para executar a automação
-async def executar_automacao(num_temas=6, num_perguntas=6, intervalo=10, root=None):
+async def executar_automacao(num_temas=6, num_perguntas=6, root=None):
     resultados = []
+    download_speed, upload_speed = medir_velocidade_internet()
+    
+    # Ajusta o intervalo com base na velocidade de download (exemplo simples)
+    intervalo = 15  # Definindo um valor inicial padrão
+    if download_speed > 50:  # Se a velocidade for acima de 50 Mbps, pode diminuir o intervalo
+        intervalo = 10
+    elif download_speed < 10:  # Se for abaixo de 10 Mbps, aumenta o intervalo
+        intervalo = 20
+
+    logging.info(f"Intervalo entre pesquisas será de {intervalo} segundos, baseado na velocidade de download de {download_speed:.2f} Mbps.")
+    
     if await verificar_conectividade():
         if abrir_edge():
             for _ in range(num_temas):
@@ -148,6 +179,7 @@ async def executar_automacao(num_temas=6, num_perguntas=6, intervalo=10, root=No
                 limpar_dados_navegacao()
             salvar_resultados(resultados)
             logging.info("Automação concluída com sucesso.")
+            fechar_edge()  # Fechar o Edge após concluir
             if root:
                 root.quit()  # Fechar a interface gráfica após a execução
         else:
@@ -160,8 +192,8 @@ async def executar_automacao(num_temas=6, num_perguntas=6, intervalo=10, root=No
             root.quit()  # Fechar o programa caso falhe a conectividade
 
 # Função para rodar a automação em segundo plano
-def iniciar_automacao_bg(num_temas, num_perguntas, intervalo, root=None):
-    asyncio.run(executar_automacao(num_temas, num_perguntas, intervalo, root))
+def iniciar_automacao_bg(num_temas, num_perguntas, root=None):
+    asyncio.run(executar_automacao(num_temas, num_perguntas, root))
 
 # Interface gráfica
 def iniciar_interface():
@@ -198,19 +230,11 @@ def iniciar_interface():
     num_perguntas.pack(pady=5)
     num_perguntas.insert(0, "6")
 
-    ttk.Label(root, text="Intervalo entre pesquisas (em segundos):", style='TLabel').pack(pady=10)
-    intervalo = ttk.Entry(root, width=20)
-    intervalo.pack(pady=5)
-    intervalo.insert(0, "10")
-
     def iniciar_automacao_handler():
         try:
             temas = int(num_temas.get())
             perguntas = int(num_perguntas.get())
-            intervalo_value = int(intervalo.get())
-            if temas < 1 or perguntas < 1 or intervalo_value < 1:
-                raise ValueError("Valores devem ser maiores que 0.")
-            threading.Thread(target=iniciar_automacao_bg, args=(temas, perguntas, intervalo_value, root), daemon=True).start()
+            threading.Thread(target=iniciar_automacao_bg, args=(temas, perguntas, root), daemon=True).start()
             messagebox.showinfo("Inicializado", "Automação iniciada em segundo plano.")
         except ValueError as e:
             messagebox.showerror("Erro", f"Entrada inválida: {e}")
