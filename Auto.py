@@ -10,7 +10,7 @@ import threading
 import os
 import csv
 import asyncio
-import speedtest
+import speedtest  # Importando o módulo correto para medir a velocidade da internet
 
 # Configuração de logging
 logging.basicConfig(
@@ -20,6 +20,7 @@ logging.basicConfig(
     encoding='utf-8'
 )
 
+# Log de erros específicos
 logging.basicConfig(
     filename='automacao_erros.log',
     level=logging.ERROR,
@@ -50,15 +51,21 @@ def gerar_pesquisas_sobre_tema(tema, n):
 
 # Função para salvar os resultados em CSV
 def salvar_resultados(resultados):
+    with open('resultados_pesquisas.csv', 'a', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        if os.stat('resultados_pesquisas.csv').st_size == 0:
+            writer.writerow(["Tema", "Pergunta", "Status"])
+        for resultado in resultados:
+            writer.writerow([resultado['tema'], resultado['pergunta'], resultado['status']])
+
+# Função para fechar o navegador Edge
+def fechar_edge():
     try:
-        with open('resultados_pesquisas.csv', 'a', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
-            if os.stat('resultados_pesquisas.csv').st_size == 0:
-                writer.writerow(["Tema", "Pergunta", "Status"])
-            for resultado in resultados:
-                writer.writerow([resultado['tema'], resultado['pergunta'], resultado['status']])
+        pyautogui.hotkey('ctrl', 'w')  # Fecha a aba atual do navegador
+        time.sleep(1)  # Aguarda um pouco
+        logging.info("Navegador Edge fechado com sucesso.")
     except Exception as e:
-        logging.error(f"Erro ao salvar os resultados: {e}")
+        logging.error(f"Erro ao fechar o Edge: {e}")
 
 # Função de "tentar novamente" com múltiplas tentativas
 def tentar_novamente(funcao, max_tentativas=3, *args, **kwargs):
@@ -85,15 +92,6 @@ def abrir_edge():
         logging.error(f"Erro ao abrir o Edge: {e}")
         return False
 
-# Função para fechar o Edge
-def fechar_edge():
-    try:
-        pyautogui.hotkey('ctrl', 'w')  # Fechar a aba do navegador
-        time.sleep(1)
-        logging.info("Navegador Edge fechado com sucesso.")
-    except Exception as e:
-        logging.error(f"Erro ao fechar o Edge: {e}")
-
 # Função para realizar uma pesquisa
 def realizar_pesquisa(pesquisa):
     try:
@@ -101,7 +99,7 @@ def realizar_pesquisa(pesquisa):
         pyautogui.write(pesquisa)
         pyautogui.press('enter')
         time.sleep(10)
-        pyautogui.hotkey('ctrl', 'w')  # Fechar a aba
+        pyautogui.hotkey('ctrl', 'w')
         logging.info(f"Pesquisa realizada: {pesquisa}")
         return True
     except Exception as e:
@@ -121,27 +119,10 @@ def limpar_dados_navegacao():
         logging.error(f"Erro ao limpar os dados de navegação: {e}")
         return False
 
-# Função para verificar a conectividade com a internet
-async def verificar_conectividade():
-    try:
-        endpoints = ['https://www.google.com', 'https://www.bing.com', 'https://www.duckduckgo.com']
-        for url in endpoints:
-            try:
-                response = requests.get(url, timeout=5)
-                if response.status_code == 200:
-                    logging.info(f"Conectividade com {url} verificada.")
-                    return True
-            except requests.ConnectionError:
-                logging.warning(f"Falha ao acessar {url}. Tentando outro...")
-        return False
-    except requests.RequestException as e:
-        logging.error(f"Erro ao verificar conectividade: {e}")
-        return False
-
-# Função para medir a velocidade da internet
+# Função para medir a velocidade de internet
 def medir_velocidade_internet():
-    st = speedtest.Speedtest()
-    st.get_best_server()  # Escolhe o melhor servidor
+    st = speedtest.Speedtest()  # Usando o método correto
+    st.get_best_server()
     download_speed = st.download() / 1_000_000  # Convertendo para Mbps
     upload_speed = st.upload() / 1_000_000  # Convertendo para Mbps
     ping = st.results.ping
@@ -149,51 +130,35 @@ def medir_velocidade_internet():
     return download_speed, upload_speed
 
 # Função para executar a automação
-async def executar_automacao(num_temas=6, num_perguntas=6, root=None):
+async def executar_automacao(num_temas=6, num_perguntas=6):
     resultados = []
-    download_speed, upload_speed = medir_velocidade_internet()
-    
-    # Ajusta o intervalo com base na velocidade de download (exemplo simples)
-    intervalo = 15  # Definindo um valor inicial padrão
-    if download_speed > 50:  # Se a velocidade for acima de 50 Mbps, pode diminuir o intervalo
-        intervalo = 10
-    elif download_speed < 10:  # Se for abaixo de 10 Mbps, aumenta o intervalo
-        intervalo = 20
+    download_speed, _ = medir_velocidade_internet()  # Medindo a velocidade de download
 
-    logging.info(f"Intervalo entre pesquisas será de {intervalo} segundos, baseado na velocidade de download de {download_speed:.2f} Mbps.")
-    
-    if await verificar_conectividade():
-        if abrir_edge():
-            for _ in range(num_temas):
-                tema = random.choice(temas_en)
-                pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
-                for pesquisa in pesquisas:
-                    sucesso = False
-                    while not sucesso:
-                        sucesso = realizar_pesquisa(pesquisa)
-                        if not sucesso:
-                            logging.error(f"Falha ao realizar a pesquisa: {pesquisa}. Tentando novamente.")
-                            time.sleep(intervalo)
-                    resultados.append({'tema': tema, 'pergunta': pesquisa, 'status': 'Concluída'})
-                    await asyncio.sleep(intervalo)  # Delay entre pesquisas
-                limpar_dados_navegacao()
-            salvar_resultados(resultados)
-            logging.info("Automação concluída com sucesso.")
-            fechar_edge()  # Fechar o Edge após concluir
-            if root:
-                root.quit()  # Fechar a interface gráfica após a execução
-        else:
-            logging.error("Falha ao abrir o navegador.")
-            if root:
-                root.quit()  # Fechar o programa caso falhe ao abrir o navegador
+    intervalo = max(10, 60 / download_speed)  # Ajusta o intervalo de acordo com a velocidade de download
+
+    if abrir_edge():
+        for _ in range(num_temas):
+            tema = random.choice(temas_en)
+            pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
+            for pesquisa in pesquisas:
+                sucesso = False
+                while not sucesso:
+                    sucesso = realizar_pesquisa(pesquisa)
+                    if not sucesso:
+                        logging.error(f"Falha ao realizar a pesquisa: {pesquisa}. Tentando novamente.")
+                        time.sleep(intervalo)
+                resultados.append({'tema': tema, 'pergunta': pesquisa, 'status': 'Concluída'})
+                await asyncio.sleep(intervalo)  # Delay entre pesquisas
+            limpar_dados_navegacao()
+        salvar_resultados(resultados)
+        logging.info("Automação concluída com sucesso.")
+        fechar_edge()  # Fechar o navegador após a execução
     else:
-        logging.error("Falha na verificação de conectividade com a internet.")
-        if root:
-            root.quit()  # Fechar o programa caso falhe a conectividade
+        logging.error("Falha ao abrir o navegador.")
 
 # Função para rodar a automação em segundo plano
-def iniciar_automacao_bg(num_temas, num_perguntas, root=None):
-    asyncio.run(executar_automacao(num_temas, num_perguntas, root))
+def iniciar_automacao_bg(num_temas, num_perguntas):
+    asyncio.run(executar_automacao(num_temas, num_perguntas))
 
 # Interface gráfica
 def iniciar_interface():
@@ -226,7 +191,7 @@ def iniciar_interface():
     num_temas.insert(0, "6")
 
     ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').pack(pady=10)
-    num_perguntas = ttk.Entry(root , width=20)
+    num_perguntas = ttk.Entry(root, width=20)
     num_perguntas.pack(pady=5)
     num_perguntas.insert(0, "6")
 
@@ -234,20 +199,14 @@ def iniciar_interface():
         try:
             temas = int(num_temas.get())
             perguntas = int(num_perguntas.get())
-            threading.Thread(target=iniciar_automacao_bg, args=(temas, perguntas, root), daemon=True).start()
-            messagebox.showinfo("Inicializado", "Automação iniciada em segundo plano.")
-        except ValueError as e:
-            messagebox.showerror("Erro", f"Entrada inválida: {e}")
+            threading.Thread(target=iniciar_automacao_bg, args=(temas, perguntas), daemon=True).start()
+            messagebox.showinfo("Informação", "Automação iniciada com sucesso!")
+        except ValueError:
+            messagebox.showerror("Erro", "Por favor, insira números válidos!")
 
-    ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao_handler, style='TButton').pack(pady=10)
-
-    # Adicionar botão para fechar o programa
-    ttk.Button(root, text="Fechar Programa", command=root.quit, style='Red.TButton').pack(pady=10)
-
-    # Adicionar imagem .png na interface
-    img = PhotoImage(file=image_path)
-    img_label = tk.Label(root, image=img)
-    img_label.pack(pady=10)
+    # Botões
+    ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao_handler).pack(pady=20)
+    ttk.Button(root, text="Fechar", style='Red.TButton', command=root.quit).pack(pady=5)
 
     root.mainloop()
 
