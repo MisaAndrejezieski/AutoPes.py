@@ -193,15 +193,26 @@ def iniciar_interface():
     num_perguntas_entry = ttk.Entry(root)
     num_perguntas_entry.pack(pady=5)
 
-    # Função para iniciar automação a partir da interface
+    # Exibir a velocidade da internet
+    ttk.Label(root, text="Velocidade da Internet:").pack(pady=5)
+    velocidade_label = ttk.Label(root, text="Calculando...", font=('Helvetica', 12))
+    velocidade_label.pack(pady=5)
+
+    def atualizar_velocidade():
+        download_speed, _ = medir_velocidade_internet()
+        velocidade_label.config(text=f"Velocidade: {download_speed:.2f} Mbps")
+        root.after(5000, atualizar_velocidade)  # Atualiza a cada 5 segundos
+
+    # Iniciar a atualização da velocidade
+    atualizar_velocidade()
+
+    # Função de iniciar a automação
     def iniciar_automacao_handler():
         try:
             num_temas = int(num_temas_entry.get())
             num_perguntas = int(num_perguntas_entry.get())
-            if num_temas <= 0 or num_perguntas <= 0:
-                raise ValueError("Os números de temas e perguntas devem ser positivos.")
             threading.Thread(target=iniciar_automacao_bg, args=(num_temas, num_perguntas)).start()
-            messagebox.showinfo("Informação", "Automação iniciada com sucesso!")
+            messagebox.showinfo("Sucesso", "Automação iniciada com sucesso!")
         except ValueError:
             messagebox.showerror("Erro", "Por favor, insira números válidos!")
 
