@@ -162,6 +162,12 @@ def iniciar_interface():
     root.geometry('600x500')
     root.configure(bg='#F3F4F6')
 
+    # Adicionando o ícone
+    try:
+        root.iconbitmap("22287dragon_98813.ico")  # Defina o caminho do seu ícone
+    except Exception as e:
+        logging.warning(f"Não foi possível carregar o ícone: {e}")
+    
     # Estilos
     style = ttk.Style()
     style.theme_use('clam')
@@ -194,13 +200,10 @@ def iniciar_interface():
 
     # Botão para iniciar a automação
     start_button = ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao_handler)
-    start_button.pack(pady=30)
+    start_button.pack(pady=20)
 
-    # Botão de fechar
-    def fechar():
-        root.quit()
-
-    close_button = ttk.Button(root, text="Fechar", command=fechar, style="Red.TButton")
+    # Botão para fechar a aplicação
+    close_button = ttk.Button(root, text="Fechar", command=root.quit, style='Red.TButton')
     close_button.pack(pady=10)
 
     root.mainloop()
