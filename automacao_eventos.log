@@ -1,0 +1,48 @@
+2024-11-15 15:16:19,954 - DEBUG - Using proactor: IocpProactor
+2024-11-15 15:16:19,954 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-15 15:16:20,301 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-15 15:16:20,301 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-15 15:16:22,616 - INFO - Navegador Edge aberto com sucesso.
+2024-11-15 15:16:33,035 - INFO - Pesquisa realizada: What are the latest news in engineering?
+2024-11-15 15:16:48,481 - INFO - Pesquisa realizada: Who are the leading experts in engineering?
+2024-11-15 15:17:03,907 - INFO - Pesquisa realizada: What is engineering?
+2024-11-15 15:17:19,347 - INFO - Pesquisa realizada: What are the main challenges in engineering?
+2024-11-15 15:17:34,776 - INFO - Pesquisa realizada: How to make money with engineering
+2024-11-15 15:17:50,205 - INFO - Pesquisa realizada: How does engineering impact society?
+2024-11-15 15:17:59,433 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-15 15:18:09,856 - INFO - Pesquisa realizada: How does geography impact society?
+2024-11-15 15:18:25,291 - INFO - Pesquisa realizada: What are the latest news in geography?
+2024-11-15 15:18:40,724 - INFO - Pesquisa realizada: Who are the leading experts in geography?
+2024-11-15 15:18:56,143 - INFO - Pesquisa realizada: What is geography?
+2024-11-15 15:19:11,627 - INFO - Pesquisa realizada: What are the main challenges in geography?
+2024-11-15 15:19:27,062 - INFO - Pesquisa realizada: How to make money with geography
+2024-11-15 15:19:36,266 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-15 15:19:46,695 - INFO - Pesquisa realizada: How does politics impact society?
+2024-11-15 15:20:02,130 - INFO - Pesquisa realizada: How to make money with politics
+2024-11-15 15:20:17,552 - INFO - Pesquisa realizada: What is politics?
+2024-11-15 15:20:32,984 - INFO - Pesquisa realizada: Who are the leading experts in politics?
+2024-11-15 15:20:48,423 - INFO - Pesquisa realizada: What are the main challenges in politics?
+2024-11-15 15:21:03,852 - INFO - Pesquisa realizada: What are the latest news in politics?
+2024-11-15 15:21:13,064 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-15 15:21:23,483 - INFO - Pesquisa realizada: What is biology?
+2024-11-15 15:21:38,916 - INFO - Pesquisa realizada: How to make money with biology
+2024-11-15 15:21:54,393 - INFO - Pesquisa realizada: What are the latest news in biology?
+2024-11-15 15:22:09,826 - INFO - Pesquisa realizada: What are the main challenges in biology?
+2024-11-15 15:22:25,300 - INFO - Pesquisa realizada: How does biology impact society?
+2024-11-15 15:22:40,743 - INFO - Pesquisa realizada: Who are the leading experts in biology?
+2024-11-15 15:22:49,952 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-15 15:23:00,377 - INFO - Pesquisa realizada: How does design impact society?
+2024-11-15 15:23:15,830 - INFO - Pesquisa realizada: What are the main challenges in design?
+2024-11-15 15:23:31,262 - INFO - Pesquisa realizada: What are the latest news in design?
+2024-11-15 15:23:46,730 - INFO - Pesquisa realizada: How to make money with design
+2024-11-15 15:24:02,155 - INFO - Pesquisa realizada: Who are the leading experts in design?
+2024-11-15 15:24:17,580 - INFO - Pesquisa realizada: What is design?
+2024-11-15 15:24:26,785 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-15 15:24:37,213 - INFO - Pesquisa realizada: Who are the leading experts in technology?
+2024-11-15 15:24:52,651 - INFO - Pesquisa realizada: What are the latest news in technology?
+2024-11-15 15:25:08,077 - INFO - Pesquisa realizada: How to make money with technology
+2024-11-15 15:25:23,502 - INFO - Pesquisa realizada: What is technology?
+2024-11-15 15:25:38,934 - INFO - Pesquisa realizada: How does technology impact society?
+2024-11-15 15:25:54,369 - INFO - Pesquisa realizada: What are the main challenges in technology?
+2024-11-15 15:26:03,576 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-15 15:26:03,576 - INFO - Automação concluída com sucesso.
