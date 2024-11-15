@@ -159,17 +159,17 @@ def iniciar_automacao_bg(num_temas, num_perguntas):
 def iniciar_interface():
     root = tk.Tk()
     root.title("Automação de Pesquisa")
-    root.geometry('500x400')
-    root.configure(bg='#282c34')
+    root.geometry('600x500')
+    root.configure(bg='#F3F4F6')
 
     # Estilos
     style = ttk.Style()
     style.theme_use('clam')
-    style.configure('TButton', background='#4CAF50', foreground='#ffffff', font=('Helvetica', 12, 'bold'))
-    style.map('TButton', background=[('active', '#56b6c2')])
-    style.configure('Red.TButton', background='#f44336', foreground='#ffffff', font=('Helvetica', 12, 'bold'))
-    style.map('Red.TButton', background=[('active', '#d32f2f')])
-    style.configure('TLabel', background='#282c34', foreground='#61afef', font=('Helvetica', 12))
+    style.configure('TButton', background='#A7D8D7', foreground='#2E4053', font=('Helvetica', 12, 'bold'))
+    style.map('TButton', background=[('active', '#80C7C6')])
+    style.configure('Red.TButton', background='#F28C8C', foreground='#2E4053', font=('Helvetica', 12, 'bold'))
+    style.map('Red.TButton', background=[('active', '#F76C6C')])
+    style.configure('TLabel', background='#F3F4F6', foreground='#2E4053', font=('Helvetica', 12))
     style.configure('TEntry', font=('Helvetica', 12), padding=5)
 
     # Elementos da interface
@@ -179,7 +179,7 @@ def iniciar_interface():
     num_temas_entry.insert(0, "6")
 
     ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').pack(pady=10)
-    num_perguntas_entry = ttk.Entry(root , width=20)
+    num_perguntas_entry = ttk.Entry(root, width=20)
     num_perguntas_entry.pack(pady=5)
     num_perguntas_entry.insert(0, "6")
 
@@ -194,7 +194,14 @@ def iniciar_interface():
 
     # Botão para iniciar a automação
     start_button = ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao_handler)
-    start_button.pack(pady=20)
+    start_button.pack(pady=30)
+
+    # Botão de fechar
+    def fechar():
+        root.quit()
+
+    close_button = ttk.Button(root, text="Fechar", command=fechar, style="Red.TButton")
+    close_button.pack(pady=10)
 
     root.mainloop()
 
