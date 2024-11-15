@@ -10,7 +10,7 @@ import threading
 import os
 import csv
 import asyncio
-import speedtest_cli  # Corrigido para usar speedtest_cli (o nome correto do módulo)
+import speedtest
 
 # Configuração de logging
 logging.basicConfig(
@@ -58,15 +58,6 @@ def salvar_resultados(resultados):
         for resultado in resultados:
             writer.writerow([resultado['tema'], resultado['pergunta'], resultado['status']])
 
-# Função para fechar o navegador Edge
-def fechar_edge():
-    try:
-        pyautogui.hotkey('ctrl', 'w')  # Fecha a aba atual do navegador
-        time.sleep(1)  # Aguarda um pouco
-        logging.info("Navegador Edge fechado com sucesso.")
-    except Exception as e:
-        logging.error(f"Erro ao fechar o Edge: {e}")
-
 # Função de "tentar novamente" com múltiplas tentativas
 def tentar_novamente(funcao, max_tentativas=3, *args, **kwargs):
     for tentativa in range(max_tentativas):
@@ -77,7 +68,7 @@ def tentar_novamente(funcao, max_tentativas=3, *args, **kwargs):
             if tentativa + 1 == max_tentativas:
                 logging.error(f"Falha ao tentar executar {funcao.__name__} após {max_tentativas} tentativas.")
                 raise e
-            time.sleep(2)  # Espera entre tentativas
+            time.sleep(2)
 
 # Função para abrir o Edge
 def abrir_edge():
@@ -119,72 +110,73 @@ def limpar_dados_navegacao():
         logging.error(f"Erro ao limpar os dados de navegação: {e}")
         return False
 
-# Função para medir a velocidade de internet
+# Função para verificar a conectividade com a internet
+async def verificar_conectividade():
+    try:
+        endpoints = ['https://www.google.com', 'https://www.bing.com', 'https://www.duckduckgo.com']
+        for url in endpoints:
+            try:
+                response = requests.get(url, timeout=5)
+                if response.status_code == 200:
+                    logging.info(f"Conectividade com {url} verificada.")
+                    return True
+            except requests.ConnectionError:
+                logging.warning(f"Falha ao acessar {url}. Tentando outro...")
+        return False
+    except requests.RequestException as e:
+        logging.error(f"Erro ao verificar conectividade: {e}")
+        return False
+
+# Função para medir a velocidade da internet
 def medir_velocidade_internet():
-    st = speedtest_cli.Speedtest()  # Usando o método correto do speedtest-cli
-    st.get_best_server()
-    download_speed = st.download() / 1_000_000  # Convertendo para Mbps
-    upload_speed = st.upload() / 1_000_000  # Convertendo para Mbps
-    ping = st.results.ping
-    logging.info(f"Velocidade de download: {download_speed:.2f} Mbps, upload: {upload_speed:.2f} Mbps, ping: {ping} ms.")
-    return download_speed, upload_speed
+    st = speedtest.Speedtest()
+    download_speed = st.download() / 1_000_000  # Convertendo de bits para Mbps
+    upload_speed = st.upload() / 1_000_000  # Convertendo de bits para Mbps
+    return round(download_speed, 2), round(upload_speed, 2)
 
 # Função para executar a automação
 async def executar_automacao(num_temas=6, num_perguntas=6):
     resultados = []
-    download_speed, _ = medir_velocidade_internet()  # Medindo a velocidade de download
-
-    intervalo = max(10, 60 / download_speed)  # Ajusta o intervalo de acordo com a velocidade de download
-
-    if abrir_edge():
-        for _ in range(num_temas):
-            tema = random.choice(temas_en)
-            pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
-            for pesquisa in pesquisas:
-                sucesso = False
-                while not sucesso:
-                    sucesso = realizar_pesquisa(pesquisa)
-                    if not sucesso:
-                        logging.error(f"Falha ao realizar a pesquisa: {pesquisa}. Tentando novamente.")
-                        time.sleep(intervalo)
-                resultados.append({'tema': tema, 'pergunta': pesquisa, 'status': 'Concluída'})
-                await asyncio.sleep(intervalo)  # Delay entre pesquisas
-            limpar_dados_navegacao()
-        salvar_resultados(resultados)
-        logging.info("Automação concluída com sucesso.")
-        fechar_edge()  # Fechar o navegador após a execução
+    if await verificar_conectividade():
+        if abrir_edge():
+            for _ in range(num_temas):
+                tema = random.choice(temas_en)
+                pesquisas = gerar_pesquisas_sobre_tema(tema, num_perguntas)
+                for pesquisa in pesquisas:
+                    sucesso = False
+                    while not sucesso:
+                        sucesso = realizar_pesquisa(pesquisa)
+                        if not sucesso:
+                            logging.error(f"Falha ao realizar a pesquisa: {pesquisa}. Tentando novamente.")
+                            time.sleep(5)
+                    resultados.append({'tema': tema, 'pergunta': pesquisa, 'status': 'Concluída'})
+                    await asyncio.sleep(5)
+                limpar_dados_navegacao()
+            salvar_resultados(resultados)
+            logging.info("Automação concluída com sucesso.")
+        else:
+            logging.error("Falha ao abrir o navegador.")
     else:
-        logging.error("Falha ao abrir o navegador.")
+        logging.error("Falha na verificação de conectividade com a internet.")
 
 # Função para rodar a automação em segundo plano
 def iniciar_automacao_bg(num_temas, num_perguntas):
     asyncio.run(executar_automacao(num_temas, num_perguntas))
 
-# Função para atualizar a velocidade de internet em uma thread separada
-def atualizar_velocidade_label(label):
-    def thread_atualizacao():
-        while True:
-            download_speed, _ = medir_velocidade_internet()
-            label.config(text=f"Velocidade de Download: {download_speed:.2f} Mbps")
-            time.sleep(5)  # Atualiza a cada 5 segundos
-
-    threading.Thread(target=thread_atualizacao, daemon=True).start()
+# Função para atualizar a velocidade de internet na interface
+def atualizar_velocidade(label_velocidade):
+    download_speed, _ = medir_velocidade_internet()
+    label_velocidade.config(text=f"Velocidade de Download: {download_speed} Mbps")
+    label_velocidade.after(5000, atualizar_velocidade, label_velocidade)
 
 # Interface gráfica
 def iniciar_interface():
     root = tk.Tk()
     root.title("Automação de Pesquisa")
-
-    # Caminhos dos arquivos
-    icon_path = os.path.join(os.path.dirname(__file__), '22287dragon_98813.ico')
-    image_path = os.path.join(os.path.dirname(__file__), '22287dragon_98813.png')
-
-    # Adicionar ícone à barra superior
-    root.iconbitmap(icon_path)
-
-    # Configuração de cores e estilos
     root.geometry('500x400')
     root.configure(bg='#282c34')
+
+    # Estilos
     style = ttk.Style()
     style.theme_use('clam')
     style.configure('TButton', background='#4CAF50', foreground='#ffffff', font=('Helvetica', 12, 'bold'))
@@ -192,26 +184,25 @@ def iniciar_interface():
     style.configure('Red.TButton', background='#f44336', foreground='#ffffff', font=('Helvetica', 12, 'bold'))
     style.map('Red.TButton', background=[('active', '#d32f2f')])
     style.configure('TLabel', background='#282c34', foreground='#61afef', font=('Helvetica', 12))
-    style.configure('TEntry', font=('Helvetica', 12))
+    style.configure('TEntry', font=('Helvetica', 12), padding=5)
 
-    # Título
-    ttk.Label(root, text="Automação de Pesquisa", style="TLabel").pack(pady=20)
-
-    # Input para número de temas e perguntas
-    ttk.Label(root, text="Número de Temas: ", style="TLabel").pack()
-    num_temas_entry = ttk.Entry(root)
+    # Elementos da interface
+    ttk.Label(root, text="Número de Temas:", style='TLabel').pack(pady=10)
+    num_temas_entry = ttk.Entry(root, width=20)
     num_temas_entry.pack(pady=5)
+    num_temas_entry.insert(0, "6")
 
-    ttk.Label(root, text="Número de Perguntas: ", style="TLabel").pack()
-    num_perguntas_entry = ttk.Entry(root)
+    ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').pack(pady=10)
+    num_perguntas_entry = ttk.Entry(root , width=20)
     num_perguntas_entry.pack(pady=5)
+    num_perguntas_entry.insert(0, "6")
 
     # Label para exibir a velocidade de download
     label_velocidade = ttk.Label(root, text="Velocidade de Download: 0.00 Mbps", style="TLabel")
     label_velocidade.pack(pady=20)
 
     # Atualizar a velocidade de internet a cada 5 segundos
-    atualizar_velocidade_label(label_velocidade)
+    atualizar_velocidade(label_velocidade)
 
     # Função de iniciar a automação
     def iniciar_automacao_handler():
@@ -219,15 +210,15 @@ def iniciar_interface():
             num_temas = int(num_temas_entry.get())
             num_perguntas = int(num_perguntas_entry.get())
             threading.Thread(target=iniciar_automacao_bg, args=(num_temas, num_perguntas)).start()
-            messagebox.showinfo("Sucesso", "Automação iniciada com sucesso!")
         except ValueError:
-            messagebox.showerror("Erro", "Por favor, insira números válidos!")
+            messagebox.showerror("Erro", "Por favor, insira números válidos.")
 
-    # Botões
-    ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao_handler).pack(pady=20)
-    ttk.Button(root, text="Fechar", style='Red.TButton', command=root.quit).pack(pady=5)
+    # Botão para iniciar a automação
+    start_button = ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao_handler)
+    start_button.pack(pady=20)
 
     root.mainloop()
 
 # Iniciar a interface gráfica
-iniciar_interface()
+if __name__ == "__main__":
+    iniciar_interface()
