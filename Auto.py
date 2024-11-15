@@ -10,7 +10,7 @@ import threading
 import os
 import csv
 import asyncio
-import speedtest  # Importando o módulo correto para medir a velocidade da internet
+import speedtest  # Correção na importação do módulo correto
 
 # Configuração de logging
 logging.basicConfig(
@@ -121,7 +121,7 @@ def limpar_dados_navegacao():
 
 # Função para medir a velocidade de internet
 def medir_velocidade_internet():
-    st = speedtest.Speedtest()  # Usando o método correto
+    st = speedtest.Speedtest()  # Usando o método correto do speedtest-cli
     st.get_best_server()
     download_speed = st.download() / 1_000_000  # Convertendo para Mbps
     upload_speed = st.upload() / 1_000_000  # Convertendo para Mbps
@@ -185,21 +185,22 @@ def iniciar_interface():
     style.configure('TEntry', font=('Helvetica', 12), padding=5)
 
     # Elementos da interface
-    ttk.Label(root, text="Número de Temas:", style='TLabel').pack(pady=10)
-    num_temas = ttk.Entry(root, width=20)
-    num_temas.pack(pady=5)
-    num_temas.insert(0, "6")
+    ttk.Label(root, text="Número de Temas:").pack(pady=5)
+    num_temas_entry = ttk.Entry(root)
+    num_temas_entry.pack(pady=5)
 
-    ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').pack(pady=10)
-    num_perguntas = ttk.Entry(root, width=20)
-    num_perguntas.pack(pady=5)
-    num_perguntas.insert(0, "6")
+    ttk.Label(root, text="Número de Perguntas:").pack(pady=5)
+    num_perguntas_entry = ttk.Entry(root)
+    num_perguntas_entry.pack(pady=5)
 
+    # Função para iniciar automação a partir da interface
     def iniciar_automacao_handler():
         try:
-            temas = int(num_temas.get())
-            perguntas = int(num_perguntas.get())
-            threading.Thread(target=iniciar_automacao_bg, args=(temas, perguntas), daemon=True).start()
+            num_temas = int(num_temas_entry.get())
+            num_perguntas = int(num_perguntas_entry.get())
+            if num_temas <= 0 or num_perguntas <= 0:
+                raise ValueError("Os números de temas e perguntas devem ser positivos.")
+            threading.Thread(target=iniciar_automacao_bg, args=(num_temas, num_perguntas)).start()
             messagebox.showinfo("Informação", "Automação iniciada com sucesso!")
         except ValueError:
             messagebox.showerror("Erro", "Por favor, insira números válidos!")
