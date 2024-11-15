@@ -10,7 +10,7 @@ import threading
 import os
 import csv
 import asyncio
-import speedtest  # Correção na importação do módulo correto
+import speedtest_cli  # Corrigido para usar speedtest_cli (o nome correto do módulo)
 
 # Configuração de logging
 logging.basicConfig(
@@ -121,7 +121,7 @@ def limpar_dados_navegacao():
 
 # Função para medir a velocidade de internet
 def medir_velocidade_internet():
-    st = speedtest.Speedtest()  # Usando o método correto do speedtest-cli
+    st = speedtest_cli.Speedtest()  # Usando o método correto do speedtest-cli
     st.get_best_server()
     download_speed = st.download() / 1_000_000  # Convertendo para Mbps
     upload_speed = st.upload() / 1_000_000  # Convertendo para Mbps
@@ -160,6 +160,16 @@ async def executar_automacao(num_temas=6, num_perguntas=6):
 def iniciar_automacao_bg(num_temas, num_perguntas):
     asyncio.run(executar_automacao(num_temas, num_perguntas))
 
+# Função para atualizar a velocidade de internet em uma thread separada
+def atualizar_velocidade_label(label):
+    def thread_atualizacao():
+        while True:
+            download_speed, _ = medir_velocidade_internet()
+            label.config(text=f"Velocidade de Download: {download_speed:.2f} Mbps")
+            time.sleep(5)  # Atualiza a cada 5 segundos
+
+    threading.Thread(target=thread_atualizacao, daemon=True).start()
+
 # Interface gráfica
 def iniciar_interface():
     root = tk.Tk()
@@ -182,29 +192,26 @@ def iniciar_interface():
     style.configure('Red.TButton', background='#f44336', foreground='#ffffff', font=('Helvetica', 12, 'bold'))
     style.map('Red.TButton', background=[('active', '#d32f2f')])
     style.configure('TLabel', background='#282c34', foreground='#61afef', font=('Helvetica', 12))
-    style.configure('TEntry', font=('Helvetica', 12), padding=5)
+    style.configure('TEntry', font=('Helvetica', 12))
 
-    # Elementos da interface
-    ttk.Label(root, text="Número de Temas:").pack(pady=5)
+    # Título
+    ttk.Label(root, text="Automação de Pesquisa", style="TLabel").pack(pady=20)
+
+    # Input para número de temas e perguntas
+    ttk.Label(root, text="Número de Temas: ", style="TLabel").pack()
     num_temas_entry = ttk.Entry(root)
     num_temas_entry.pack(pady=5)
 
-    ttk.Label(root, text="Número de Perguntas:").pack(pady=5)
+    ttk.Label(root, text="Número de Perguntas: ", style="TLabel").pack()
     num_perguntas_entry = ttk.Entry(root)
     num_perguntas_entry.pack(pady=5)
 
-    # Exibir a velocidade da internet
-    ttk.Label(root, text="Velocidade da Internet:").pack(pady=5)
-    velocidade_label = ttk.Label(root, text="Calculando...", font=('Helvetica', 12))
-    velocidade_label.pack(pady=5)
+    # Label para exibir a velocidade de download
+    label_velocidade = ttk.Label(root, text="Velocidade de Download: 0.00 Mbps", style="TLabel")
+    label_velocidade.pack(pady=20)
 
-    def atualizar_velocidade():
-        download_speed, _ = medir_velocidade_internet()
-        velocidade_label.config(text=f"Velocidade: {download_speed:.2f} Mbps")
-        root.after(5000, atualizar_velocidade)  # Atualiza a cada 5 segundos
-
-    # Iniciar a atualização da velocidade
-    atualizar_velocidade()
+    # Atualizar a velocidade de internet a cada 5 segundos
+    atualizar_velocidade_label(label_velocidade)
 
     # Função de iniciar a automação
     def iniciar_automacao_handler():
