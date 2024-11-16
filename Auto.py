@@ -164,7 +164,7 @@ def iniciar_interface():
 
     # Adicionando o ícone
     try:
-        root.iconbitmap("22287dragon_98813.ico")  # Defina o caminho do seu ícone
+        root.iconbitmap("Luffys_flag.ico")  # Defina o caminho do seu ícone
     except Exception as e:
         logging.warning(f"Não foi possível carregar o ícone: {e}")
     
