@@ -46,3 +46,11 @@
 2024-11-15 15:25:54,369 - INFO - Pesquisa realizada: What are the main challenges in technology?
 2024-11-15 15:26:03,576 - INFO - Dados de navegação e cookies limpos com sucesso.
 2024-11-15 15:26:03,576 - INFO - Automação concluída com sucesso.
+2024-11-16 14:09:25,478 - DEBUG - Using proactor: IocpProactor
+2024-11-16 14:09:25,478 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-16 14:09:25,771 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-16 14:09:25,771 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-16 14:09:28,087 - INFO - Navegador Edge aberto com sucesso.
+2024-11-16 14:09:38,507 - INFO - Pesquisa realizada: Who are the leading experts in philosophy?
+2024-11-16 14:09:47,711 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-16 14:09:47,711 - INFO - Automação concluída com sucesso.
