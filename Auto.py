@@ -10,7 +10,6 @@ import threading
 import os
 import csv
 import asyncio
-import ctypes
 
 # Configuração de logging
 logging.basicConfig(
@@ -156,21 +155,13 @@ async def executar_automacao(num_temas=6, num_perguntas=6):
 def iniciar_automacao_bg(num_temas, num_perguntas):
     asyncio.run(executar_automacao(num_temas, num_perguntas))
 
-# Função para mudar a cor da barra de título
-def set_title_bar_color(window, color):
-    hwnd = ctypes.windll.user32.GetParent(window.winfo_id())
-    ctypes.windll.dwmapi.DwmSetWindowAttribute(hwnd, 35, ctypes.byref(ctypes.c_int(color)), ctypes.sizeof(ctypes.c_int))
-
-# Função para converter RGB para hexadecimal
-def rgb_to_hex(r, g, b):
-    return (r << 16) + (g << 8) + b
-
 # Interface gráfica
 def iniciar_interface():
     root = tk.Tk()
     root.title("Automação de Pesquisa")
     root.geometry('600x500')
     root.configure(bg='#cfffca')
+    root.overrideredirect(True)  # Remove a barra de título padrão
 
     # Adicionando o ícone
     try:
@@ -187,6 +178,23 @@ def iniciar_interface():
     style.map('Red.TButton', background=[('active', '#F76C6C')])
     style.configure('TLabel', background='#F3F4F6', foreground='#2E4053', font=('Helvetica', 12))
     style.configure('TEntry', font=('Helvetica', 12), padding=5)
+
+    # Barra de título personalizada
+    title_bar = tk.Frame(root, bg='#c63637', relief='raised', bd=2)
+    title_bar.pack(fill=tk.X)
+
+    # Função para mover a janela
+    def move_window(event):
+        root.geometry(f'+{event.x_root}+{event.y_root}')
+
+    title_bar.bind('<B1-Motion>', move_window)
+
+    # Botões de controle da janela
+    close_button = tk.Button(title_bar, text='X', command=root.quit, bg='#c63637', fg='white', bd=0)
+    close_button.pack(side=tk.RIGHT, padx=5)
+
+    minimize_button = tk.Button(title_bar, text='-', command=root.iconify, bg='#c63637', fg='white', bd=0)
+    minimize_button.pack(side=tk.RIGHT)
 
     # Elementos da interface
     ttk.Label(root, text="Número de Temas:", style='TLabel').pack(pady=10)
@@ -208,18 +216,13 @@ def iniciar_interface():
         except ValueError:
             messagebox.showerror("Erro", "Por favor, insira números válidos.")
 
-        # Botão para iniciar a automação
+    # Botão para iniciar a automação
     start_button = ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao_handler)
     start_button.pack(pady=20)
 
     # Botão para fechar a aplicação
     close_button = ttk.Button(root, text="Fechar", command=root.quit, style='Red.TButton')
     close_button.pack(pady=10)
-
-    # Mudar a cor da barra de título usando valores RGB
-    r, g, b = 190, 37, 40  # Exemplo de valores RGB
-    hex_color = rgb_to_hex(r, g, b)
-    set_title_bar_color(root, hex_color)
 
     root.mainloop()
 
