@@ -1,5 +1,5 @@
-Automação de Pesquisa no Navegador Edge.
- 
+# Automação de Pesquisa no Navegador Edge
+
 Descrição
 Este programa realiza automações de pesquisa no navegador Microsoft Edge utilizando a biblioteca pyautogui para controlar a interface gráfica do usuário (GUI). Ele gera pesquisas aleatórias sobre diversos temas, realiza essas pesquisas no navegador, limpa os dados de navegação e fecha o navegador automaticamente após a conclusão. A automação também inclui uma interface gráfica amigável, desenvolvida com a biblioteca tkinter, para facilitar a configuração e execução da automação.
 
