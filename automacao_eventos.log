@@ -60,3 +60,11 @@
 2024-11-19 10:36:08,155 - WARNING - Não foi possível carregar a imagem: couldn't open "Luffys_flag.png": no such file or directory
 2024-11-19 10:39:27,031 - WARNING - Não foi possível carregar a imagem: couldn't recognize data in image file "Luffys_flag.ico"
 2024-11-19 10:44:18,633 - WARNING - Não foi possível carregar a imagem: couldn't open "Luffys_flag.png": no such file or directory
+2024-11-19 10:55:21,525 - DEBUG - Using proactor: IocpProactor
+2024-11-19 10:55:21,525 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-19 10:55:21,743 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-19 10:55:21,743 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-19 10:55:24,072 - INFO - Navegador Edge aberto com sucesso.
+2024-11-19 10:55:34,489 - INFO - Pesquisa realizada: How to make money with sociology
+2024-11-19 10:55:43,696 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-19 10:55:43,696 - INFO - Automação concluída com sucesso.
