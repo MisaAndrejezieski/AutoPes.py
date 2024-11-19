@@ -161,7 +161,6 @@ def iniciar_interface():
     root.title("Automação de Pesquisa")
     root.geometry('600x500')
     root.configure(bg='#cfffca')
-    root.overrideredirect(True)  # Remove a barra de título padrão
 
     # Adicionando o ícone
     try:
@@ -185,15 +184,20 @@ def iniciar_interface():
 
     # Função para mover a janela
     def move_window(event):
-        root.geometry(f'+{event.x_root}+{event.y_root}')
+        root.geometry(f'+{event.x_root - root.start_x}+{event.y_root - root.start_y}')
 
+    def start_move(event):
+        root.start_x = event.x
+        root.start_y = event.y
+
+    title_bar.bind('<Button-1>', start_move)
     title_bar.bind('<B1-Motion>', move_window)
 
     # Botões de controle da janela
     close_button = tk.Button(title_bar, text='X', command=root.quit, bg='#c63637', fg='white', bd=0)
     close_button.pack(side=tk.RIGHT, padx=5)
 
-    minimize_button = tk.Button(title_bar, text='-', command=root.iconify, bg='#c63637', fg='white', bd=0)
+    minimize_button = tk.Button(title_bar, text='-', command=lambda: root.state('iconic'), bg='#c63637', fg='white', bd=0)
     minimize_button.pack(side=tk.RIGHT)
 
     def toggle_maximize():
@@ -205,11 +209,16 @@ def iniciar_interface():
     maximize_button = tk.Button(title_bar, text='⬜', command=toggle_maximize, bg='#c63637', fg='white', bd=0)
     maximize_button.pack(side=tk.RIGHT)
 
-    # Elementos da interface
+        # Elementos da interface
     ttk.Label(root, text="Número de Temas:", style='TLabel').pack(pady=10)
     num_temas_entry = ttk.Entry(root, width=20)
     num_temas_entry.pack(pady=5)
     num_temas_entry.insert(0, "6")
+
+    ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').pack(pady=10)
+    num_perguntas_entry = ttk.Entry(root, width=20)
+    num_perguntas_entry.pack(pady=5)
+    num_perguntas_entry.insert(0, "6")
 
     # Função de iniciar a automação
     def iniciar_automacao_handler():
