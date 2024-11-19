@@ -184,7 +184,7 @@ def iniciar_interface():
 
     # Adicionando a imagem na barra de título
     try:
-        img = PhotoImage(file="Luffys_flag.ico")  # Use uma imagem PNG em vez de ICO
+        img = PhotoImage(file="22287dragon_98813.png")  # Use uma imagem PNG em vez de ICO
         logo_label = tk.Label(title_bar, image=img, bg='#fdcae1')
         logo_label.image = img  # Manter uma referência da imagem
         logo_label.pack(side=tk.LEFT, padx=5)
