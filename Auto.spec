@@ -5,7 +5,7 @@ a = Analysis(
     ['Auto.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('Luffys_flag.ico', '.'), ('22287dragon_98813.png', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
