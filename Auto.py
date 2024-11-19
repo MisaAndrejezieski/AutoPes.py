@@ -193,23 +193,7 @@ def iniciar_interface():
     title_bar.bind('<Button-1>', start_move)
     title_bar.bind('<B1-Motion>', move_window)
 
-    # Botões de controle da janela
-    close_button = tk.Button(title_bar, text='X', command=root.quit, bg='#c63637', fg='white', bd=0)
-    close_button.pack(side=tk.RIGHT, padx=5)
-
-    minimize_button = tk.Button(title_bar, text='-', command=lambda: root.state('iconic'), bg='#c63637', fg='white', bd=0)
-    minimize_button.pack(side=tk.RIGHT)
-
-    def toggle_maximize():
-        if root.state() == 'normal':
-            root.state('zoomed')
-        else:
-            root.state('normal')
-
-    maximize_button = tk.Button(title_bar, text='⬜', command=toggle_maximize, bg='#c63637', fg='white', bd=0)
-    maximize_button.pack(side=tk.RIGHT)
-
-        # Elementos da interface
+    # Elementos da interface
     ttk.Label(root, text="Número de Temas:", style='TLabel').pack(pady=10)
     num_temas_entry = ttk.Entry(root, width=20)
     num_temas_entry.pack(pady=5)
@@ -220,7 +204,7 @@ def iniciar_interface():
     num_perguntas_entry.pack(pady=5)
     num_perguntas_entry.insert(0, "6")
 
-    # Função de iniciar a automação
+        # Função de iniciar a automação
     def iniciar_automacao_handler():
         try:
             num_temas = int(num_temas_entry.get())
@@ -242,3 +226,4 @@ def iniciar_interface():
 # Iniciar a interface gráfica
 if __name__ == "__main__":
     iniciar_interface()
+
