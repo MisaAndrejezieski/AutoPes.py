@@ -10,6 +10,7 @@ import threading
 import os
 import csv
 import asyncio
+import ctypes
 
 # Configuração de logging
 logging.basicConfig(
@@ -155,6 +156,11 @@ async def executar_automacao(num_temas=6, num_perguntas=6):
 def iniciar_automacao_bg(num_temas, num_perguntas):
     asyncio.run(executar_automacao(num_temas, num_perguntas))
 
+# Função para mudar a cor da barra de título
+def set_title_bar_color(window, color):
+    hwnd = ctypes.windll.user32.GetParent(window.winfo_id())
+    ctypes.windll.dwmapi.DwmSetWindowAttribute(hwnd, 35, ctypes.byref(ctypes.c_int(color)), ctypes.sizeof(ctypes.c_int))
+
 # Interface gráfica
 def iniciar_interface():
     root = tk.Tk()
@@ -167,7 +173,7 @@ def iniciar_interface():
         root.iconbitmap("Luffys_flag.ico")  # Defina o caminho do seu ícone
     except Exception as e:
         logging.warning(f"Não foi possível carregar o ícone: {e}")
-    
+
     # Estilos
     style = ttk.Style()
     style.theme_use('clam')
@@ -205,6 +211,9 @@ def iniciar_interface():
     # Botão para fechar a aplicação
     close_button = ttk.Button(root, text="Fechar", command=root.quit, style='Red.TButton')
     close_button.pack(pady=10)
+
+    # Mudar a cor da barra de título
+    set_title_bar_color(root, 0x00FF00)  # Verde
 
     root.mainloop()
 
