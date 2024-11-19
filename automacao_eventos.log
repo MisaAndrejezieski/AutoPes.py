@@ -56,3 +56,6 @@
 2024-11-16 14:09:47,711 - INFO - Automação concluída com sucesso.
 2024-11-19 10:25:40,173 - WARNING - Não foi possível carregar a imagem: couldn't recognize data in image file "Luffys_flag.ico"
 2024-11-19 10:26:56,303 - WARNING - Não foi possível carregar a imagem: couldn't recognize data in image file "Luffys_flag.ico"
+2024-11-19 10:35:50,480 - WARNING - Não foi possível carregar a imagem: couldn't open "Luffys_flag.png": no such file or directory
+2024-11-19 10:36:08,155 - WARNING - Não foi possível carregar a imagem: couldn't open "Luffys_flag.png": no such file or directory
+2024-11-19 10:39:27,031 - WARNING - Não foi possível carregar a imagem: couldn't recognize data in image file "Luffys_flag.ico"
