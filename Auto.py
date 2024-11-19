@@ -1,3 +1,4 @@
+from colorsys import rgb_to_hls
 import time
 import pyautogui
 import random
@@ -213,7 +214,12 @@ def iniciar_interface():
     close_button.pack(pady=10)
 
     # Mudar a cor da barra de título
-    set_title_bar_color(root, #c63637)  # Verde
+    # set_title_bar_color(root, 0xc63637)  # Verde
+    
+    # Mudar a cor da barra de título usando valores RGB 
+    r, g, b = 198, 54, 55 # Exemplo de valores RGB 
+    hex_color = rgb_to_hls(r, g, b) 
+    set_title_bar_color(root, hex_color)
 
     root.mainloop()
 
