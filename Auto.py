@@ -217,7 +217,7 @@ def iniciar_interface():
     close_button.pack(pady=10)
 
     # Mudar a cor da barra de título usando valores RGB
-    r, g, b = 190, 37, 117  # Exemplo de valores RGB
+    r, g, b = 190, 37, 40  # Exemplo de valores RGB
     hex_color = rgb_to_hex(r, g, b)
     set_title_bar_color(root, hex_color)
 
