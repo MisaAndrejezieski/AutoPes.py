@@ -181,13 +181,14 @@ def iniciar_interface():
     # Barra de título personalizada
     title_bar = tk.Frame(root, bg='#fdcae1', relief='raised', bd=2)
     title_bar.pack(fill=tk.X)
-    
-    # Adicionando a imagem na barra de título 
-    try: 
-        img = PhotoImage(file="Luffys_flag.ico") 
-        logo_label = tk.Label(title_bar, image=img, bg='#fdcae1') 
-        logo_label.image = img # Manter uma referência da imagem logo_label.pack(side=tk.LEFT, padx=5) 
-    except Exception as e: 
+
+    # Adicionando a imagem na barra de título
+    try:
+        img = PhotoImage(file="Luffys_flag.ico")
+        logo_label = tk.Label(title_bar, image=img, bg='#fdcae1')
+        logo_label.image = img  # Manter uma referência da imagem
+        logo_label.pack(side=tk.LEFT, padx=5)
+    except Exception as e:
         logging.warning(f"Não foi possível carregar a imagem: {e}")
 
     # Função para mover a janela
@@ -234,4 +235,3 @@ def iniciar_interface():
 # Iniciar a interface gráfica
 if __name__ == "__main__":
     iniciar_interface()
-
