@@ -179,8 +179,16 @@ def iniciar_interface():
     style.configure('TEntry', font=('Helvetica', 12), padding=5)
 
     # Barra de título personalizada
-    title_bar = tk.Frame(root, bg='#fdcae1', relief='raised', bd=50)
+    title_bar = tk.Frame(root, bg='#fdcae1', relief='raised', bd=2)
     title_bar.pack(fill=tk.X)
+    
+    # Adicionando a imagem na barra de título 
+    try: 
+        img = PhotoImage(file="Luffys_flag.ico") 
+        logo_label = tk.Label(title_bar, image=img, bg='#fdcae1') 
+        logo_label.image = img # Manter uma referência da imagem logo_label.pack(side=tk.LEFT, padx=5) 
+    except Exception as e: 
+        logging.warning(f"Não foi possível carregar a imagem: {e}")
 
     # Função para mover a janela
     def move_window(event):
