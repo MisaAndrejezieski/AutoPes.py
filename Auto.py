@@ -1,4 +1,3 @@
-from colorsys import rgb_to_hls
 import time
 import pyautogui
 import random
@@ -162,6 +161,10 @@ def set_title_bar_color(window, color):
     hwnd = ctypes.windll.user32.GetParent(window.winfo_id())
     ctypes.windll.dwmapi.DwmSetWindowAttribute(hwnd, 35, ctypes.byref(ctypes.c_int(color)), ctypes.sizeof(ctypes.c_int))
 
+# Função para converter RGB para hexadecimal
+def rgb_to_hex(r, g, b):
+    return (r << 16) + (g << 8) + b
+
 # Interface gráfica
 def iniciar_interface():
     root = tk.Tk()
@@ -205,7 +208,7 @@ def iniciar_interface():
         except ValueError:
             messagebox.showerror("Erro", "Por favor, insira números válidos.")
 
-    # Botão para iniciar a automação
+        # Botão para iniciar a automação
     start_button = ttk.Button(root, text="Iniciar Automação", command=iniciar_automacao_handler)
     start_button.pack(pady=20)
 
@@ -213,12 +216,9 @@ def iniciar_interface():
     close_button = ttk.Button(root, text="Fechar", command=root.quit, style='Red.TButton')
     close_button.pack(pady=10)
 
-    # Mudar a cor da barra de título
-    # set_title_bar_color(root, 0xc63637)  # Verde
-    
-    # Mudar a cor da barra de título usando valores RGB 
-    r, g, b = 198, 54, 55 # Exemplo de valores RGB 
-    hex_color = rgb_to_hls(r, g, b) 
+    # Mudar a cor da barra de título usando valores RGB
+    r, g, b = 190, 37, 117  # Exemplo de valores RGB
+    hex_color = rgb_to_hex(r, g, b)
     set_title_bar_color(root, hex_color)
 
     root.mainloop()
