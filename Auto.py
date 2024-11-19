@@ -179,7 +179,7 @@ def iniciar_interface():
     style.configure('TEntry', font=('Helvetica', 12), padding=5)
 
     # Barra de título personalizada
-    title_bar = tk.Frame(root, bg='#fdcae1', relief='raised', bd=2)
+    title_bar = tk.Frame(root, bg='#fdcae1', relief='raised', bd=8)
     title_bar.pack(fill=tk.X)
 
     # Função para mover a janela
