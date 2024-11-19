@@ -196,16 +196,20 @@ def iniciar_interface():
     minimize_button = tk.Button(title_bar, text='-', command=root.iconify, bg='#c63637', fg='white', bd=0)
     minimize_button.pack(side=tk.RIGHT)
 
+    def toggle_maximize():
+        if root.state() == 'normal':
+            root.state('zoomed')
+        else:
+            root.state('normal')
+
+    maximize_button = tk.Button(title_bar, text='⬜', command=toggle_maximize, bg='#c63637', fg='white', bd=0)
+    maximize_button.pack(side=tk.RIGHT)
+
     # Elementos da interface
     ttk.Label(root, text="Número de Temas:", style='TLabel').pack(pady=10)
     num_temas_entry = ttk.Entry(root, width=20)
     num_temas_entry.pack(pady=5)
     num_temas_entry.insert(0, "6")
-
-    ttk.Label(root, text="Número de Perguntas por Tema:", style='TLabel').pack(pady=10)
-    num_perguntas_entry = ttk.Entry(root, width=20)
-    num_perguntas_entry.pack(pady=5)
-    num_perguntas_entry.insert(0, "6")
 
     # Função de iniciar a automação
     def iniciar_automacao_handler():
