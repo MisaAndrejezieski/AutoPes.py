@@ -160,7 +160,7 @@ def iniciar_interface():
     root = tk.Tk()
     root.title("Automação de Pesquisa")
     root.geometry('600x500')
-    root.configure(bg='#F3F4F6')
+    root.configure(bg='#00cc22')
 
     # Adicionando o ícone
     try:
