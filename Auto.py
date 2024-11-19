@@ -213,7 +213,7 @@ def iniciar_interface():
     close_button.pack(pady=10)
 
     # Mudar a cor da barra de título
-    set_title_bar_color(root, 0x00FF00)  # Verde
+    set_title_bar_color(root, #c63637)  # Verde
 
     root.mainloop()
 
