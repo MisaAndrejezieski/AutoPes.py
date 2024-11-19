@@ -182,12 +182,12 @@ def iniciar_interface():
     title_bar = tk.Frame(root, bg='#fdcae1', relief='raised', bd=2)
     title_bar.pack(fill=tk.X)
 
-    # Adicionando a imagem na barra de título
+    # Adicionando a imagem na barra de título e centralizando
     try:
-        img = PhotoImage(file="22287dragon_98813.png")  # Use uma imagem PNG em vez de ICO
+        img = PhotoImage(file="Luffys_flag.png")  # Use uma imagem PNG em vez de ICO
         logo_label = tk.Label(title_bar, image=img, bg='#fdcae1')
         logo_label.image = img  # Manter uma referência da imagem
-        logo_label.pack(side=tk.LEFT, padx=5)
+        logo_label.pack(side=tk.TOP, pady=5)
     except Exception as e:
         logging.warning(f"Não foi possível carregar a imagem: {e}")
 
@@ -213,13 +213,13 @@ def iniciar_interface():
     num_perguntas_entry.pack(pady=5)
     num_perguntas_entry.insert(0, "6")
 
-    # Função de iniciar a automação 
-    def iniciar_automacao_handler(): 
-        try: 
-            num_temas = int(num_temas_entry.get()) 
-            num_perguntas = int (num_perguntas_entry.get()) 
-            threading.Thread(target=iniciar_automacao_bg, args=(num_temas, num_perguntas)).start() 
-        except ValueError: 
+        # Função de iniciar a automação
+    def iniciar_automacao_handler():
+        try:
+            num_temas = int(num_temas_entry.get())
+            num_perguntas = int(num_perguntas_entry.get())
+            threading.Thread(target=iniciar_automacao_bg, args=(num_temas, num_perguntas)).start()
+        except ValueError:
             messagebox.showerror("Erro", "Por favor, insira números válidos.")
 
     # Botão para iniciar a automação
