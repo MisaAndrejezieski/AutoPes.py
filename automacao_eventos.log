@@ -68,3 +68,51 @@
 2024-11-19 10:55:34,489 - INFO - Pesquisa realizada: How to make money with sociology
 2024-11-19 10:55:43,696 - INFO - Dados de navegação e cookies limpos com sucesso.
 2024-11-19 10:55:43,696 - INFO - Automação concluída com sucesso.
+2024-11-20 05:49:59,710 - DEBUG - Using proactor: IocpProactor
+2024-11-20 05:49:59,725 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-20 05:50:00,304 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-20 05:50:00,319 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-20 05:50:02,640 - INFO - Navegador Edge aberto com sucesso.
+2024-11-20 05:50:13,082 - INFO - Pesquisa realizada: How to make money with finance
+2024-11-20 05:50:28,530 - INFO - Pesquisa realizada: What are the latest news in finance?
+2024-11-20 05:50:43,972 - INFO - Pesquisa realizada: Who are the leading experts in finance?
+2024-11-20 05:50:59,404 - INFO - Pesquisa realizada: How does finance impact society?
+2024-11-20 05:51:14,838 - INFO - Pesquisa realizada: What are the main challenges in finance?
+2024-11-20 05:51:30,260 - INFO - Pesquisa realizada: What is finance?
+2024-11-20 05:51:39,467 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-20 05:51:49,901 - INFO - Pesquisa realizada: Who are the leading experts in health?
+2024-11-20 05:52:05,331 - INFO - Pesquisa realizada: How does health impact society?
+2024-11-20 05:52:20,830 - INFO - Pesquisa realizada: What are the main challenges in health?
+2024-11-20 05:52:36,251 - INFO - Pesquisa realizada: What is health?
+2024-11-20 05:52:51,681 - INFO - Pesquisa realizada: What are the latest news in health?
+2024-11-20 05:53:07,120 - INFO - Pesquisa realizada: How to make money with health
+2024-11-20 05:53:16,331 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-20 05:53:26,754 - INFO - Pesquisa realizada: How to make money with education
+2024-11-20 05:53:42,186 - INFO - Pesquisa realizada: What are the latest news in education?
+2024-11-20 05:53:57,621 - INFO - Pesquisa realizada: What are the main challenges in education?
+2024-11-20 05:54:13,058 - INFO - Pesquisa realizada: Who are the leading experts in education?
+2024-11-20 05:54:28,524 - INFO - Pesquisa realizada: What is education?
+2024-11-20 05:54:43,965 - INFO - Pesquisa realizada: How does education impact society?
+2024-11-20 05:54:53,180 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-20 05:55:03,608 - INFO - Pesquisa realizada: Who are the leading experts in engineering?
+2024-11-20 05:55:19,044 - INFO - Pesquisa realizada: What are the latest news in engineering?
+2024-11-20 05:55:34,472 - INFO - Pesquisa realizada: What is engineering?
+2024-11-20 05:55:49,900 - INFO - Pesquisa realizada: How to make money with engineering
+2024-11-20 05:56:05,332 - INFO - Pesquisa realizada: What are the main challenges in engineering?
+2024-11-20 05:56:20,763 - INFO - Pesquisa realizada: How does engineering impact society?
+2024-11-20 05:56:29,974 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-20 05:56:40,400 - INFO - Pesquisa realizada: How does marketing impact society?
+2024-11-20 05:56:55,830 - INFO - Pesquisa realizada: What is marketing?
+2024-11-20 05:57:11,259 - INFO - Pesquisa realizada: How to make money with marketing
+2024-11-20 05:57:26,703 - INFO - Pesquisa realizada: What are the main challenges in marketing?
+2024-11-20 05:57:42,138 - INFO - Pesquisa realizada: What are the latest news in marketing?
+2024-11-20 05:57:57,573 - INFO - Pesquisa realizada: Who are the leading experts in marketing?
+2024-11-20 05:58:06,785 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-20 05:58:17,210 - INFO - Pesquisa realizada: How to make money with gastronomy
+2024-11-20 05:58:32,649 - INFO - Pesquisa realizada: How does gastronomy impact society?
+2024-11-20 05:58:48,088 - INFO - Pesquisa realizada: Who are the leading experts in gastronomy?
+2024-11-20 05:59:03,517 - INFO - Pesquisa realizada: What are the main challenges in gastronomy?
+2024-11-20 05:59:18,986 - INFO - Pesquisa realizada: What are the latest news in gastronomy?
+2024-11-20 05:59:34,409 - INFO - Pesquisa realizada: What is gastronomy?
+2024-11-20 05:59:43,616 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-20 05:59:43,616 - INFO - Automação concluída com sucesso.
