@@ -1,0 +1,8 @@
+2024-11-21 04:17:31,870 - DEBUG - Using proactor: IocpProactor
+2024-11-21 04:17:31,870 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-21 04:17:32,058 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-21 04:17:32,058 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-21 04:17:34,382 - INFO - Navegador Edge aberto com sucesso.
+2024-11-21 04:17:44,801 - INFO - Pesquisa realizada: How does education impact society?
+2024-11-21 04:17:54,007 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-21 04:17:54,007 - INFO - Automação concluída com sucesso.
