@@ -166,4 +166,4 @@ if __name__ == "__main__":
     automacao = Automacao()
     interface = InterfaceGrafica(automacao)
     interface.run()
-    
+   
