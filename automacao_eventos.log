@@ -164,3 +164,11 @@
 2024-11-21 04:04:17,083 - INFO - Pesquisa realizada: How does politics impact society?
 2024-11-21 04:04:26,298 - INFO - Dados de navegação e cookies limpos com sucesso.
 2024-11-21 04:04:26,298 - INFO - Automação concluída com sucesso.
+2024-11-21 04:05:30,050 - DEBUG - Using proactor: IocpProactor
+2024-11-21 04:05:30,050 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-21 04:05:30,253 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-21 04:05:30,253 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-21 04:05:32,572 - INFO - Navegador Edge aberto com sucesso.
+2024-11-21 04:05:42,983 - INFO - Pesquisa realizada: What is music?
+2024-11-21 04:05:52,186 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-21 04:05:52,186 - INFO - Automação concluída com sucesso.
