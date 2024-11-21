@@ -188,3 +188,11 @@
 2024-11-21 04:10:02,266 - INFO - Pesquisa realizada: How does finance impact society?
 2024-11-21 04:10:11,476 - INFO - Dados de navegação e cookies limpos com sucesso.
 2024-11-21 04:10:11,476 - INFO - Automação concluída com sucesso.
+2024-11-21 04:10:58,180 - DEBUG - Using proactor: IocpProactor
+2024-11-21 04:10:58,180 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-21 04:10:58,383 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-21 04:10:58,383 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-21 04:11:00,695 - INFO - Navegador Edge aberto com sucesso.
+2024-11-21 04:11:11,113 - INFO - Pesquisa realizada: How to make money with administration
+2024-11-21 04:11:20,318 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-21 04:11:20,318 - INFO - Automação concluída com sucesso.
