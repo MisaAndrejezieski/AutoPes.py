@@ -180,3 +180,11 @@
 2024-11-21 04:09:11,473 - INFO - Pesquisa realizada: How does medicine impact society?
 2024-11-21 04:09:20,690 - INFO - Dados de navegação e cookies limpos com sucesso.
 2024-11-21 04:09:20,690 - INFO - Automação concluída com sucesso.
+2024-11-21 04:09:49,024 - DEBUG - Using proactor: IocpProactor
+2024-11-21 04:09:49,024 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-21 04:09:49,508 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-21 04:09:49,540 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-21 04:09:51,848 - INFO - Navegador Edge aberto com sucesso.
+2024-11-21 04:10:02,266 - INFO - Pesquisa realizada: How does finance impact society?
+2024-11-21 04:10:11,476 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-11-21 04:10:11,476 - INFO - Automação concluída com sucesso.
