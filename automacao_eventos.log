@@ -14,3 +14,10 @@
 2024-11-21 04:20:16,344 - INFO - Pesquisa realizada: How does geography impact society?
 2024-11-21 04:20:25,562 - INFO - Dados de navegação e cookies limpos com sucesso.
 2024-11-21 04:20:25,562 - INFO - Automação concluída com sucesso.
+2024-11-21 04:33:26,852 - DEBUG - Using proactor: IocpProactor
+2024-11-21 04:33:26,852 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-21 04:33:27,039 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-21 04:33:27,055 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-21 04:33:29,362 - INFO - Navegador Edge aberto com sucesso.
+2024-11-21 04:33:39,783 - INFO - Pesquisa realizada: What is design?
+2024-11-21 04:33:44,793 - INFO - Automação concluída com sucesso.
