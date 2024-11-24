@@ -207,3 +207,11 @@
 2024-11-24 08:21:19,024 - INFO - Navegador Edge aberto com sucesso.
 2024-11-24 08:21:29,444 - INFO - Pesquisa realizada: How to make money with technology
 2024-11-24 08:21:34,455 - INFO - Automação concluída com sucesso.
+2024-11-24 11:57:57,807 - DEBUG - Using proactor: IocpProactor
+2024-11-24 11:57:57,838 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-24 11:57:58,119 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-24 11:57:58,119 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-24 11:58:00,443 - INFO - Navegador Edge aberto com sucesso.
+2024-11-24 11:58:10,865 - INFO - Pesquisa realizada: What is science?
+2024-11-24 11:58:26,285 - INFO - Pesquisa realizada: What are the latest news in science?
+2024-11-24 11:58:41,719 - INFO - Pesquisa realizada: Who are the leading experts in science?
