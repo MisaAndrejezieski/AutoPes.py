@@ -215,3 +215,9 @@
 2024-11-24 11:58:10,865 - INFO - Pesquisa realizada: What is science?
 2024-11-24 11:58:26,285 - INFO - Pesquisa realizada: What are the latest news in science?
 2024-11-24 11:58:41,719 - INFO - Pesquisa realizada: Who are the leading experts in science?
+2024-11-24 11:59:02,615 - DEBUG - Using proactor: IocpProactor
+2024-11-24 11:59:02,615 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-24 11:59:02,819 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-24 11:59:02,819 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-24 11:59:05,136 - INFO - Navegador Edge aberto com sucesso.
+2024-11-24 11:59:15,554 - INFO - Pesquisa realizada: How does politics impact society?
