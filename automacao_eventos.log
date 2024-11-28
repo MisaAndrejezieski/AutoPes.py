@@ -327,3 +327,38 @@
 2024-11-28 14:45:10,487 - INFO - Pesquisa realizada: How to make money with anthropology
 2024-11-28 14:45:25,923 - INFO - Pesquisa realizada: What are the latest news in anthropology?
 2024-11-28 14:45:30,934 - INFO - Automação concluída com sucesso.
+2024-11-28 15:37:37,090 - DEBUG - Using proactor: IocpProactor
+2024-11-28 15:37:37,090 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-28 15:37:37,609 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-28 15:37:37,625 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-28 15:37:37,625 - DEBUG - Starting
+2024-11-28 15:37:37,641 - ERROR - 
+    Error 263 for command:
+        open success.mp3
+    O dispositivo especificado não está aberto ou o MCI não o reconhece.
+2024-11-28 15:37:37,641 - ERROR - 
+    Error 263 for command:
+        close success.mp3
+    O dispositivo especificado não está aberto ou o MCI não o reconhece.
+2024-11-28 15:37:37,641 - WARNING - Failed to close the file: success.mp3
+2024-11-28 15:43:04,210 - DEBUG - Using proactor: IocpProactor
+2024-11-28 15:43:04,210 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-28 15:43:04,678 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-28 15:43:04,678 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-28 15:43:04,678 - DEBUG - Starting
+2024-11-28 15:43:04,678 - ERROR - 
+    Error 263 for command:
+        open success.mp3
+    O dispositivo especificado não está aberto ou o MCI não o reconhece.
+2024-11-28 15:43:04,678 - ERROR - 
+    Error 263 for command:
+        close success.mp3
+    O dispositivo especificado não está aberto ou o MCI não o reconhece.
+2024-11-28 15:43:04,678 - WARNING - Failed to close the file: success.mp3
+2024-11-28 15:43:38,922 - DEBUG - Using proactor: IocpProactor
+2024-11-28 15:43:38,922 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-28 15:43:39,390 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-28 15:43:39,406 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-28 15:43:41,730 - INFO - Navegador Edge aberto com sucesso.
+2024-11-28 15:43:52,152 - INFO - Pesquisa realizada: What are the main challenges in philosophy?
+2024-11-28 15:43:57,165 - INFO - Automação concluída com sucesso.
