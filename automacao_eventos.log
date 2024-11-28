@@ -1,0 +1,6 @@
+2024-11-28 17:56:42,905 - DEBUG - Using proactor: IocpProactor
+2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-28 17:56:43,186 - INFO - Conectividade com https://www.google.com verificada.
+2024-11-28 17:56:45,505 - INFO - Navegador Edge aberto com sucesso.
+2024-11-28 17:56:55,923 - INFO - Pesquisa realizada: How to make money with sociology
