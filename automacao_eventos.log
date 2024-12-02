@@ -1,15 +1,7 @@
 2024-11-28 17:56:42,905 - DEBUG - Using proactor: IocpProactor
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-11-28 17:56:43,186 -1): www.google.com:443
-2024-11-28 18:04:15,519 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-11-28 18:04:15,519 - INFO - Conectividade com https://www.google.com verificada.
-2024-11-28 18:04:17,836 - INFO - Navegador Edge aberto com sucesso.
-2024-11-28 18:04:28,253 - INFO - Pesquisa realizada: How does politics impact society?
-2024-11-28 18:04:43,690 - INFO - Pesquisa realizada: What are the latest news in politics?
-2024-11-28 18:04:59,124 - INFO - Pesquisa realizada: What are the main challenges in politics?
-2024-11-28 18:05:14,561 - INFO - Pesquisa realizada: Who are the leading experts in politics?
-2024-11-28 18:05:29,994 - INFO - Pesquisa realizada: How to make money with politics
+2024-11-28 17:56:43,186 -1): ww,994 - INFO - Pesquisa realizada: How to make money with politics
 2024-11-28 18:05:45,419 - INFO - Pesquisa realizada: What is politics?
 2024-11-28 18:06:00,855 - INFO - Pesquisa realizada: What are the main challenges in administration?
 2024-11-28 18:06:16,288 - INFO - Pesquisa realizada: What are the latest news in administration?
