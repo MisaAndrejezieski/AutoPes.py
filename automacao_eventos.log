@@ -2,16 +2,7 @@
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None52,390 - INFO - Pesquisa realizada: What are the main challenges in sports?
 2024-11-28 18:10:07,827 - INFO - Pesematics?
-2024-12-01 05:25:53,153 -  INFO - Pesquisa realizada: What is chemistry?
-2024-12-01 22:57:46,455 - INFO - Pesquisa realizada: How does chemistry impact society?
-2024-12-01 22:58:01,873 - INFO - Pesquisa realizada: How to make money with chemistry
-2024-12-01 22:58:17,300 - INFO - Pesquisa realizada: How does art impact society?
-2024-12-01 22:58:32,730 - INFO - Pesquisa realizada: Who are the leading experts in art?
-2024-12-01 22:58:48,152 - INFO - Pesquisa realizada: How to make money with art
-2024-12-01 22:59:03,566 - INFO - Pesquisa realizada: What is art?
-2024-12-01 22:59:18,996 - INFO - Pesquisa realizada: What are the main challenges in art?
-2024-12-01 22:59:34,418 - INFO - Pesquisa realizada: What are the latest news in art?
-2024-12-01 22:59:49,846 - INFO - Pesquisa realizada: What are the main challenges in fashion?
+2024-12-01 05:25:53,153 -  INFO - Pesquisa realizada: What is chemistry??
 2024-12-01 23:00:05,272 - INFO - Pesquisa realizada: How to make money with fashion
 2024-12-01 23:00:20,682 - INFO - Pesquisa realizada: What is fashion?
 2024-12-01 23:00:36,104 - INFO - Pesquisa realizada: How does fashion impact society?
