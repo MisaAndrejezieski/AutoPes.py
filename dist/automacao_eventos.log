@@ -70,29 +70,4 @@
 2024-12-01 22:44:21,554 - INFO - Conectividade com https://www.google.com verificada.
 2024-12-01 22:44:21,642 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
 2024-12-01 22:44:21,643 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:23,732 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:23,881 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:23,950 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:23,950 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:23,950 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:24,067 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:24,067 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:24,136 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:24,136 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:24,205 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:24,205 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:24,249 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:24,249 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:24,385 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:24,385 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:26,452 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:26,557 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:26,698 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:28,674 - INFO - Pesquisa realizada: How to make money with geography
-2024-12-01 22:44:31,414 - INFO - Pesquisa realizada: Who are the leading experts in music?
-2024-12-01 22:44:31,532 - INFO - Pesquisa realizada: What are the main challenges in architecture?
-2024-12-01 22:44:34,140 - INFO - Pesquisa realizada: What are the latest news in health?
-2024-12-01 22:44:34,153 - INFO - Pesquisa realizada: What are the main challenges in education?
-2024-12-01 22:44:34,262 - INFO - Pesquisa realizada: How to make money with law
-2024-12-01 22:44:34,290 - INFO - Pesquisa realizada: How to make money with music
-2024-12-01 22:44:34,365 - INFO - Pesquisa re
+
