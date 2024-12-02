@@ -2,15 +2,7 @@
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None52,390 - INFO - Pesquisa realizada: What are the main challenges in sports?
 2024-11-28 18:10:07,827 - INFO - Pesematics?
-2024-12-01 05:25:53,153 - INFO - Pesquisa realizada: What are the latest news in mathematit society?
-2024-12-01 05:45:39,280 - INFO - Pesquisa realizada: What are the latest news in philosophy?
-2024-12-01 05:45:54,722 - INFO - Pesquisa realizada: Who are the leading experts in philosophy?
-2024-12-01 05:46:10,169 - INFO - Pesquisa realizada: What are the main challenges in philosophy?
-2024-12-01 05:46:25,595 - INFO - Pesquisa realizada: What is philosophy?
-2024-12-01 05:46:41,076 - INFO - Pesquisa realizada: What are the latest news in biology?
-2024-12-01 05:46:56,501 - INFO - Pesquisa realizada: What is biology?
-2024-12-01 05:47:11,949 - INFO - Pesquisa realizada: Who are the leading experts in biology?
-2024-12-01 05:47:27,391 - INFO - Pesquisa realizada: How does biology impact society?
+2024-12-01 05:25:53,153 - INFO - Pesquisa realizada: What are the latest news in mat1 05:47:27,391 - INFO - Pesquisa realizada: How does biology impact society?
 2024-12-01 05:47:42,813 - INFO - Pesquisa realizada: How to make money with biology
 2024-12-01 22:54:59,166 - DEBUG - Using proactor: IocpProactor
 2024-12-01 22:54:59,184 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
