@@ -1,23 +1,6 @@
 2024-11-28 17:56:42,905 - DEBUG - Using proactor: IocpProactor
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None52,390 - INFO - Pesquisa realizada: What are the main challenges in sports?
-2024-11-28 18:10:07,827 - INFO - Pesematics?
-2024-12-01 05:25:53,153 -  INFO - Pesquisa realizada: What is chemistry??
-2024-12-01 23:00:05,272 - INFO - Pesquisa realizada: How to make money with fashion
-2024-12-01 23:00:20,682 - INFO - Pesquisa realizada: What is fashion?
-2024-12-01 23:00:36,104 - INFO - Pesquisa realizada: How does fashion impact society?
-2024-12-01 23:00:51,519 - INFO - Pesquisa realizada: What are the latest news in fashion?
-2024-12-01 23:01:06,950 - INFO - Pesquisa realizada: Who are the leading experts in fashion?
-2024-12-01 23:01:22,401 - INFO - Pesquisa realizada: What are the main challenges in anthropology?
+2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None52
 2024-12-01 23:01:37,825 - INFO - Pesquisa realizada: Who are the leading experts in anthropology?
-2024-12-01 23:01:53,245 - INFO - Pesquisa realizada: What is anthropology?
-2024-12-01 23:02:08,678 - INFO - Pesquisa realizada: How does anthropology impact society?
-2024-12-01 23:02:24,106 - INFO - Pesquisa realizada: How to make money with anthropology
-2024-12-01 23:02:39,543 - INFO - Pesquisa realizada: What are the latest news in anthropology?
-2024-12-01 23:02:54,964 - INFO - Pesquisa realizada: What are the latest news in engineering?
-2024-12-01 23:03:10,389 - INFO - Pesquisa realizada: How to make money with engineering
-2024-12-01 23:03:25,812 - INFO - Pesquisa realizada: How does engineering impact society?
-2024-12-01 23:03:41,246 - INFO - Pesquisa realizada: What are the main challenges in engineering?
-2024-12-01 23:03:56,674 - INFO - Pesquisa realizada: Who are the leading experts in engineering?
-2024-12-01 23:04:12,089 - INFO - Pesquisa realizada: What is engineering?
+2024-12-01 23:01:53,245 - INFO - Pesquisa realizada: What is anthrop INFO - Pesquisa realizada: What is engineering?
 2024-12-01 23:04:17,103 - INFO - Automação concluída com sucesso.
