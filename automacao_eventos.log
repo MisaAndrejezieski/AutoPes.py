@@ -2,13 +2,7 @@
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None52,390 - INFO - Pesquisa realizada: What are the main challenges in sports?
 2024-11-28 18:10:07,827 - INFO - Pesematics?
-2024-12-01 05:25:53,153 - INFO - Pesquisa realizada: What are the latest news in mathematics?INFO - Pesquisa realizada: What are the latest news in education?
-2024-12-01 05:41:49,859 - DEBUG - Using proactor: IocpProactor
-2024-12-01 05:41:49,859 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 05:41:50,375 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 05:41:50,375 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 05:41:52,702 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 05:42:03,118 - INFO - Pesquisa realizada: How to make money with philosophy
+2024-12-01 05:25:53,153 - INFO - Pesquisa realizada: What are the latest news in mathematics?INFO - Pesquisa realizada: What are the latest news inophy
 2024-12-01 05:42:18,557 - INFO - Pesquisa realizada: What are the latest news in philosophy?
 2024-12-01 05:42:33,994 - INFO - Pesquisa realizada: How does philosophy impact society?
 2024-12-01 05:42:49,423 - INFO - Pesquisa realizada: What is philosophy?
