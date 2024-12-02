@@ -1,6 +1,0 @@
-2024-11-28 17:56:42,905 - DEBUG - Using proactor: IocpProactor
-2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None52
-2024-12-01 23:01:37,825 - INFO - Pesquisa realizada: Who are the leading experts in anthropology?
-2024-12-01 23:01:53,245 - INFO - Pesquisa realizada: What is anthrop INFO - Pesquisa realizada: What is engineering?
-2024-12-01 23:04:17,103 - INFO - Automação concluída com sucesso.
