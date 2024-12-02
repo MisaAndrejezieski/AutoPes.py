@@ -29,45 +29,4 @@
 2024-12-01 22:43:57,833 - INFO - Pesquisa realizada: What are the main challenges in geography?
 2024-12-01 22:44:03,058 - DEBUG - Using proactor: IocpProactor
 2024-12-01 22:44:03,058 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:03,174 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:03,174 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:03,252 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:03,252 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:03,361 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:03,361 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:05,565 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:05,676 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:05,794 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:05,794 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:05,905 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:05,905 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:05,990 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:05,990 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:06,021 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:06,021 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:06,098 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:06,114 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:06,223 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:06,223 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:08,301 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:08,427 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:08,543 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:13,245 - INFO - Pesquisa realizada: What is geography?
-2024-12-01 22:44:15,982 - INFO - Pesquisa realizada: How to make money with music
-2024-12-01 22:44:16,096 - INFO - Pesquisa realizada: Who are the leading experts in architecture?
-2024-12-01 22:44:18,715 - INFO - Pesquisa realizada: How to make money with health
-2024-12-01 22:44:18,839 - INFO - Pesquisa realizada: How does law impact society?
-2024-12-01 22:44:18,960 - INFO - Pesquisa realizada: What are the latest news in geography?
-2024-12-01 22:44:21,229 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:21,229 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:21,344 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:21,344 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:21,407 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:21,407 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:21,461 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:21,461 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:21,554 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:21,554 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:21,642 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:21,643 - INFO - Conectividade com https://www.google.com verificada.
 
