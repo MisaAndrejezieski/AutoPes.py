@@ -3,10 +3,7 @@
 2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
 2024-11-28 17:56:43,186 - INFO - Conectividade com https://www.google.com verificada.
 2024-11-28 17:56:45,505 - INFO - Navegador Edge aberto com sucesso.
-2024-11-28 17:56:55,923 - INFO - Pesquisa realizada: How to make money with sociology
-2024-11-28 17:58:21,198 - DEBUG - Using proactor: IocpProactor
-2024-11-28 17:58:21,214 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-11-28 17:58:21,433 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-11-28 17:56:55,923 - INFO - Pesquisa realizada: How to make money with sociologyne
 2024-11-28 17:58:21,433 - INFO - Conectividade com https://www.google.com verificada.
 2024-11-28 17:58:23,749 - INFO - Navegador Edge aberto com sucesso.
 2024-11-28 17:58:34,161 - INFO - Pesquisa realizada: What is science?
