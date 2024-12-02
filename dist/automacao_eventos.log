@@ -19,3 +19,323 @@
 2024-11-21 03:53:39,552 - INFO - Pesquisa realizada: Who are the leading experts in philosophy?
 2024-11-21 03:53:54,965 - INFO - Pesquisa realizada: How to make money with philosophy
 2024-11-21 03:54:10,372 - INFO - Pesquisa realizada: What are the latest news in philosophy?
+2024-12-01 22:43:42,413 - WARNING - Não foi possível carregar o ícone: bitmap "Luffys_flag.ico" not defined
+2024-12-01 22:43:42,429 - WARNING - Não foi possível carregar a imagem: couldn't open "22287dragon_98813.png": no such file or directory
+2024-12-01 22:43:44,866 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:43:44,882 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:43:45,101 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:43:45,101 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:43:47,415 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:43:57,833 - INFO - Pesquisa realizada: What are the main challenges in geography?
+2024-12-01 22:44:03,058 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:03,058 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:03,174 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:03,174 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:03,252 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:03,252 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:03,361 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:03,361 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:05,565 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:05,676 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:05,794 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:05,794 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:05,905 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:05,905 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:05,990 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:05,990 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:06,021 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:06,021 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:06,098 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:06,114 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:06,223 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:06,223 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:08,301 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:08,427 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:08,543 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:13,245 - INFO - Pesquisa realizada: What is geography?
+2024-12-01 22:44:15,982 - INFO - Pesquisa realizada: How to make money with music
+2024-12-01 22:44:16,096 - INFO - Pesquisa realizada: Who are the leading experts in architecture?
+2024-12-01 22:44:18,715 - INFO - Pesquisa realizada: How to make money with health
+2024-12-01 22:44:18,839 - INFO - Pesquisa realizada: How does law impact society?
+2024-12-01 22:44:18,960 - INFO - Pesquisa realizada: What are the latest news in geography?
+2024-12-01 22:44:21,229 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:21,229 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:21,344 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:21,344 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:21,407 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:21,407 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:21,461 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:21,461 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:21,554 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:21,554 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:21,642 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:21,643 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:23,732 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:23,881 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:23,950 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:23,950 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:23,950 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:24,067 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:24,067 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:24,136 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:24,136 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:24,205 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:24,205 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:24,249 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:24,249 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:24,385 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:24,385 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:26,452 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:26,557 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:26,698 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:28,674 - INFO - Pesquisa realizada: How to make money with geography
+2024-12-01 22:44:31,414 - INFO - Pesquisa realizada: Who are the leading experts in music?
+2024-12-01 22:44:31,532 - INFO - Pesquisa realizada: What are the main challenges in architecture?
+2024-12-01 22:44:34,140 - INFO - Pesquisa realizada: What are the latest news in health?
+2024-12-01 22:44:34,153 - INFO - Pesquisa realizada: What are the main challenges in education?
+2024-12-01 22:44:34,262 - INFO - Pesquisa realizada: How to make money with law
+2024-12-01 22:44:34,290 - INFO - Pesquisa realizada: How to make money with music
+2024-12-01 22:44:34,365 - INFO - Pesquisa realizada: Who are the leading experts in marketing?
+2024-12-01 22:44:34,383 - INFO - Pesquisa realizada: How to make money with geography
+2024-12-01 22:44:36,645 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:36,645 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:36,766 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:36,766 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:36,813 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:36,813 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:36,867 - INFO - Pesquisa realizada: What is mathematics?
+2024-12-01 22:44:36,890 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:36,890 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:36,976 - INFO - Pesquisa realizada: How does science impact society?
+2024-12-01 22:44:36,976 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:36,976 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:37,080 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:37,083 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:37,112 - INFO - Pesquisa realizada: How does gastronomy impact society?
+2024-12-01 22:44:39,134 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:39,322 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:39,364 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:39,364 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:39,396 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:39,489 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:39,489 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:39,564 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:39,564 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:39,634 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:44:39,634 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:44:39,683 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:39,683 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:39,834 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:44:39,840 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:44:41,872 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:41,996 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:42,153 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:44:44,098 - INFO - Pesquisa realizada: What are the latest news in geography?
+2024-12-01 22:44:46,831 - INFO - Pesquisa realizada: What are the latest news in music?
+2024-12-01 22:44:46,959 - INFO - Pesquisa realizada: What is architecture?
+2024-12-01 22:44:49,554 - INFO - Pesquisa realizada: Who are the leading experts in economy?
+2024-12-01 22:44:49,566 - INFO - Pesquisa realizada: What are the main challenges in health?
+2024-12-01 22:44:49,574 - INFO - Pesquisa realizada: What is education?
+2024-12-01 22:44:49,680 - INFO - Pesquisa realizada: What are the main challenges in law?
+2024-12-01 22:44:49,715 - INFO - Pesquisa realizada: Who are the leading experts in music?
+2024-12-01 22:44:49,736 - INFO - Pesquisa realizada: How does administration impact society?
+2024-12-01 22:44:49,818 - INFO - Pesquisa realizada: How to make money with marketing
+2024-12-01 22:44:49,818 - INFO - Pesquisa realizada: How does geography impact society?
+2024-12-01 22:44:49,821 - INFO - Pesquisa realizada: What are the main challenges in law?
+2024-12-01 22:44:52,305 - INFO - Pesquisa realizada: How does mathematics impact society?
+2024-12-01 22:44:52,308 - INFO - Pesquisa realizada: What are the main challenges in literature?
+2024-12-01 22:44:52,406 - INFO - Pesquisa realizada: How to make money with science
+2024-12-01 22:44:52,409 - INFO - Pesquisa realizada: What is biology?
+2024-12-01 22:44:52,534 - INFO - Pesquisa realizada: How to make money with gastronomy
+2024-12-01 22:44:52,570 - INFO - Pesquisa realizada: What are the main challenges in astronomy?
+2024-12-01 22:44:59,529 - INFO - Pesquisa realizada: Who are the leading experts in geography?
+2024-12-01 22:45:02,262 - INFO - Pesquisa realizada: What are the main challenges in music?
+2024-12-01 22:45:02,405 - INFO - Pesquisa realizada: What are the latest news in architecture?
+2024-12-01 22:45:05,004 - INFO - Pesquisa realizada: What are the main challenges in economy?
+2024-12-01 22:45:05,004 - INFO - Pesquisa realizada: How does health impact society?
+2024-12-01 22:45:05,050 - INFO - Pesquisa realizada: Who are the leading experts in education?
+2024-12-01 22:45:05,104 - INFO - Pesquisa realizada: What is law?
+2024-12-01 22:45:05,140 - INFO - Pesquisa realizada: What is music?
+2024-12-01 22:45:05,163 - INFO - Pesquisa realizada: What are the latest news in administration?
+2024-12-01 22:45:05,268 - INFO - Pesquisa realizada: How does law impact society?
+2024-12-01 22:45:05,289 - INFO - Pesquisa realizada: Who are the leading experts in geography?
+2024-12-01 22:45:05,289 - INFO - Pesquisa realizada: What are the latest news in marketing?
+2024-12-01 22:45:07,753 - INFO - Pesquisa realizada: Who are the leading experts in literature?
+2024-12-01 22:45:07,754 - INFO - Pesquisa realizada: Who are the leading experts in mathematics?
+2024-12-01 22:45:07,823 - INFO - Pesquisa realizada: What are the latest news in science?
+2024-12-01 22:45:07,851 - INFO - Pesquisa realizada: What are the main challenges in biology?
+2024-12-01 22:45:07,985 - INFO - Pesquisa realizada: What are the latest news in gastronomy?
+2024-12-01 22:45:08,014 - INFO - Pesquisa realizada: How to make money with astronomy
+2024-12-01 22:45:10,236 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:10,236 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:10,354 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:10,354 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:10,438 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:10,438 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:10,474 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:10,474 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:10,544 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:10,544 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:10,669 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:10,669 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:12,748 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:12,867 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:12,981 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:15,038 - INFO - Pesquisa realizada: How does geography impact society?
+2024-12-01 22:45:17,757 - INFO - Pesquisa realizada: What is music?
+2024-12-01 22:45:17,861 - INFO - Pesquisa realizada: How to make money with architecture
+2024-12-01 22:45:20,424 - INFO - Pesquisa realizada: What is economy?
+2024-12-01 22:45:20,424 - INFO - Pesquisa realizada: What is health?
+2024-12-01 22:45:20,473 - INFO - Pesquisa realizada: How to make money with education
+2024-12-01 22:45:20,525 - INFO - Pesquisa realizada: What are the latest news in law?
+2024-12-01 22:45:20,560 - INFO - Pesquisa realizada: What are the main challenges in music?
+2024-12-01 22:45:20,595 - INFO - Pesquisa realizada: What are the main challenges in administration?
+2024-12-01 22:45:20,708 - INFO - Pesquisa realizada: What are the latest news in law?
+2024-12-01 22:45:20,723 - INFO - Pesquisa realizada: What are the main challenges in geography?
+2024-12-01 22:45:20,723 - INFO - Pesquisa realizada: What are the main challenges in marketing?
+2024-12-01 22:45:23,103 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:23,103 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:23,220 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:23,220 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:23,284 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:23,284 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:23,331 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:23,331 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:23,409 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:23,409 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:23,449 - INFO - Pesquisa realizada: What is anthropology?
+2024-12-01 22:45:23,456 - INFO - Pesquisa realizada: How does literature impact society?
+2024-12-01 22:45:23,488 - INFO - Pesquisa realizada: Who are the leading experts in science?
+2024-12-01 22:45:23,490 - INFO - Pesquisa realizada: What are the latest news in administration?
+2024-12-01 22:45:23,511 - INFO - Pesquisa realizada: How to make money with mathematics
+2024-12-01 22:45:23,524 - INFO - Pesquisa realizada: What is gastronomy?
+2024-12-01 22:45:23,545 - INFO - Pesquisa realizada: How does law impact society?
+2024-12-01 22:45:23,545 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:23,556 - INFO - Pesquisa realizada: Who are the leading experts in biology?
+2024-12-01 22:45:23,556 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:23,558 - INFO - Pesquisa realizada: Who are the leading experts in astronomy?
+2024-12-01 22:45:24,261 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-12-01 22:45:25,598 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:25,680 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:25,680 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:25,723 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:25,793 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:25,794 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:25,876 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:25,899 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:25,899 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:25,914 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:25,914 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:25,999 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:25,999 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:26,188 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:26,188 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:28,224 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:28,313 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:28,455 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:28,455 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:28,504 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:28,571 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:28,571 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:28,656 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:28,656 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:28,704 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:28,704 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:28,790 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:28,790 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:28,851 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:28,852 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:28,904 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:28,904 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:28,996 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:28,996 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:29,056 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:29,056 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:29,204 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:29,204 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:30,965 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:31,103 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:31,239 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:31,380 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:31,522 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:33,175 - INFO - Pesquisa realizada: How does music impact society?
+2024-12-01 22:45:33,290 - INFO - Pesquisa realizada: How does architecture impact society?
+2024-12-01 22:45:34,689 - INFO - Pesquisa realizada: Who are the leading experts in astronomy?
+2024-12-01 22:45:35,855 - INFO - Pesquisa realizada: How to make money with economy
+2024-12-01 22:45:35,860 - INFO - Pesquisa realizada: Who are the leading experts in health?
+2024-12-01 22:45:35,899 - INFO - Pesquisa realizada: What are the latest news in education?
+2024-12-01 22:45:35,946 - INFO - Pesquisa realizada: Who are the leading experts in law?
+2024-12-01 22:45:35,980 - INFO - Pesquisa realizada: What are the latest news in music?
+2024-12-01 22:45:36,033 - INFO - Pesquisa realizada: What are the main challenges in literature?
+2024-12-01 22:45:36,040 - INFO - Pesquisa realizada: How to make money with administration
+2024-12-01 22:45:36,135 - INFO - Pesquisa realizada: How to make money with law
+2024-12-01 22:45:36,152 - INFO - Pesquisa realizada: What are the main challenges in music?
+2024-12-01 22:45:36,158 - INFO - Pesquisa realizada: What is marketing?
+2024-12-01 22:45:36,158 - INFO - Pesquisa realizada: What is geography?
+2024-12-01 22:45:36,298 - INFO - Pesquisa realizada: How to make money with psychology
+2024-12-01 22:45:38,641 - INFO - Pesquisa realizada: What are the latest news in engineering?
+2024-12-01 22:45:38,727 - INFO - Pesquisa realizada: What are the main challenges in fashion?
+2024-12-01 22:45:38,870 - INFO - Pesquisa realizada: What are the main challenges in anthropology?
+2024-12-01 22:45:38,892 - INFO - Pesquisa realizada: How to make money with literature
+2024-12-01 22:45:38,917 - INFO - Pesquisa realizada: What is science?
+2024-12-01 22:45:38,921 - INFO - Pesquisa realizada: What is administration?
+2024-12-01 22:45:38,928 - INFO - Pesquisa realizada: What are the latest news in literature?
+2024-12-01 22:45:38,937 - INFO - Pesquisa realizada: What are the latest news in mathematics?
+2024-12-01 22:45:38,953 - INFO - Pesquisa realizada: Who are the leading experts in gastronomy?
+2024-12-01 22:45:38,973 - INFO - Pesquisa realizada: Who are the leading experts in law?
+2024-12-01 22:45:39,003 - INFO - Pesquisa realizada: How does biology impact society?
+2024-12-01 22:45:39,005 - INFO - Pesquisa realizada: What are the latest news in astronomy?
+2024-12-01 22:45:39,917 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:39,917 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:40,034 - DEBUG - Using proactor: IocpProactor
+2024-12-01 22:45:40,034 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-01 22:45:40,105 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:40,105 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:40,219 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-01 22:45:40,219 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-01 22:45:41,380 - INFO - Pesquisa realizada: Who are the leading experts in science?
+2024-12-01 22:45:41,518 - INFO - Pesquisa realizada: What are the latest news in politics?
+2024-12-01 22:45:41,652 - INFO - Pesquisa realizada: How to make money with biology
+2024-12-01 22:45:41,789 - INFO - Pesquisa realizada: What is health?
+2024-12-01 22:45:41,938 - INFO - Pesquisa realizada: What is music?
+2024-12-01 22:45:42,387 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-12-01 22:45:42,423 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:42,504 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-12-01 22:45:42,527 - INFO - Navegador Edge aberto com sucesso.
+2024-12-01 22:45:45,074 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-12-01 22:45:45,148 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-12-01 22:45:45,370 - INFO - Dados de navegação e cookies limpos com sucesso.
+2024-12-01 22:45:50,104 - INFO - Pesquisa realizada: What is astronomy?
+2024-12-01 22:45:51,268 - INFO - Pesquisa realizada: How does economy impact society?
+2024-12-01 22:45:51,315 - INFO - Pesquisa realizada: How does education impact society?
+2024-12-01 22:45:51,400 - INFO - Pesquisa realizada: How does music impact society?
+2024-12-01 22:45:51,447 - INFO - Pesquisa realizada: What are the latest news in literature?
+2024-12-01 22:45:51,479 - INFO - Pesquisa realizada: Who are the leading experts in administration?
+2024-12-01 22:45:51,559 - INFO - Pesquisa realizada: What is law?
+2024-12-01 22:45:51,586 - INFO - Pesquisa realizada: How does marketing impact society?
+2024-12-01 22:45:51,587 - INFO - Pesquisa realizada: Who are the leading experts in music?
+2024-12-01 22:45:51,726 - INFO - Pesquisa realizada: How does psychology impact society?
+2024-12-01 22:45:52,802 - INFO - Pesquisa realizada: Who are the leading experts in psychology?
+2024-12-01 22:45:52,832 - INFO - Pesquisa realizada: What is architecture?
+2024-12-01 22:45:52,915 - INFO - Pesquisa realizada: How does music impact society?
+2024-12-01 22:45:52,939 - INFO - Pesquisa realizada: What are the latest news in economy?
+2024-12-01 22:45:54,076 - INFO - Pesquisa realizada: Who are the leading experts in engineering?
+2024-12-01 22:45:54,146 - INFO - Pesquisa realizada: What is fashion?
+2024-12-01 22:45:54,307 - INFO - Pesquisa realizada: What are the latest news in anthropology?
+2024-12-01 22:45:54,316 - INFO - Pesquisa realizada: What is literature?
+2024-12-01 22:45:54,352 - INFO - Pesquisa realizada: How does administration impact society?
+2024-12-01 22:45:54,353 - INFO - Pesquisa realizada: What are the main challenges in science?
+2024-12-01 22:45:54,368 - INFO - Pesquisa realizada: How does literature impact society?
+2024-12-01 22:45:54,372 - INFO - Pesquisa realizada: What are the main challenges in mathematics?
+2024-12-01 22:45:54,385 - INFO - Pesquisa realizada: What are the main challenges in gastronomy?
+2024-12-01 22:45:54,408 - INFO - Pesquisa realizada: What are the latest news in law?
+2024-12-01 22:45:54,420 - INFO - Pesquisa realizada: What is astronomy?
+2024-12-01 22:45:54,422 - INFO - Pesquisa realizada: How to make money with biology
+2024-12-01 22:45:55,489 - INFO - Pesquisa realizada: How to make money with finance
+2024-12-01 22:45:55,564 - INFO - Pesquisa realizada: What are the latest news in law?
+2024-12-01 22:45:55,791 - INFO - Pesquisa realizada: Who are the leading experts in science?
+2024-12-01 22:45:56,807 - INFO - Pesquisa realizada: How to make money with science
+2024-12-01 22:45:56,939 - INFO - Pesquisa realizada: How to make money with politics
+2024-12-01 22:45:57,074 - INFO - Pesquisa realizada: Who are the leading experts in biology?
+2024-12-01 22:45:57,207 - INFO - Pesquisa realizada: How does health impact society?
+2024-12-01 22:45:57,365 - INFO - Pesquisa realizada: How to make money with music
