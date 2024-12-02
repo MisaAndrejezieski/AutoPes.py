@@ -113,61 +113,7 @@
 2024-12-01 22:44:37,083 - INFO - Conectividade com https://www.google.com verificada.
 2024-12-01 22:44:37,112 - INFO - Pesquisa realizada: How does gastronomy impact society?
 2024-12-01 22:44:39,134 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:39,322 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:39,364 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:39,364 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:39,396 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:39,489 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:39,489 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:39,564 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:39,564 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:39,634 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:39,634 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:39,683 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:39,683 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:39,834 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:39,840 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:41,872 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:41,996 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:42,153 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:44:44,098 - INFO - Pesquisa realizada: What are the latest news in geography?
-2024-12-01 22:44:46,831 - INFO - Pesquisa realizada: What are the latest news in music?
-2024-12-01 22:44:46,959 - INFO - Pesquisa realizada: What is architecture?
-2024-12-01 22:44:49,554 - INFO - Pesquisa realizada: Who are the leading experts in economy?
-2024-12-01 22:44:49,566 - INFO - Pesquisa realizada: What are the main challenges in health?
-2024-12-01 22:44:49,574 - INFO - Pesquisa realizada: What is education?
-2024-12-01 22:44:49,680 - INFO - Pesquisa realizada: What are the main challenges in law?
-2024-12-01 22:44:49,715 - INFO - Pesquisa realizada: Who are the leading experts in music?
-2024-12-01 22:44:49,736 - INFO - Pesquisa realizada: How does administration impact society?
-2024-12-01 22:44:49,818 - INFO - Pesquisa realizada: How to make money with marketing
-2024-12-01 22:44:49,818 - INFO - Pesquisa realizada: How does geography impact society?
-2024-12-01 22:44:49,821 - INFO - Pesquisa realizada: What are the main challenges in law?
 
-2024-12-01 22:45:51,559 - INFO - Pesquisa realizada: What is law?
-2024-12-01 22:45:51,586 - INFO - Pesquisa realizada: How does marketing impact society?
-2024-12-01 22:45:51,587 - INFO - Pesquisa realizada: Who are the leading experts in music?
-2024-12-01 22:45:51,726 - INFO - Pesquisa realizada: How does psychology impact society?
-2024-12-01 22:45:52,802 - INFO - Pesquisa realizada: Who are the leading experts in psychology?
-2024-12-01 22:45:52,832 - INFO - Pesquisa realizada: What is architecture?
-2024-12-01 22:45:52,915 - INFO - Pesquisa realizada: How does music impact society?
-2024-12-01 22:45:52,939 - INFO - Pesquisa realizada: What are the latest news in economy?
-2024-12-01 22:45:54,076 - INFO - Pesquisa realizada: Who are the leading experts in engineering?
-2024-12-01 22:45:54,146 - INFO - Pesquisa realizada: What is fashion?
-2024-12-01 22:45:54,307 - INFO - Pesquisa realizada: What are the latest news in anthropology?
-2024-12-01 22:45:54,316 - INFO - Pesquisa realizada: What is literature?
-2024-12-01 22:45:54,352 - INFO - Pesquisa realizada: How does administration impact society?
-2024-12-01 22:45:54,353 - INFO - Pesquisa realizada: What are the main challenges in science?
-2024-12-01 22:45:54,368 - INFO - Pesquisa realizada: How does literature impact society?
-2024-12-01 22:45:54,372 - INFO - Pesquisa realizada: What are the main challenges in mathematics?
-2024-12-01 22:45:54,385 - INFO - Pesquisa realizada: What are the main challenges in gastronomy?
-2024-12-01 22:45:54,408 - INFO - Pesquisa realizada: What are the latest news in law?
-2024-12-01 22:45:54,420 - INFO - Pesquisa realizada: What is astronomy?
-2024-12-01 22:45:54,422 - INFO - Pesquisa realizada: How to make money with biology
-2024-12-01 22:45:55,489 - INFO - Pesquisa realizada: How to make money with finance
-2024-12-01 22:45:55,564 - INFO - Pesquisa realizada: What are the latest news in law?
-2024-12-01 22:45:55,791 - INFO - Pesquisa realizada: Who are the leading experts in science?
-2024-12-01 22:45:56,807 - INFO - Pesquisa realizada: How to make money with science
-2024-12-01 22:45:56,939 - INFO - Pesquisa realizada: How to make money with politics
 2024-12-01 22:45:57,074 - INFO - Pesquisa realizada: Who are the leading experts in biology?
 2024-12-01 22:45:57,207 - INFO - Pesquisa realizada: How does health impact society?
 2024-12-01 22:45:57,365 - INFO - Pesquisa realizada: How to make money with music
