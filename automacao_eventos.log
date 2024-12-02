@@ -1,14 +1,7 @@
 2024-11-28 17:56:42,905 - DEBUG - Using proactor: IocpProactor
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-11-28 17:56:43,186 - INFO - Conectividade com https://www.google.com verificada.
-2024-11-28 17:56:45,505 - INFO - Navegador Edge aberto com sucesso.
-2024-11-28 17:56:55,923 - INFO - Pesquisa realizada: How to make money with sociologyne
-2024-11-28 17:58:21,433 - INFO - Conectividade com https://www.google.com verif,907 - INFO - Pesquisa realizada: What are the main challenges in science?
-2024-11-28 17:59:51,339 - INFO - Pesquisa realizada: How to make money with science
-2024-11-28 17:59:56,346 - INFO - Automação concluída com sucesso.
-2024-11-28 18:04:15,316 - DEBUG - Using proactor: IocpProactor
-2024-11-28 18:04:15,316 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-11-28 17:56:43,186 -1): www.google.com:443
 2024-11-28 18:04:15,519 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
 2024-11-28 18:04:15,519 - INFO - Conectividade com https://www.google.com verificada.
 2024-11-28 18:04:17,836 - INFO - Navegador Edge aberto com sucesso.
