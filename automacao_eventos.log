@@ -2,15 +2,7 @@
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None52,390 - INFO - Pesquisa realizada: What are the main challenges in sports?
 2024-11-28 18:10:07,827 - INFO - Pesquisa realizada: How does sports impact society?
-2024-11-28 18:10:23,261 - INFO - Pesquisa realizada: What is sports?
-2024-11-28 18:10:38,699 - INFO - Pesquisa realizada: How does physics impact society?
-2024-11-28 18:10:54,137 - INFO - Pesquisa realizada: How to make money with physics
-2024-11-28 18:11:09,555 - INFO - Pesquisa realizada: What is physics?
-2024-11-28 18:11:24,984 - INFO - Pesquisa realizada: Who are the leading experts in physics?
-2024-11-28 18:11:40,427 - INFO - Pesquisa realizada: What are the latest news in physics?
-2024-11-28 18:11:55,865 - INFO - Pesquisa realizada: What are the main challenges in physics?
-2024-11-28 18:12:00,876 - INFO - Automação concluída com sucesso.
-2024-12-01 05:24:53,342 - DEBUG - Using proactor: IocpProactor
+2024-11-28 18:10:23,261 - INFO - Pesquisa realizada: What is sports? - DEBUG - Using proactor: IocpProactor
 2024-12-01 05:24:53,373 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-12-01 05:24:53,983 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
 2024-12-01 05:24:53,998 - INFO - Conectividade com https://www.google.com verificada.
