@@ -1,15 +1,7 @@
 2024-11-28 17:56:42,905 - DEBUG - Using proactor: IocpProactor
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None52,390 - INFO - Pesquisa realizada: What are the main challenges in sports?
-2024-11-28 18:10:07,827 - INFO - Pesquisa realizada: How does sports impact society?
-2024-11-28 18:10:23,261 - INFO - Pesquisa realizada: What is sports? - DEBUG - Using proactor: IocpProactor
-2024-12-01 05:24:53,373 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 05:24:53,983 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 05:24:53,998 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 05:24:56,315 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 05:25:06,846 - INFO - Pesquisa realizada: How does mathematics impact society?
-2024-12-01 05:25:22,283 - INFO - Pesquisa realizada: What is mathematics?
-2024-12-01 05:25:37,714 - INFO - Pesquisa realizada: Who are the leading experts in mathematics?
+2024-11-28 18:10:07,827 - INFO - Pesematics?
 2024-12-01 05:25:53,153 - INFO - Pesquisa realizada: What are the latest news in mathematics?
 2024-12-01 05:26:08,585 - INFO - Pesquisa realizada: How to make money with mathematics
 2024-12-01 05:26:24,017 - INFO - Pesquisa realizada: What are the main challenges in mathematics?
