@@ -2,15 +2,7 @@
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None52,390 - INFO - Pesquisa realizada: What are the main challenges in sports?
 2024-11-28 18:10:07,827 - INFO - Pesematics?
-2024-12-01 05:25:53,153 - INFO - Pesquisa realizada: What are the latest news in mat1 05:47:
-2024-12-01 22:55:43,051 - INFO - Pesquisa realizada: What are the main challenges in marketing?
-2024-12-01 22:55:58,483 - INFO - Pesquisa realizada: How does marketing impact society?
-2024-12-01 22:56:13,900 - INFO - Pesquisa realizada: What is marketing?
-2024-12-01 22:56:29,317 - INFO - Pesquisa realizada: What are the latest news in marketing?
-2024-12-01 22:56:44,748 - INFO - Pesquisa realizada: Who are the leading experts in chemistry?
-2024-12-01 22:57:00,183 - INFO - Pesquisa realizada: What are the latest news in chemistry?
-2024-12-01 22:57:15,607 - INFO - Pesquisa realizada: What are the main challenges in chemistry?
-2024-12-01 22:57:31,026 - INFO - Pesquisa realizada: What is chemistry?
+2024-12-01 05:25:53,153 -  INFO - Pesquisa realizada: What is chemistry?
 2024-12-01 22:57:46,455 - INFO - Pesquisa realizada: How does chemistry impact society?
 2024-12-01 22:58:01,873 - INFO - Pesquisa realizada: How to make money with chemistry
 2024-12-01 22:58:17,300 - INFO - Pesquisa realizada: How does art impact society?
