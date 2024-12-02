@@ -142,37 +142,7 @@
 2024-12-01 22:44:49,818 - INFO - Pesquisa realizada: How to make money with marketing
 2024-12-01 22:44:49,818 - INFO - Pesquisa realizada: How does geography impact society?
 2024-12-01 22:44:49,821 - INFO - Pesquisa realizada: What are the main challenges in law?
-2024-12-01 22:44:52,305 - INFO - Pesquisa realizada: How does mathematics impact society?
-2024-12-01 22:44:52,308 - INFO - Pesquisa realizada: What are the main challenges in literature?
-2024-12-01 22:44:52,406 - INFO - Pesquisa realizada: How to make money with science
-2024-12-01 22:44:52,409 - INFO - Pesquisa realizada: What is biology?
-2024-12-01 22:44:52,534 - INFO - Pesquisa realizada: How to make mon
-2024-12-01 22:45:39,917 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:39,917 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:40,034 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:40,034 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:40,105 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:40,105 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:40,219 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:40,219 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:41,380 - INFO - Pesquisa realizada: Who are the leading experts in science?
-2024-12-01 22:45:41,518 - INFO - Pesquisa realizada: What are the latest news in politics?
-2024-12-01 22:45:41,652 - INFO - Pesquisa realizada: How to make money with biology
-2024-12-01 22:45:41,789 - INFO - Pesquisa realizada: What is health?
-2024-12-01 22:45:41,938 - INFO - Pesquisa realizada: What is music?
-2024-12-01 22:45:42,387 - INFO - Dados de navegação e cookies limpos com sucesso.
-2024-12-01 22:45:42,423 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:42,504 - INFO - Dados de navegação e cookies limpos com sucesso.
-2024-12-01 22:45:42,527 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:45,074 - INFO - Dados de navegação e cookies limpos com sucesso.
-2024-12-01 22:45:45,148 - INFO - Dados de navegação e cookies limpos com sucesso.
-2024-12-01 22:45:45,370 - INFO - Dados de navegação e cookies limpos com sucesso.
-2024-12-01 22:45:50,104 - INFO - Pesquisa realizada: What is astronomy?
-2024-12-01 22:45:51,268 - INFO - Pesquisa realizada: How does economy impact society?
-2024-12-01 22:45:51,315 - INFO - Pesquisa realizada: How does education impact society?
-2024-12-01 22:45:51,400 - INFO - Pesquisa realizada: How does music impact society?
-2024-12-01 22:45:51,447 - INFO - Pesquisa realizada: What are the latest news in literature?
-2024-12-01 22:45:51,479 - INFO - Pesquisa realizada: Who are the leading experts in administration?
+
 2024-12-01 22:45:51,559 - INFO - Pesquisa realizada: What is law?
 2024-12-01 22:45:51,586 - INFO - Pesquisa realizada: How does marketing impact society?
 2024-12-01 22:45:51,587 - INFO - Pesquisa realizada: Who are the leading experts in music?
