@@ -163,30 +163,7 @@
 2024-12-01 22:45:07,753 - INFO - Pesquisa realizada: Who are the leading experts in literature?
 2024-12-01 22:45:07,754 - INFO - Pesquisa realizada: Who are the leading experts in mathematics?
 2024-12-01 22:45:07,823 - INFO - Pesquisa realizada: What are the latest news in science?
-2024-12-01 22:45:07,851 - INFO - Pesquisa realizada: What are the main challenges in biology?
-2024-12-01 22:45:07,985 - INFO - Pesquisa realizada: What are the latest news in gastronomy?
-2024-12-01 22:45:08,014 - INFO - Pesquisa realizada: How to make money with astronomy
-2024-12-01 22:45:10,236 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:10,236 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:10,354 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:10,354 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:10,438 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:10,438 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:10,474 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:10,474 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:10,544 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:10,544 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:10,669 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:10,669 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:12,748 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:12,867 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:12,981 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:15,038 - INFO - Pesquisa realizada: How does geography impact society?
-2024-12-01 22:45:17,757 - INFO - Pesquisa realizada: What is music?
-2024-12-01 22:45:17,861 - INFO - Pesquisa realizada: How to make money with architecture
-2024-12-01 22:45:20,424 - INFO - Pesquisa realizada: What is economy?
-2024-12-01 22:45:20,424 - INFO - Pesquisa realizada: What is health?
-2024-12-01 22:45:20,473 - INFO - Pesquisa realizada: How to make money with education
+2024-12-01 22:45:07,851 - INFO - Pesquisa realizada: What are the main challenges in biolog
 2024-12-01 22:45:20,525 - INFO - Pesquisa realizada: What are the latest news in law?
 2024-12-01 22:45:20,560 - INFO - Pesquisa realizada: What are the main challenges in music?
 2024-12-01 22:45:20,595 - INFO - Pesquisa realizada: What are the main challenges in administration?
