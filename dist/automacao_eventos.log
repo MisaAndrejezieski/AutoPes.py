@@ -156,34 +156,6 @@
 2024-12-01 22:45:05,050 - INFO - Pesquisa realizada: Who are the leading experts in education?
 2024-12-01 22:45:05,104 - INFO - Pesquisa realizada: What is law?
 2024-12-01 22:45:05,140 - INFO - Pesquisa realizada: What is music?
-2024-12-01 22:45:05,163 - INFO - Pesquisa realizada: What are the latest news in administration?
-2024-12-01 22:45:05,268 - INFO - Pesquisa realizada: How does law impact society?
-2024-12-01 22:45:05,289 - INFO - Pesquisa realizada: Who are the leading experts in geogronomy?
-2024-12-01 22:45:23,545 - INFO - Pesquisa realizada: How does law impact society?
-2024-12-01 22:45:23,545 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:23,556 - INFO - Pesquisa realizada: Who are the leading experts in biology?
-2024-12-01 22:45:23,556 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:23,558 - INFO - Pesquisa realizada: Who are the leading experts in astronomy?
-2024-12-01 22:45:24,261 - INFO - Dados de navegação e cookies limpos com sucesso.
-2024-12-01 22:45:25,598 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:25,680 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:25,680 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:25,723 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:25,793 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:25,794 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:25,876 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:25,899 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:25,899 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:25,914 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:25,914 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:25,999 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:25,999 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:26,188 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:26,188 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:28,224 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:28,313 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:28,455 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:28,455 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-12-01 22:45:28,504 - INFO - Navegador Edge aberto com sucesso.
 2024-12-01 22:45:28,571 - DEBUG - Using proactor: IocpProactor
 2024-12-01 22:45:28,571 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
