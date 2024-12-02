@@ -1,15 +1,6 @@
 2024-11-28 17:56:42,905 - DEBUG - Using proactor: IocpProactor
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-11-28 17:56:43,186 -1): ww,994 - INFO - Pesquisa realizada: How to make money with politics
-2024-11-28 18:05:45,419 - INFO - Pesquisa realizada: What is politics?echnology?
-2024-11-28 18:08:19,802 - INFO - Pesquisa realizada: What is technology?
-2024-11-28 18:08:35,245 - INFO - Pesquisa realizada: What are the main challenges in technology?
-2024-11-28 18:08:50,673 - INFO - Pesquisa realizada: How to make money with technology
-2024-11-28 18:09:06,097 - INFO - Pesquisa realizada: Who are the leading experts in sports?
-2024-11-28 18:09:21,523 - INFO - Pesquisa realizada: How to make money with sports
-2024-11-28 18:09:36,952 - INFO - Pesquisa realizada: What are the latest news in sports?
-2024-11-28 18:09:52,390 - INFO - Pesquisa realizada: What are the main challenges in sports?
+2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None52,390 - INFO - Pesquisa realizada: What are the main challenges in sports?
 2024-11-28 18:10:07,827 - INFO - Pesquisa realizada: How does sports impact society?
 2024-11-28 18:10:23,261 - INFO - Pesquisa realizada: What is sports?
 2024-11-28 18:10:38,699 - INFO - Pesquisa realizada: How does physics impact society?
