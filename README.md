@@ -187,8 +187,8 @@ def start_move(event):
     root.start_x = event.x
     root.start_y = event.y
 
-title_bar.bind('<Button-1>', start_move)
-title_bar.bind('<B1-Motion>', move_window)
+/*title_bar.bind('<Button-1>', start_move)
+/*title_bar.bind('<B1-Motion>', move_window)
 
 ## Elementos da interface
 
