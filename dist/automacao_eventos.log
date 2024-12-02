@@ -151,37 +151,7 @@
 2024-12-01 22:44:59,529 - INFO - Pesquisa realizada: Who are the leading experts in geography?
 2024-12-01 22:45:02,262 - INFO - Pesquisa realizada: What are the main challenges in music?
 2024-12-01 22:45:02,405 - INFO - Pesquisa realizada: What are the latest news in architecture?
-2024-12-01 22:45:05,004 - INFO - Pesquisa realizada: What are the main challenges in economy?
-2024-12-01 22:45:05,004 - INFO - Pesquisa realizada: How does health impact society?
-2024-12-01 22:45:05,050 - INFO - Pesquisa realizada: Who are the leading experts in education?
-2024-12-01 22:45:05,104 - INFO - Pesquisa realizada: What is law?
-2024-12-01 22:45:05,140 - INFO - Pesquisa realizada: What is music?
-2024-12-01 22:45:28,504 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:28,571 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:28,571 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:28,656 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:28,656 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:28,704 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:28,704 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:28,790 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:28,790 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:28,851 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:28,852 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:28,904 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:28,904 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:28,996 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:45:28,996 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:45:29,056 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:29,056 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:29,204 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:45:29,204 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:45:30,965 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:31,103 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:31,239 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:31,380 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:31,522 - INFO - Navegador Edge aberto com sucesso.
-2024-12-01 22:45:33,175 - INFO - Pesquisa realizada: How does music impact society?
-2024-12-01 22:45:33,290 - INFO - Pesquisa realizada: How does architecture impact society?
+2024-12-01 22:45:05,004 - INFO - Pesquisa realizada: What are the main challe
 2024-12-01 22:45:34,689 - INFO - Pesquisa realizada: Who are the leading experts in astronomy?
 2024-12-01 22:45:35,855 - INFO - Pesquisa realizada: How to make money with economy
 2024-12-01 22:45:35,860 - INFO - Pesquisa realizada: Who are the leading experts in health?
