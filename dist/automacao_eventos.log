@@ -95,25 +95,4 @@
 2024-12-01 22:44:34,153 - INFO - Pesquisa realizada: What are the main challenges in education?
 2024-12-01 22:44:34,262 - INFO - Pesquisa realizada: How to make money with law
 2024-12-01 22:44:34,290 - INFO - Pesquisa realizada: How to make money with music
-2024-12-01 22:44:34,365 - INFO - Pesquisa realizada: Who are the leading experts in marketing?
-2024-12-01 22:44:34,383 - INFO - Pesquisa realizada: How to make money with geography
-2024-12-01 22:44:36,645 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:36,645 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:36,766 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:36,766 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:36,813 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:36,813 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:36,867 - INFO - Pesquisa realizada: What is mathematics?
-2024-12-01 22:44:36,890 - DEBUG - Using proactor: IocpProactor
-2024-12-01 22:44:36,890 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-01 22:44:36,976 - INFO - Pesquisa realizada: How does science impact society?
-2024-12-01 22:44:36,976 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:36,976 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:37,080 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-01 22:44:37,083 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-01 22:44:37,112 - INFO - Pesquisa realizada: How does gastronomy impact society?
-2024-12-01 22:44:39,134 - INFO - Navegador Edge aberto com sucesso.
-
-2024-12-01 22:45:57,074 - INFO - Pesquisa realizada: Who are the leading experts in biology?
-2024-12-01 22:45:57,207 - INFO - Pesquisa realizada: How does health impact society?
-2024-12-01 22:45:57,365 - INFO - Pesquisa realizada: How to make money with music
+2024-12-01 22:44:34,365 - INFO - Pesquisa re
