@@ -2,16 +2,7 @@
 2024-11-28 17:56:42,920 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-11-28 17:56:43,186 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
 2024-11-28 17:56:43,186 -1): ww,994 - INFO - Pesquisa realizada: How to make money with politics
-2024-11-28 18:05:45,419 - INFO - Pesquisa realizada: What is politics?
-2024-11-28 18:06:00,855 - INFO - Pesquisa realizada: What are the main challenges in administration?
-2024-11-28 18:06:16,288 - INFO - Pesquisa realizada: What are the latest news in administration?
-2024-11-28 18:06:31,732 - INFO - Pesquisa realizada: Who are the leading experts in administration?
-2024-11-28 18:06:47,167 - INFO - Pesquisa realizada: How to make money with administration
-2024-11-28 18:07:02,595 - INFO - Pesquisa realizada: What is administration?
-2024-11-28 18:07:18,079 - INFO - Pesquisa realizada: How does administration impact society?
-2024-11-28 18:07:33,505 - INFO - Pesquisa realizada: How does technology impact society?
-2024-11-28 18:07:48,944 - INFO - Pesquisa realizada: Who are the leading experts in technology?
-2024-11-28 18:08:04,380 - INFO - Pesquisa realizada: What are the latest news in technology?
+2024-11-28 18:05:45,419 - INFO - Pesquisa realizada: What is politics?echnology?
 2024-11-28 18:08:19,802 - INFO - Pesquisa realizada: What is technology?
 2024-11-28 18:08:35,245 - INFO - Pesquisa realizada: What are the main challenges in technology?
 2024-11-28 18:08:50,673 - INFO - Pesquisa realizada: How to make money with technology
