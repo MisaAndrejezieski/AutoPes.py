@@ -3,13 +3,7 @@
 2024-12-02 21:28:21,326 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
 2024-12-02 21:28:21,341 - INFO - Conectividade com https://www.google.com verificada.
 2024-12-02 21:28:23,653 - INFO - Navegador Edge aberto com sucesso.
-2024-12-02 21:28:34,079 - INFO - Pesquisa realizada: How to make money with history
-2024-12-02 21:28:50,284 - DEBUG - Using proactor: IocpProactorO - Pesquisa realizada: How to make money with music
-2024-12-03 16:31:34,873 - INFO - Pesquisa realizada: How does music impact society?
-2024-12-03 16:31:50,318 - INFO - Pesquisa realizada: What are the main challenges in music?
-2024-12-03 16:32:05,741 - INFO - Pesquisa realizada: What is music?
-2024-12-03 16:32:21,171 - INFO - Pesquisa realizada: Who are the leading experts in music?
-2024-12-03 16:32:36,607 - INFO - Pesquisa realizada: How does science impact society?
+2024-12-02 21:28:34,079 - INFO - Pesquisa iety?
 2024-12-03 16:32:52,040 - INFO - Pesquisa realizada: What are the latest news in science?
 2024-12-03 16:33:07,467 - INFO - Pesquisa realizada: How to make money with science
 2024-12-03 16:33:22,909 - INFO - Pesquisa realizada: Who are the leading experts in science?
