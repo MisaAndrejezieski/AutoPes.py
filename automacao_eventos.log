@@ -1,5 +1,1 @@
-2024-12-02 21:28:20,701 - DEBUG - Using proactor: IocpProactor
-2024-12-02 21:28:20,716 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-02 21:28:21,326 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-02 21:28:21,341 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-03 16:36:58,993 - INFO - Pesquisa realizada: What is health?
+
