@@ -2,15 +2,6 @@
 2024-12-02 21:28:20,716 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-12-02 21:28:21,326 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
 2024-12-02 21:28:21,341 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-02 21:28:23,653 - 90 - INFO - Pesquisa realizada: How to make money with medicine
-2024-12-03 16:34:55,525 - INFO - Pesquisa realizada: What are the latest news in medicine?
-2024-12-03 16:35:10,961 - INFO - Pesquisa realizada: How does medicine impact society?
-2024-12-03 16:35:26,392 - INFO - Pesquisa realizada: Who are the leading experts in medicine?
-2024-12-03 16:35:41,832 - INFO - Pesquisa realizada: How does health impact society?
-2024-12-03 16:35:57,268 - INFO - Pesquisa realizada: What are the latest news in health?
-2024-12-03 16:36:12,696 - INFO - Pesquisa realizada: What are the main challenges in health?
-2024-12-03 16:36:28,139 - INFO - Pesquisa realizada: Who are the leading experts in health?
-2024-12-03 16:36:43,562 - INFO - Pesquisa realizada: How to make money with health
 2024-12-03 16:36:58,993 - INFO - Pesquisa realizada: What is health?
 2024-12-03 16:37:14,420 - INFO - Pesquisa realizada: How to make money with design
 2024-12-03 16:37:29,864 - INFO - Pesquisa realizada: What are the main challenges in design?
