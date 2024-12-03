@@ -1,1 +1,8 @@
 
+2024-12-03 17:35:00,737 - DEBUG - Using proactor: IocpProactor
+2024-12-03 17:35:00,737 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-03 17:35:01,317 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-03 17:35:01,347 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-03 17:35:03,658 - INFO - Navegador Edge aberto com sucesso.
+2024-12-03 17:35:14,078 - INFO - Pesquisa realizada: Who are the leading experts in finance?
+2024-12-03 17:35:19,094 - INFO - Automação concluída com sucesso.
