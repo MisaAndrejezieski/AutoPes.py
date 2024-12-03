@@ -2,16 +2,7 @@
 2024-12-02 21:28:20,716 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-12-02 21:28:21,326 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
 2024-12-02 21:28:21,341 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-02 21:28:23,653 - INFO - Navegador Edge aberto com sucesso.
-2024-12-02 21:28:34,079 - INFO - Pesquisa iety?
-2024-12-03 16:32:52,040 - INFO - Pesquisa realizada: What are the latest news in science?
-2024-12-03 16:33:07,467 - INFO - Pesquisa realizada: How to make money with science
-2024-12-03 16:33:22,909 - INFO - Pesquisa realizada: Who are the leading experts in science?
-2024-12-03 16:33:38,340 - INFO - Pesquisa realizada: What is science?
-2024-12-03 16:33:53,779 - INFO - Pesquisa realizada: What are the main challenges in science?
-2024-12-03 16:34:09,213 - INFO - Pesquisa realizada: What is medicine?
-2024-12-03 16:34:24,655 - INFO - Pesquisa realizada: What are the main challenges in medicine?
-2024-12-03 16:34:40,090 - INFO - Pesquisa realizada: How to make money with medicine
+2024-12-02 21:28:23,653 - 90 - INFO - Pesquisa realizada: How to make money with medicine
 2024-12-03 16:34:55,525 - INFO - Pesquisa realizada: What are the latest news in medicine?
 2024-12-03 16:35:10,961 - INFO - Pesquisa realizada: How does medicine impact society?
 2024-12-03 16:35:26,392 - INFO - Pesquisa realizada: Who are the leading experts in medicine?
