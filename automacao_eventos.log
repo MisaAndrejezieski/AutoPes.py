@@ -4,13 +4,7 @@
 2024-12-02 21:28:21,341 - INFO - Conectividade com https://www.google.com verificada.
 2024-12-02 21:28:23,653 - INFO - Navegador Edge aberto com sucesso.
 2024-12-02 21:28:34,079 - INFO - Pesquisa realizada: How to make money with history
-2024-12-02 21:28:50,284 - DEBUG - Using proactor: IocpProactor
-2024-12-02 21:28:50,284 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-02 21:28:50,784 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-02 21:28:50,784 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-02 21:28:53,103 - INFO - Navegador Edge aberto com sucesso.
-2024-12-02 21:29:03,521 - INFO - Pesquisa realizada: What are the latest news in music?
-2024-12-03 16:31:19,443 - INFO - Pesquisa realizada: How to make money with music
+2024-12-02 21:28:50,284 - DEBUG - Using proactor: IocpProactorO - Pesquisa realizada: How to make money with music
 2024-12-03 16:31:34,873 - INFO - Pesquisa realizada: How does music impact society?
 2024-12-03 16:31:50,318 - INFO - Pesquisa realizada: What are the main challenges in music?
 2024-12-03 16:32:05,741 - INFO - Pesquisa realizada: What is music?
