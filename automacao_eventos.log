@@ -11,17 +11,7 @@
 2024-12-04 16:04:39,942 - DEBUG - Using proactor: IocpProactor
 2024-12-04 16:04:39,942 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
 2024-12-04 16:04:40,145 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-04 16:04:40,145 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-04 16:04:42,463 - INFO - Navegador Edge aberto com sucesso.
-2024-12-04 16:04:52,881 - INFO - Pesquisa realizada: How to make money with administration
-2024-12-04 16:05:08,310 - INFO - Pesquisa realizada: What is administration?
-2024-12-04 16:05:23,744 - INFO - Pesquisa realizada: How does administration impact society?
-2024-12-04 16:05:39,183 - INFO - Pesquisa realizada: What are the latest news in administration?
-2024-12-04 16:05:54,629 - INFO - Pesquisa realizada: What are the main challenges in administration?
-2024-12-04 16:06:10,068 - INFO - Pesquisa realizada: Who are the leading experts in administration?
-2024-12-04 16:06:25,506 - INFO - Pesquisa realizada: Who are the leading experts in music?
-2024-12-04 16:06:40,943 - INFO - Pesquisa realizada: What are the main challenges in music?
-2024-12-04 16:06:56,377 - INFO - Pesquisa realizada: What 
+
  
 
 
