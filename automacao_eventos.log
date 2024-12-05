@@ -52,14 +52,6 @@
 2024-12-04 16:13:58,184 - INFO - Automação concluída com sucesso.
 2024-12-04 19:37:14,105 - DEBUG - Using proactor: IocpProactor
 2024-12-04 19:37:14,121 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
-2024-12-04 19:37:14,386 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
-2024-12-04 19:37:14,386 - INFO - Conectividade com https://www.google.com verificada.
-2024-12-04 19:37:16,692 - INFO - Navegador Edge aberto com sucesso.
-2024-12-04 19:37:27,136 - INFO - Pesquisa realizada: What are the latest news in literature?
-2024-12-04 19:37:42,554 - INFO - Pesquisa realizada: What are the main challenges in literature?
-2024-12-04 19:37:57,984 - INFO - Pesquisa realizada: Who are the leading experts in literature?
-2024-12-04 19:38:13,415 - INFO - Pesquisa realizada: How does literature impact society?
-2024-12-04 19:38:28,837 - INFO - Pesquisa realizada: What is literature?
-2024-12-04 19:38:44,259 - INFO - Pesquisa realizada: How to make money with literature
+2024-12-04 19:37:14,386 - DEBUG - https://www.google.com:443 
 
 
