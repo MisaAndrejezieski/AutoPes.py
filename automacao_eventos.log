@@ -83,3 +83,39 @@
 2024-12-06 16:19:58,526 - INFO - Pesquisa realizada: What is anthropology?
 2024-12-06 16:19:58,618 - INFO - Pesquisa realizada: What are the latest news in psychology?
 2024-12-06 16:19:58,651 - INFO - Pesquisa realizada: How to make money with history
+2024-12-06 16:20:28,097 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:20:28,097 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:20:28,332 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:20:28,332 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:20:30,645 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:20:41,061 - INFO - Pesquisa realizada: How to make money with administration
+2024-12-06 16:20:56,492 - INFO - Pesquisa realizada: What are the main challenges in administration?
+2024-12-06 16:21:11,907 - INFO - Pesquisa realizada: What is administration?
+2024-12-06 16:21:27,336 - INFO - Pesquisa realizada: How does administration impact society?
+2024-12-06 16:21:42,777 - INFO - Pesquisa realizada: Who are the leading experts in administration?
+2024-12-06 16:21:58,234 - INFO - Pesquisa realizada: What are the latest news in administration?
+2024-12-06 16:22:13,663 - INFO - Pesquisa realizada: How does architecture impact society?
+2024-12-06 16:22:29,079 - INFO - Pesquisa realizada: What is architecture?
+2024-12-06 16:22:44,515 - INFO - Pesquisa realizada: What are the latest news in architecture?
+2024-12-06 16:22:59,937 - INFO - Pesquisa realizada: How to make money with architecture
+2024-12-06 16:23:15,362 - INFO - Pesquisa realizada: What are the main challenges in architecture?
+2024-12-06 16:23:30,799 - INFO - Pesquisa realizada: Who are the leading experts in architecture?
+2024-12-06 16:23:46,220 - INFO - Pesquisa realizada: What are the main challenges in finance?
+2024-12-06 16:24:01,649 - INFO - Pesquisa realizada: What are the latest news in finance?
+2024-12-06 16:24:17,072 - INFO - Pesquisa realizada: How does finance impact society?
+2024-12-06 16:24:32,505 - INFO - Pesquisa realizada: Who are the leading experts in finance?
+2024-12-06 16:24:47,917 - INFO - Pesquisa realizada: How to make money with finance
+2024-12-06 16:25:03,331 - INFO - Pesquisa realizada: What is finance?
+2024-12-06 16:25:18,761 - INFO - Pesquisa realizada: How does sports impact society?
+2024-12-06 16:25:34,182 - INFO - Pesquisa realizada: How to make money with sports
+2024-12-06 16:25:49,601 - INFO - Pesquisa realizada: What is sports?
+2024-12-06 16:26:05,036 - INFO - Pesquisa realizada: What are the main challenges in sports?
+2024-12-06 16:26:20,465 - INFO - Pesquisa realizada: Who are the leading experts in sports?
+2024-12-06 16:26:35,887 - INFO - Pesquisa realizada: What are the latest news in sports?
+2024-12-06 16:26:51,305 - INFO - Pesquisa realizada: How does gastronomy impact society?
+2024-12-06 16:27:06,731 - INFO - Pesquisa realizada: What is gastronomy?
+2024-12-06 16:27:22,169 - INFO - Pesquisa realizada: Who are the leading experts in gastronomy?
+2024-12-06 16:27:37,598 - INFO - Pesquisa realizada: What are the latest news in gastronomy?
+2024-12-06 16:27:53,012 - INFO - Pesquisa realizada: How to make money with gastronomy
+2024-12-06 16:28:08,436 - INFO - Pesquisa realizada: What are the main challenges in gastronomy?
+2024-12-06 16:28:23,856 - INFO - Pesquisa realizada: How to make money with economy
