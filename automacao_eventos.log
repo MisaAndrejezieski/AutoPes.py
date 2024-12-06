@@ -4,3 +4,82 @@
  
 
 
+2024-12-06 16:18:37,513 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:18:37,612 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:18:38,441 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:18:38,456 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:18:40,797 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:18:51,203 - INFO - Pesquisa realizada: What is marketing?
+2024-12-06 16:19:06,619 - INFO - Pesquisa realizada: How does marketing impact society?
+2024-12-06 16:19:11,861 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:19:11,861 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:19:11,977 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:19:11,977 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:19:12,055 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:19:12,055 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:19:12,086 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:19:12,086 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:19:12,198 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:19:12,198 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:19:12,283 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:19:12,283 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:19:14,384 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:19:14,536 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:19:14,606 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:19:14,606 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:19:14,606 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:19:14,723 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:19:14,723 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:19:14,788 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:19:14,788 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:19:14,828 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:19:14,828 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:19:14,929 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:19:14,929 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:19:15,026 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:19:15,034 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:19:17,103 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:19:17,244 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:19:17,345 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:19:22,047 - INFO - Pesquisa realizada: Who are the leading experts in marketing?
+2024-12-06 16:19:24,799 - INFO - Pesquisa realizada: How to make money with medicine
+2024-12-06 16:19:24,943 - INFO - Pesquisa realizada: How does philosophy impact society?
+2024-12-06 16:19:25,015 - INFO - Pesquisa realizada: How does literature impact society?
+2024-12-06 16:19:27,514 - INFO - Pesquisa realizada: Who are the leading experts in physics?
+2024-12-06 16:19:27,685 - INFO - Pesquisa realizada: What are the latest news in anthropology?
+2024-12-06 16:19:27,797 - INFO - Pesquisa realizada: What is history?
+2024-12-06 16:19:30,027 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:19:30,027 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:19:30,143 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:19:30,143 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:19:30,233 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:19:30,233 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:19:30,249 - DEBUG - Using proactor: IocpProactor
+2024-12-06 16:19:30,249 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-06 16:19:30,341 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:19:30,341 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:19:30,442 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-06 16:19:30,447 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-06 16:19:32,543 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:19:32,655 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:19:32,758 - INFO - Navegador Edge aberto com sucesso.
+2024-12-06 16:19:37,473 - INFO - Pesquisa realizada: What are the latest news in marketing?
+2024-12-06 16:19:40,229 - INFO - Pesquisa realizada: Who are the leading experts in medicine?
+2024-12-06 16:19:40,364 - INFO - Pesquisa realizada: What are the latest news in philosophy?
+2024-12-06 16:19:40,435 - INFO - Pesquisa realizada: Who are the leading experts in literature?
+2024-12-06 16:19:42,939 - INFO - Pesquisa realizada: What is physics?
+2024-12-06 16:19:42,962 - INFO - Pesquisa realizada: Who are the leading experts in design?
+2024-12-06 16:19:43,066 - INFO - Pesquisa realizada: How does mathematics impact society?
+2024-12-06 16:19:43,100 - INFO - Pesquisa realizada: How does anthropology impact society?
+2024-12-06 16:19:43,175 - INFO - Pesquisa realizada: How to make money with psychology
+2024-12-06 16:19:43,213 - INFO - Pesquisa realizada: What are the main challenges in history?
+2024-12-06 16:19:52,915 - INFO - Pesquisa realizada: How to make money with marketing
+2024-12-06 16:19:55,745 - INFO - Pesquisa realizada: How does medicine impact society?
+2024-12-06 16:19:55,832 - INFO - Pesquisa realizada: What is philosophy?
+2024-12-06 16:19:55,850 - INFO - Pesquisa realizada: How to make money with literature
+2024-12-06 16:19:58,382 - INFO - Pesquisa realizada: How does physics impact society?
+2024-12-06 16:19:58,400 - INFO - Pesquisa realizada: What are the main challenges in design?
+2024-12-06 16:19:58,525 - INFO - Pesquisa realizada: What are the latest news in mathematics?
+2024-12-06 16:19:58,526 - INFO - Pesquisa realizada: What is anthropology?
+2024-12-06 16:19:58,618 - INFO - Pesquisa realizada: What are the latest news in psychology?
+2024-12-06 16:19:58,651 - INFO - Pesquisa realizada: How to make money with history
