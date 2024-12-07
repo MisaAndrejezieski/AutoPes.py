@@ -119,3 +119,51 @@
 2024-12-06 16:27:53,012 - INFO - Pesquisa realizada: How to make money with gastronomy
 2024-12-06 16:28:08,436 - INFO - Pesquisa realizada: What are the main challenges in gastronomy?
 2024-12-06 16:28:23,856 - INFO - Pesquisa realizada: How to make money with economy
+2024-12-07 14:31:47,902 - DEBUG - Using proactor: IocpProactor
+2024-12-07 14:31:47,919 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-07 14:31:48,161 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-07 14:31:48,161 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-07 14:31:50,477 - INFO - Navegador Edge aberto com sucesso.
+2024-12-07 14:32:00,988 - INFO - Pesquisa realizada: Who are the leading experts in engineering?
+2024-12-07 14:32:40,408 - DEBUG - Using proactor: IocpProactor
+2024-12-07 14:32:40,408 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-07 14:32:40,604 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-07 14:32:40,604 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-07 14:32:42,913 - INFO - Navegador Edge aberto com sucesso.
+2024-12-07 14:32:53,324 - INFO - Pesquisa realizada: Who are the leading experts in gastronomy?
+2024-12-07 14:33:08,745 - INFO - Pesquisa realizada: How to make money with gastronomy
+2024-12-07 14:33:24,164 - INFO - Pesquisa realizada: What is gastronomy?
+2024-12-07 14:33:39,644 - INFO - Pesquisa realizada: What are the main challenges in gastronomy?
+2024-12-07 14:33:55,078 - INFO - Pesquisa realizada: What are the latest news in gastronomy?
+2024-12-07 14:34:10,521 - INFO - Pesquisa realizada: How does gastronomy impact society?
+2024-12-07 14:34:25,943 - INFO - Pesquisa realizada: How to make money with chemistry
+2024-12-07 14:34:41,363 - INFO - Pesquisa realizada: What is chemistry?
+2024-12-07 14:34:56,795 - INFO - Pesquisa realizada: How does chemistry impact society?
+2024-12-07 14:35:12,210 - INFO - Pesquisa realizada: What are the latest news in chemistry?
+2024-12-07 14:35:27,639 - INFO - Pesquisa realizada: Who are the leading experts in chemistry?
+2024-12-07 14:35:43,062 - INFO - Pesquisa realizada: What are the main challenges in chemistry?
+2024-12-07 14:35:58,498 - INFO - Pesquisa realizada: Who are the leading experts in psychology?
+2024-12-07 14:36:13,922 - INFO - Pesquisa realizada: What are the latest news in psychology?
+2024-12-07 14:36:29,350 - INFO - Pesquisa realizada: What is psychology?
+2024-12-07 14:36:44,776 - INFO - Pesquisa realizada: How does psychology impact society?
+2024-12-07 14:37:00,198 - INFO - Pesquisa realizada: What are the main challenges in psychology?
+2024-12-07 14:37:15,625 - INFO - Pesquisa realizada: How to make money with psychology
+2024-12-07 14:37:31,093 - INFO - Pesquisa realizada: What are the main challenges in literature?
+2024-12-07 14:37:46,510 - INFO - Pesquisa realizada: How does literature impact society?
+2024-12-07 14:38:01,965 - INFO - Pesquisa realizada: What is literature?
+2024-12-07 14:38:17,387 - INFO - Pesquisa realizada: How to make money with literature
+2024-12-07 14:38:32,820 - INFO - Pesquisa realizada: Who are the leading experts in literature?
+2024-12-07 14:38:48,252 - INFO - Pesquisa realizada: What are the latest news in literature?
+2024-12-07 14:39:03,670 - INFO - Pesquisa realizada: What are the latest news in health?
+2024-12-07 14:39:19,102 - INFO - Pesquisa realizada: What are the main challenges in health?
+2024-12-07 14:39:34,545 - INFO - Pesquisa realizada: What is health?
+2024-12-07 14:39:49,978 - INFO - Pesquisa realizada: How does health impact society?
+2024-12-07 14:40:05,402 - INFO - Pesquisa realizada: Who are the leading experts in health?
+2024-12-07 14:40:20,820 - INFO - Pesquisa realizada: How to make money with health
+2024-12-07 14:40:36,248 - INFO - Pesquisa realizada: How to make money with astronomy
+2024-12-07 14:40:51,686 - INFO - Pesquisa realizada: Who are the leading experts in astronomy?
+2024-12-07 14:41:07,104 - INFO - Pesquisa realizada: How does astronomy impact society?
+2024-12-07 14:41:22,530 - INFO - Pesquisa realizada: What are the latest news in astronomy?
+2024-12-07 14:41:37,946 - INFO - Pesquisa realizada: What is astronomy?
+2024-12-07 14:41:53,374 - INFO - Pesquisa realizada: What are the main challenges in astronomy?
+2024-12-07 14:41:58,377 - INFO - Automação concluída com sucesso.
