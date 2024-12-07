@@ -167,3 +167,15 @@
 2024-12-07 14:41:37,946 - INFO - Pesquisa realizada: What is astronomy?
 2024-12-07 14:41:53,374 - INFO - Pesquisa realizada: What are the main challenges in astronomy?
 2024-12-07 14:41:58,377 - INFO - Automação concluída com sucesso.
+2024-12-07 14:49:11,569 - DEBUG - Using proactor: IocpProactor
+2024-12-07 14:49:11,569 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-07 14:49:11,787 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-07 14:49:11,803 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-07 14:49:11,803 - ERROR - Erro ao abrir o Edge: name 'subprocess' is not defined
+2024-12-07 14:49:11,803 - ERROR - Falha ao abrir o navegador.
+2024-12-07 14:49:16,082 - DEBUG - Using proactor: IocpProactor
+2024-12-07 14:49:16,082 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-07 14:49:16,301 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-07 14:49:16,301 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-07 14:49:16,301 - ERROR - Erro ao abrir o Edge: name 'subprocess' is not defined
+2024-12-07 14:49:16,301 - ERROR - Falha ao abrir o navegador.
