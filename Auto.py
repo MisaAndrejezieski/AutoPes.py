@@ -82,10 +82,8 @@ class Automacao:
 
     def abrir_edge(self):
         try:
-            pyautogui.press('win')
-            pyautogui.write('edge')
-            pyautogui.press('enter')
-            time.sleep(2)
+            subprocess.run(["start", "msedge"], shell=True)
+            time.sleep(5)  # Aguardar o Edge abrir completamente
             logging.info("Navegador Edge aberto com sucesso.")
             return True
         except Exception as e:
@@ -166,5 +164,3 @@ if __name__ == "__main__":
     automacao = Automacao()
     interface = InterfaceGrafica(automacao)
     interface.run()
-   
-   
