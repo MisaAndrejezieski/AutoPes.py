@@ -179,3 +179,10 @@
 2024-12-07 14:49:16,301 - INFO - Conectividade com https://www.google.com verificada.
 2024-12-07 14:49:16,301 - ERROR - Erro ao abrir o Edge: name 'subprocess' is not defined
 2024-12-07 14:49:16,301 - ERROR - Falha ao abrir o navegador.
+2024-12-07 14:50:14,885 - DEBUG - Using proactor: IocpProactor
+2024-12-07 14:50:14,885 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-07 14:50:15,088 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-07 14:50:15,104 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-07 14:50:17,418 - INFO - Navegador Edge aberto com sucesso.
+2024-12-07 14:50:27,829 - INFO - Pesquisa realizada: How does gastronomy impact society?
+2024-12-07 14:50:32,831 - INFO - Automação concluída com sucesso.
