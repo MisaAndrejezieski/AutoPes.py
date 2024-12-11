@@ -277,3 +277,9 @@
 2024-12-10 08:15:23,726 - INFO - Pesquisa realizada: What is astronomy?
 2024-12-10 08:15:39,193 - INFO - Pesquisa realizada: How does astronomy impact society?
 2024-12-10 08:15:44,194 - INFO - Automação concluída com sucesso.
+2024-12-11 13:24:17,206 - DEBUG - Using proactor: IocpProactor
+2024-12-11 13:24:17,225 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-11 13:24:17,460 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-11 13:24:17,460 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-11 13:24:19,779 - INFO - Navegador Edge aberto com sucesso.
+2024-12-11 13:24:30,236 - INFO - Pesquisa realizada: How to make money with literature
