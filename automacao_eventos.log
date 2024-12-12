@@ -458,3 +458,9 @@
 2024-12-12 13:34:35,458 - INFO - Pesquisa realizada: Who are the leading experts in literature?
 2024-12-12 13:34:40,307 - INFO - Automação concluída com sucesso.
 2024-12-12 13:34:40,463 - INFO - Automação concluída com sucesso.
+2024-12-12 15:48:30,957 - DEBUG - Using proactor: IocpProactor
+2024-12-12 15:48:30,973 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-12 15:48:31,223 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-12 15:48:31,223 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-12 15:48:33,542 - INFO - Navegador Edge aberto com sucesso.
+2024-12-12 15:48:44,019 - INFO - Pesquisa realizada: What are the latest news in art?
