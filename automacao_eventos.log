@@ -325,3 +325,9 @@
 2024-12-11 13:33:52,347 - INFO - Pesquisa realizada: What are the latest news in art?
 2024-12-11 13:34:07,770 - INFO - Pesquisa realizada: How to make money with art
 2024-12-11 13:34:12,779 - INFO - Automação concluída com sucesso.
+2024-12-12 13:19:14,454 - DEBUG - Using proactor: IocpProactor
+2024-12-12 13:19:14,454 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-12 13:19:14,719 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-12 13:19:14,735 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-12 13:19:17,044 - INFO - Navegador Edge aberto com sucesso.
+2024-12-12 13:19:27,474 - INFO - Pesquisa realizada: How does literature impact society?
