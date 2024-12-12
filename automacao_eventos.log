@@ -331,3 +331,46 @@
 2024-12-12 13:19:14,735 - INFO - Conectividade com https://www.google.com verificada.
 2024-12-12 13:19:17,044 - INFO - Navegador Edge aberto com sucesso.
 2024-12-12 13:19:27,474 - INFO - Pesquisa realizada: How does literature impact society?
+2024-12-12 13:20:11,489 - DEBUG - Using proactor: IocpProactor
+2024-12-12 13:20:11,489 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-12 13:20:11,708 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-12 13:20:11,708 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-12 13:20:14,027 - INFO - Navegador Edge aberto com sucesso.
+2024-12-12 13:20:24,438 - INFO - Pesquisa realizada: Who are the leading experts in marketing?
+2024-12-12 13:20:39,870 - INFO - Pesquisa realizada: What are the main challenges in marketing?
+2024-12-12 13:20:55,300 - INFO - Pesquisa realizada: How to make money with marketing
+2024-12-12 13:21:10,725 - INFO - Pesquisa realizada: How does marketing impact society?
+2024-12-12 13:21:26,188 - INFO - Pesquisa realizada: What are the latest news in marketing?
+2024-12-12 13:21:41,601 - INFO - Pesquisa realizada: What is marketing?
+2024-12-12 13:21:57,031 - INFO - Pesquisa realizada: How does medicine impact society?
+2024-12-12 13:22:12,461 - INFO - Pesquisa realizada: What are the latest news in medicine?
+2024-12-12 13:22:27,880 - INFO - Pesquisa realizada: What is medicine?
+2024-12-12 13:22:43,345 - INFO - Pesquisa realizada: What are the main challenges in medicine?
+2024-12-12 13:22:58,763 - INFO - Pesquisa realizada: How to make money with medicine
+2024-12-12 13:23:14,239 - INFO - Pesquisa realizada: Who are the leading experts in medicine?
+2024-12-12 13:23:29,660 - INFO - Pesquisa realizada: How to make money with sports
+2024-12-12 13:23:45,102 - INFO - Pesquisa realizada: What are the main challenges in sports?
+2024-12-12 13:24:00,517 - INFO - Pesquisa realizada: What is sports?
+2024-12-12 13:24:15,994 - INFO - Pesquisa realizada: Who are the leading experts in sports?
+2024-12-12 13:24:31,415 - INFO - Pesquisa realizada: How does sports impact society?
+2024-12-12 13:24:46,836 - INFO - Pesquisa realizada: What are the latest news in sports?
+2024-12-12 13:24:52,066 - DEBUG - Using proactor: IocpProactor
+2024-12-12 13:24:52,066 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-12 13:24:52,182 - DEBUG - Using proactor: IocpProactor
+2024-12-12 13:24:52,182 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-12 13:24:52,292 - DEBUG - Using proactor: IocpProactor
+2024-12-12 13:24:52,292 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-12 13:24:52,339 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-12 13:24:52,339 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-12 13:24:52,385 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-12 13:24:52,385 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-12 13:24:52,401 - DEBUG - Using proactor: IocpProactor
+2024-12-12 13:24:52,401 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2024-12-12 13:24:52,484 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-12 13:24:52,484 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-12 13:24:52,635 - DEBUG - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-12-12 13:24:52,637 - INFO - Conectividade com https://www.google.com verificada.
+2024-12-12 13:24:54,651 - INFO - Navegador Edge aberto com sucesso.
+2024-12-12 13:24:54,704 - INFO - Navegador Edge aberto com sucesso.
+2024-12-12 13:24:54,799 - INFO - Navegador Edge aberto com sucesso.
+2024-12-12 13:24:54,942 - INFO - Navegador Edge aberto com sucesso.
