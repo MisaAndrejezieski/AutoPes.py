@@ -764,3 +764,87 @@ Traceback (most recent call last):
   File "D:\Programas\AutoPes\.venv\Lib\site-packages\webdriver_manager\core\http.py", line 35, in get
     raise exceptions.ConnectionError(f"Could not reach host. Are you offline?")
 requests.exceptions.ConnectionError: Could not reach host. Are you offline?
+2025-10-18 18:00:12,115 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:00:12,140 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:00:12,868 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:00:12,875 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:00:15,182 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:00:25,610 - INFO - Pesquisa realizada: What are the latest news in literature?
+2025-10-18 18:00:41,028 - INFO - Pesquisa realizada: What is literature?
+2025-10-18 18:00:56,485 - INFO - Pesquisa realizada: How does literature impact society?
+2025-10-18 18:01:11,942 - INFO - Pesquisa realizada: Who are the leading experts in literature?
+2025-10-18 18:01:17,163 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:17,166 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:17,271 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:17,273 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:17,380 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:17,382 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:17,489 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:17,491 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:17,600 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:17,602 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:17,709 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:17,712 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:18,466 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:18,474 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:18,669 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:18,676 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:18,853 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:18,863 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:19,000 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:19,005 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:19,273 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:19,281 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:19,334 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:19,339 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:20,795 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:20,993 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:21,188 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:21,327 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:21,598 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:21,650 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:27,368 - INFO - Pesquisa realizada: What are the main challenges in literature?
+2025-10-18 18:01:31,230 - INFO - Pesquisa realizada: How to make money with philosophy
+2025-10-18 18:01:31,526 - INFO - Pesquisa realizada: Who are the leading experts in law?
+2025-10-18 18:01:31,635 - INFO - Pesquisa realizada: What are the latest news in philosophy?
+2025-10-18 18:01:31,791 - INFO - Pesquisa realizada: Who are the leading experts in psychology?
+2025-10-18 18:01:32,089 - INFO - Pesquisa realizada: What are the main challenges in health?
+2025-10-18 18:01:32,110 - INFO - Pesquisa realizada: What are the latest news in music?
+2025-10-18 18:01:42,803 - INFO - Pesquisa realizada: How to make money with literature
+2025-10-18 18:01:46,675 - INFO - Pesquisa realizada: Who are the leading experts in philosophy?
+2025-10-18 18:01:46,966 - INFO - Pesquisa realizada: What are the main challenges in law?
+2025-10-18 18:01:47,080 - INFO - Pesquisa realizada: Who are the leading experts in philosophy?
+2025-10-18 18:01:47,234 - INFO - Pesquisa realizada: What are the main challenges in psychology?
+2025-10-18 18:01:47,521 - INFO - Pesquisa realizada: Who are the leading experts in health?
+2025-10-18 18:01:47,536 - INFO - Pesquisa realizada: How to make money with music
+2025-10-18 18:01:48,037 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:48,039 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:48,145 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:48,147 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:48,254 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:48,256 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:48,363 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:48,365 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:48,472 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:48,475 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:48,580 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:01:48,582 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:01:49,299 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:49,306 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:49,801 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:49,808 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:49,971 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:49,978 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:50,004 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:50,011 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:50,096 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:50,100 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:51,629 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:52,126 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:52,324 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:52,329 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:52,422 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:53,060 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:01:53,068 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:01:55,395 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:01:58,242 - INFO - Pesquisa realizada: Who are the leading experts in technology?

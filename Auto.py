@@ -1,118 +1,170 @@
-import os
 import time
+import pyautogui
+import random
+import logging
 import requests
-from tkinter import messagebox, ttk
 import tkinter as tk
-from selenium import webdriver
-from selenium.webdriver.edge.service import Service
-from selenium.webdriver.edge.options import Options
-from selenium.common.exceptions import WebDriverException, NoSuchElementException
+from tkinter import messagebox, PhotoImage
+from tkinter import ttk
+import threading
+import os
+import csv
+import asyncio
 
-# ======================
-# CONFIGURAÇÃO DO DRIVER
-# ======================
+# Configuração de logging
+logging.basicConfig(
+    filename='automacao_eventos.log',
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    encoding='utf-8'
+)
 
-def abrir_navegador():
-    """Inicializa o navegador Microsoft Edge usando o driver local."""
-    try:
-        driver_path = os.path.join(os.getcwd(), "drivers", "msedgedriver.exe")
-        if not os.path.exists(driver_path):
-            raise FileNotFoundError(f"Driver Edge não encontrado em: {driver_path}")
+# Lista de temas e perguntas
+temas_en = [
+    "technology", "health", "education", "sports", "politics", "economy",
+    "science", "art", "music", "literature", "history", "geography",
+    "philosophy", "psychology", "sociology", "anthropology", "astronomy",
+    "biology", "chemistry", "physics", "mathematics", "engineering",
+    "medicine", "law", "administration", "marketing", "finance",
+    "architecture", "design", "fashion", "gastronomy"
+]
 
-        options = Options()
-        options.add_argument("--start-maximized")
-        # Caso queira rodar sem abrir a janela:
-        # options.add_argument("--headless")
-        # options.add_argument("--disable-gpu")
+perguntas_en = [
+    "What is {tema}?", "What are the latest news in {tema}?",
+    "How does {tema} impact society?", "What are the main challenges in {tema}?",
+    "Who are the leading experts in {tema}?", "How to make money with {tema}",
+]
 
-        service = Service(driver_path)
-        driver = webdriver.Edge(service=service, options=options)
-        return driver
-    except Exception as e:
-        messagebox.showerror("Erro", f"Ocorreu um erro ao abrir o Edge:\n{e}")
-        return None
+class Automacao:
+    def __init__(self):
+        self.resultados = []
 
+    def gerar_pesquisas_sobre_tema(self, tema, n):
+        return random.sample([p.format(tema=tema) for p in perguntas_en], n)
 
-# ======================
-# FUNÇÕES PRINCIPAIS
-# ======================
+    def salvar_resultados(self):
+        file_exists = os.path.isfile('resultados_pesquisas.csv')
+        with open('resultados_pesquisas.csv', 'a', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            if not file_exists:
+                writer.writerow(["Tema", "Pergunta", "Status"])
+            for resultado in self.resultados:
+                writer.writerow([resultado['tema'], resultado['pergunta'], resultado['status']])
 
-def verificar_conexao():
-    """Verifica se há conexão com a internet."""
-    try:
-        requests.get("https://www.google.com", timeout=5)
-        return True
-    except requests.ConnectionError:
+    async def verificar_conectividade(self):
+        endpoints = ['https://www.google.com', 'https://www.bing.com', 'https://www.duckduckgo.com']
+        for url in endpoints:
+            try:
+                response = requests.get(url, timeout=5)
+                if response.status_code == 200:
+                    logging.info(f"Conectividade com {url} verificada.")
+                    return True
+            except requests.ConnectionError:
+                logging.warning(f"Falha ao acessar {url}. Tentando outro...")
         return False
 
+    async def executar_automacao(self, num_temas=6, num_perguntas=6):
+        if await self.verificar_conectividade():
+            if self.abrir_edge():
+                for _ in range(num_temas):
+                    tema = random.choice(temas_en)
+                    pesquisas = self.gerar_pesquisas_sobre_tema(tema, num_perguntas)
+                    for pesquisa in pesquisas:
+                        sucesso = await self.realizar_pesquisa(pesquisa)
+                        self.resultados.append({'tema': tema, 'pergunta': pesquisa, 'status': 'Concluída' if sucesso else 'Falha'})
+                        await asyncio.sleep(5)
+                self.salvar_resultados()
+                logging.info("Automação concluída com sucesso.")
+            else:
+                logging.error("Falha ao abrir o navegador.")
+        else:
+            logging.error("Falha na verificação de conectividade com a internet.")
 
-def iniciar_automacao():
-    """Função principal que é chamada ao clicar no botão Iniciar."""
-    if not verificar_conexao():
-        messagebox.showerror("Erro", "Sem conexão com a internet.")
-        return
+    def abrir_edge(self):
+        try:
+            pyautogui.press('win')
+            pyautogui.write('edge')
+            pyautogui.press('enter')
+            time.sleep(2)
+            logging.info("Navegador Edge aberto com sucesso.")
+            return True
+        except Exception as e:
+            logging.error(f"Erro ao abrir o Edge: {e}")
+            return False
 
-    driver = abrir_navegador()
-    if not driver:
-        return
+    async def realizar_pesquisa(self, pesquisa):
+        for tentativa in range(3):  # Tentar até 3 vezes
+            try:
+                pyautogui.hotkey('ctrl', 't')
+                pyautogui.write(pesquisa)
+                pyautogui.press('enter')
+                time.sleep(10)
+                pyautogui.hotkey('ctrl', 'w')
+                logging.info(f"Pesquisa realizada: {pesquisa}")
+                return True
+            except Exception as e:
+                logging.error(f"Tentativa {tentativa + 1} de realizar a pesquisa falhou: {e}")
+                if tentativa == 2:
+                    logging.error(f"Falha ao realizar a pesquisa: {pesquisa} após 3 tentativas.")
+                await asyncio.sleep(5)  # Espera antes de tentar novamente
+        return False
 
-    try:
-        # Exemplo de navegação - substitua pelo site desejado
-        driver.get("https://www.bing.com")
+class InterfaceGrafica:
+    def __init__(self, automacao):
+        self.automacao = automacao
+        self.root = tk.Tk()
+        self.root.title("Automação de Pesquisa")
+        self.root.geometry('600x500')
+        self.root.configure(bg='#cfffca')
+        self.setup_ui()
 
-        time.sleep(3)
+    def setup_ui(self):
+        # Estilos
+        style = ttk.Style()
+        style.theme_use('clam')
+        style.configure('TButton', background='#A7D8D7', foreground='#2E4053', font=('Helvetica', 12, 'bold'))
+        style.map('TButton', background=[('active', '#80C7C6')])
+        style.configure('Red.TButton', background='#F28C8C', foreground='#2E4053', font=('Helvetica', 12, 'bold'))
+        style.map('Red.TButton', background=[('active', '#F76C6C')])
+        style.configure('TLabel', background='#F3F4F6', foreground='#2E4053', font=('Helvetica', 12))
+        style.configure('TEntry', font=('Helvetica', 12), padding=5)
 
-        # Exemplo de interação
-        caixa_busca = driver.find_element("name", "q")
-        caixa_busca.send_keys("Selenium WebDriver Edge Python")
-        caixa_busca.submit()
+        # Elementos da interface
+        ttk.Label(self.root, text="Número de Temas:", style='TLabel').pack(pady=10)
+        self.num_temas_entry = ttk.Entry(self.root, width=20)
+        self.num_temas_entry.pack(pady=5)
+        self.num_temas_entry.insert(0, "6")
 
-        time.sleep(5)
-        messagebox.showinfo("Sucesso", "Automação concluída com sucesso!")
+        ttk.Label(self.root, text="Número de Perguntas por Tema:", style='TLabel').pack(pady=10)
+        self.num_perguntas_entry = ttk.Entry(self.root, width=20)
+        self.num_perguntas_entry.pack(pady=5)
+        self.num_perguntas_entry.insert(0, "6")
 
-    except NoSuchElementException as e:
-        messagebox.showerror("Erro", f"Elemento não encontrado:\n{e}")
-    except WebDriverException as e:
-        messagebox.showerror("Erro no WebDriver", f"Ocorreu um erro:\n{e}")
-    except Exception as e:
-        messagebox.showerror("Erro", f"Erro inesperado:\n{e}")
-    finally:
-        driver.quit()
+        # Botão para iniciar a automação
+        start_button = ttk.Button(self.root, text="Iniciar Automação", command=self.iniciar_automacao_handler)
+        start_button.pack(pady=20)
 
+        # Botão para fechar a aplicação
+        close_button = ttk.Button(self.root, text="Fechar", command=self.root.quit, style='Red.TButton')
+        close_button.pack(pady=10)
 
-# ======================
-# INTERFACE GRÁFICA (Tkinter)
-# ======================
+    def iniciar_automacao_handler(self):
+        try:
+            num_temas = int(self.num_temas_entry.get())
+            num_perguntas = int(self.num_perguntas_entry.get())
+            threading.Thread(target=self.run_automacao, args=(num_temas, num_perguntas)).start()
+        except ValueError:
+            messagebox.showerror("Erro", "Por favor, insira números válidos.")
 
-def criar_interface():
-    """Cria a janela principal da aplicação."""
-    janela = tk.Tk()
-    janela.title("AutoPes - Automação Edge")
-    janela.geometry("400x250")
-    janela.resizable(False, False)
+    def run_automacao(self, num_temas, num_perguntas):
+        asyncio.run(self.automacao.executar_automacao(num_temas, num_perguntas))
 
-    estilo = ttk.Style()
-    estilo.configure("TButton", font=("Segoe UI", 11))
-    estilo.configure("TLabel", font=("Segoe UI", 11))
-
-    frame = ttk.Frame(janela, padding=20)
-    frame.pack(expand=True, fill="both")
-
-    label = ttk.Label(frame, text="Clique para iniciar a automação:")
-    label.pack(pady=10)
-
-    botao_iniciar = ttk.Button(frame, text="Iniciar Automação", command=iniciar_automacao)
-    botao_iniciar.pack(pady=10)
-
-    botao_sair = ttk.Button(frame, text="Sair", command=janela.destroy)
-    botao_sair.pack(pady=10)
-
-    janela.mainloop()
-
-
-# ======================
-# EXECUÇÃO PRINCIPAL
-# ======================
+    def run(self):
+        self.root.mainloop()
 
 if __name__ == "__main__":
-    criar_interface()
+    automacao = Automacao()
+    interface = InterfaceGrafica(automacao)
+    interface.run()
+   
+   
