@@ -1,0 +1,8 @@
+2025-10-18 19:56:07,207 - DEBUG - Using proactor: IocpProactor
+2025-10-18 19:56:07,225 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 19:56:07,974 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 19:56:07,981 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 19:56:11,790 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 19:56:22,211 - INFO - Pesquisa realizada: What are the latest news in art?
+2025-10-18 19:56:27,225 - INFO - Automação concluída com sucesso.
+2025-10-18 19:56:27,376 - INFO - Microsoft Edge fechado automaticamente.
