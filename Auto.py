@@ -224,13 +224,13 @@ class InterfaceGrafica:
         ttk.Label(self.root, text="Número de Temas:", style='TLabel').pack(pady=10)
         self.num_temas_entry = ttk.Entry(self.root, width=20)
         self.num_temas_entry.pack(pady=5)
-        self.num_temas_entry.insert(0, "6")
+        self.num_temas_entry.insert(0, "1")
 
         # Campo número de perguntas por tema
         ttk.Label(self.root, text="Número de Perguntas por Tema:", style='TLabel').pack(pady=10)
         self.num_perguntas_entry = ttk.Entry(self.root, width=20)
         self.num_perguntas_entry.pack(pady=5)
-        self.num_perguntas_entry.insert(0, "6")
+        self.num_perguntas_entry.insert(0, "1")
 
         # Botão para iniciar automação
         start_button = ttk.Button(self.root, text="Iniciar Automação", command=self.iniciar_automacao_handler)
