@@ -5,3 +5,10 @@
 2025-10-18 19:33:47,458 - INFO - Navegador Edge aberto com sucesso.
 2025-10-18 19:33:57,883 - INFO - Pesquisa realizada: What are the latest news in science?
 2025-10-18 19:34:02,895 - INFO - Automação concluída com sucesso.
+2025-10-18 19:35:31,963 - DEBUG - Using proactor: IocpProactor
+2025-10-18 19:35:31,966 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 19:35:32,882 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 19:35:32,887 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 19:35:35,203 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 19:35:45,627 - INFO - Pesquisa realizada: How to make money with architecture
+2025-10-18 19:35:50,637 - INFO - Automação concluída com sucesso.
