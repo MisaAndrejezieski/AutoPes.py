@@ -1,0 +1,8 @@
+2025-10-18 20:02:43,697 - DEBUG - Using proactor: IocpProactor
+2025-10-18 20:02:43,697 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 20:02:44,563 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 20:02:44,579 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 20:02:48,391 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 20:02:58,810 - INFO - Pesquisa realizada: What is sociology?
+2025-10-18 20:03:03,812 - INFO - Automação concluída com sucesso.
+2025-10-18 20:03:04,398 - INFO - Microsoft Edge fechado automaticamente.
