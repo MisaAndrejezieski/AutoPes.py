@@ -1,0 +1,7 @@
+2025-10-18 19:47:32,938 - DEBUG - Using proactor: IocpProactor
+2025-10-18 19:47:32,942 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 19:47:33,802 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 19:47:33,805 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 19:47:36,127 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 19:47:46,551 - INFO - Pesquisa realizada: How to make money with health
+2025-10-18 19:47:51,565 - INFO - Automação concluída com sucesso.
