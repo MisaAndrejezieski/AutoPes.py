@@ -848,3 +848,10 @@ requests.exceptions.ConnectionError: Could not reach host. Are you offline?
 2025-10-18 18:01:53,068 - INFO - Conectividade com https://www.google.com verificada.
 2025-10-18 18:01:55,395 - INFO - Navegador Edge aberto com sucesso.
 2025-10-18 18:01:58,242 - INFO - Pesquisa realizada: Who are the leading experts in technology?
+2025-10-18 18:12:18,261 - DEBUG - Using proactor: IocpProactor
+2025-10-18 18:12:18,268 - DEBUG - Starting new HTTPS connection (1): www.google.com:443
+2025-10-18 18:12:18,984 - DEBUG - https://www.google.com:443 "GET / HTTP/1.1" 200 None
+2025-10-18 18:12:18,991 - INFO - Conectividade com https://www.google.com verificada.
+2025-10-18 18:12:21,305 - INFO - Navegador Edge aberto com sucesso.
+2025-10-18 18:12:31,726 - INFO - Pesquisa realizada: What is fashion?
+2025-10-18 18:12:36,741 - INFO - Automação concluída com sucesso.
