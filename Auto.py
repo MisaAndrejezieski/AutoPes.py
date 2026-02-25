@@ -4,7 +4,7 @@
 # ------------------------------------------------------------
 # Este programa realiza pesquisas automáticas no Microsoft Edge
 # sobre temas variados, salvando os resultados em CSV e logs.
-# Possui interface Tkinter e fecha o navegador ao final.
+# Possui interface Tkinter e fecha o navegador ao final. OK.
 # ------------------------------------------------------------
 
 import time
